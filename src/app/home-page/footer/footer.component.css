@@ -1,0 +1,50 @@
+.footer {
+  display: inline-flex;
+  width: 1350px;
+  height: 21px;
+  padding: 14px 45px 15px 45px;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 385px;
+  flex-shrink: 0;
+  background: #FFF;
+  box-shadow: 0px 0px 2px 0px rgba(34, 34, 34, 0.25);
+}
+
+.footer .left-footer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.footer .left-footer .year label {
+  color: #3E3E3E;
+  font-family: Poppins;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+}
+
+.footer .left-footer label {
+  color: #3E3E3E;
+  font-family: Poppins;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+}
+
+.footer .right-footer {
+  display: flex;
+  gap: 32px;
+}
+
+.footer .right-footer label {
+  color: #3E3E3E;
+  font-family: Poppins;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}

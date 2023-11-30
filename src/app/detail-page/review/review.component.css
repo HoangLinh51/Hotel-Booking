@@ -1,0 +1,146 @@
+.review .title {
+  width: 299px;
+  height: 42px;
+  flex-shrink: 0;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin: 0px 1102px 35px 129px
+}
+
+.review .title .star {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.review .title .star label {
+  color: #3E3E3E;
+  font-family: Poppins;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 1000;
+  line-height: normal;
+}
+
+.review .title label {
+  color: #3E3E3E;
+  font-family: Poppins;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.review .evaluate {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0px 130px 50px 129px;
+}
+
+.review .evaluate .clean {
+  display: flex;
+  align-items: center;
+  margin: 0px 194px 30px 0px;
+}
+
+.review .evaluate .clean label.name {
+  color: #3E3E3E;
+  font-family: Poppins;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-right: 234px;
+}
+
+.review .evaluate .accuracy {
+  margin-bottom: 30px;
+  display: flex;
+  align-items: center;
+}
+
+.review .evaluate .accuracy label.name {
+  color: #3E3E3E;
+  font-family: Poppins;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-right: 200px;
+}
+
+.review .evaluate .communication {
+  margin: 0px 194px 30px 0px;
+  display: flex;
+  align-items: center;
+}
+
+.review .evaluate .communication label.name {
+  color: #3E3E3E;
+  font-family: Poppins;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-right: 200px;
+}
+
+.review .evaluate .location {
+  margin-bottom: 30px;
+  display: flex;
+  align-items: center;
+}
+
+.review .evaluate .location label.name {
+  color: #3E3E3E;
+  font-family: Poppins;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-right: 207px;
+}
+
+.review .evaluate .checkin {
+  margin: 0px 194px 30px 0px;
+  display: flex;
+  align-items: center;
+}
+
+.review .evaluate .checkin label.name {
+  color: #3E3E3E;
+  font-family: Poppins;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-right: 250px;
+}
+
+.review .evaluate .value {
+  margin-bottom: 30px;
+  display: flex;
+  align-items: center;
+}
+
+.review .evaluate .value label.name {
+  color: #3E3E3E;
+  font-family: Poppins;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-right: 226px;
+}
+
+.review .evaluate label.number {
+  color: #3E3E3E;
+  font-family: Poppins;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-left: 14px;
+}

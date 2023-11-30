@@ -3,20 +3,13 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HomePageComponent } from './home-page/home-page.component';
-import { DetailPageComponent } from './detail-page/detail-page.component';
+import { HomePageModule } from './home-page/home-page.module';
+import { DetailPageModule } from './detail-page/detail-page.module';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    HomePageComponent,
-    DetailPageComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  declarations: [AppComponent],
+  imports: [BrowserModule, HomePageModule, AppRoutingModule, DetailPageModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

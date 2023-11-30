@@ -1,0 +1,467 @@
+
+.vila-owner {
+  display: flex;
+  margin: 0px 129px 61px 129px;
+  gap: 53px;
+}
+
+.vila-owner .left {
+  height: 525px;
+  width: 742px;
+}
+
+.vila-owner .left .owner .text {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 501px;
+  margin-right: 127px;
+}
+
+.vila-owner .left .owner {
+  display: flex;
+  width: 707px;
+  height: 80px;
+  margin-bottom: 26px;
+}
+
+.vila-owner .left .owner .text label.title {
+  color: #3E3E3E;
+  font-family: Poppins;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 1000;
+  line-height: normal;
+}
+
+.vila-owner .left .owner .text .group10 {
+  width: 253px;
+  height: 21px;
+  flex-shrink: 0;
+  gap: 6px;
+  display: flex;
+  align-items: center;
+}
+
+.vila-owner .left .owner .text .group10 label {
+  color: #3E3E3E;
+  font-family: Poppins;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.vila-owner .left .line {
+  width: 727px;
+  height: 1px;
+  flex-shrink: 0;
+  background: #E6E6E6;
+  margin: 0px;
+}
+
+.vila-owner .left .describe {
+  margin: 40px 0px 50px 0px;
+  gap: 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+.vila-owner .left .describe .frame1 {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 19px;
+}
+
+.vila-owner .left .describe .frame1 .text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 5px;
+}
+
+.vila-owner .left .describe .frame1 .text .header {
+  color: #3E3E3E;
+  font-family: Poppins;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  margin: 0px;
+}
+
+.vila-owner .left .describe .frame1 .text .body {
+  color: #3E3E3E;
+  font-family: Poppins;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  width: 703px;
+}
+
+.vila-owner .left .describe .frame2 {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.vila-owner .left .describe .frame2 .text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 5px;
+}
+
+.vila-owner .left .describe .frame2 .text .header {
+  color: #3E3E3E;
+  font-family: Poppins;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  margin: 0px;
+}
+
+.vila-owner .left .describe .frame2 .text .body {
+  color: #3E3E3E;
+  font-family: Poppins;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.vila-owner .left .describe .frame3 {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 17px;
+}
+
+.vila-owner .left .describe .frame3 .text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 5px;
+}
+
+.vila-owner .left .describe .frame3 .text .header {
+  color: #3E3E3E;
+  font-family: Poppins;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  margin: 0px;
+}
+
+.vila-owner .left .describe .frame3 .text .body {
+  color: #3E3E3E;
+  font-family: Poppins;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+
+.vila-owner .left div.attention {
+  width: 727px;
+  height: 70px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  background: #FFF;
+  box-shadow: 0px 0px 2px 0px rgba(43, 43, 43, 0.35);
+  margin-top: 35px;
+}
+
+.vila-owner .left div.attention .infor-attention {
+  margin: 17px 44px 20px 30px;
+  display: inline-flex;
+  align-items: center;
+  gap: 43px;
+}
+
+.vila-owner .left div.attention .infor-attention .text {
+  width: 580px;
+}
+
+.vila-owner .left div.attention .infor-attention .text label.attention {
+  color: #3E3E3E;
+  font-family: Poppins;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 1000;
+  line-height: normal;
+}
+
+.vila-owner .left div.attention .infor-attention .text label.text {
+  color: #3E3E3E;
+  font-family: Poppins;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.vila-owner .right {
+  width: 383px;
+  height: 519px;
+  flex-shrink: 0;
+  border-radius: 15px;
+  border: 2px solid #E6E6E6;
+  box-shadow: 0px 0px 35px 0px rgba(155, 155, 155, 0.15);
+}
+
+.vila-owner .right .header {
+  display: flex;
+  margin: 0px;
+}
+
+.vila-owner .right .header .cost {
+  width: 116px;
+  height: 42px;
+  margin: 27px 67px 31px 25px;
+}
+
+.vila-owner .right .header .cost .price {
+  color: #3E3E3E;
+  font-family: Poppins;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 1000;
+  line-height: normal;
+}
+
+.vila-owner .right .header .cost .day {
+  color: #3E3E3E;
+  font-family: Poppins;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+}
+
+.vila-owner .right .header .star {
+  width: 49px;
+  height: 21px;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin: 41px 15px 39px -4px;
+}
+
+.vila-owner .right .header .star label {
+  color: #3E3E3E;
+  font-family: Poppins;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+}
+
+.vila-owner .right .header .review {
+  color: #3E3E3E;
+  font-family: Poppins;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 1000;
+  line-height: normal;
+  text-decoration-line: underline;
+  margin: 41px 22px 39px 2px;
+}
+
+.vila-owner .right .body {
+  margin: -1px 0px 0px -2px;
+}
+
+.vila-owner .right .body .date {
+  width: 337px;
+  height: 130px;
+  flex-shrink: 0;
+  border-radius: 8px;
+  border: 0.8px solid #979797;
+  background: rgba(255, 255, 255, 0.45);
+  margin: 0px 25px 20px 25px;
+}
+
+.vila-owner .right .body .date .check-in-out {
+  display: flex;
+  border-bottom: 0.8px solid #979797;
+}
+
+.vila-owner .right .body .date .check-in-out .check-in {
+  width: 155px;
+  height: 44px;
+  flex-shrink: 0;
+  margin: 19px 2px 6px 10px;
+}
+
+.vila-owner .right .body .date .check-in-out .check-in p {
+  color: #3E3E3E;
+  font-family: Poppins;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin: 0px;
+}
+
+.vila-owner .right .body .date .check-in-out .check-in label {
+  color: #3E3E3E;
+  font-family: Poppins;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  display: flex;
+  margin-top: -1px;
+}
+
+.vila-owner .right .body .date .check-in-out .line1 {
+  width: 1px;
+  height: 69px;
+  background: #979797;
+}
+
+.vila-owner .right .body .date .check-in-out .check-out {
+  width: 156px;
+  height: 44px;
+  flex-shrink: 0;
+  margin: 19px -2px 5px 14px;
+}
+
+.vila-owner .right .body .date .check-in-out .check-out p {
+  color: #3E3E3E;
+  font-family: Poppins;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin: 0px;
+}
+
+.vila-owner .right .body .date .check-in-out .check-out label {
+  color: #3E3E3E;
+  font-family: Poppins;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  display: flex;
+  margin-top: -2px;
+}
+
+.vila-owner .right .body .date .guests {
+  width: 327px;
+  height: 45px;
+  flex-shrink: 0;
+  margin: 6px 5px 9px 5px;
+  display: flex;
+}
+
+.vila-owner .right .body .date .guests .text {
+  width: 106px;
+  margin: 7px 258px 6px 6px;
+}
+
+.vila-owner .right .body .date .guests .text p {
+  color: #3E3E3E;
+  font-family: Poppins;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin: 0px;
+}
+
+.vila-owner .right .body .date .guests .text label {
+  color: #3E3E3E;
+  font-family: Poppins;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.vila-owner .right .body .button {
+  display: flex;
+  width: 317px;
+  height: 40px;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+  border-radius: 8px;
+  background: #FF385C;
+  margin: 0px 25px 20px 25px;
+}
+
+.vila-owner .right .body .button label {
+  color: #FFF;
+  font-family: Poppins;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+
+.total div.amount {
+  display: flex;
+  margin: 0px 15px 25px 24px;
+  gap: 205px;
+}
+
+.total .amount label.amount {
+  color: #3E3E3E;
+  font-family: Poppins;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.total .amount label.price {
+  color: #3E3E3E;
+  text-align: right;
+  font-family: Poppins;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.total .line {
+  width: 337px;
+  height: 1px;
+  flex-shrink: 0;
+  background: #E6E6E6;
+  margin: 0px 25px 25px 25px;
+}
+
+.total div.total-before {
+  display: flex;
+  margin: 0px 14px 30px 25px;
+  gap: 177px
+}
+
+.total .total-before label.total-before {
+  color: #3E3E3E;
+  font-family: Poppins;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.total .total-before label.price {
+  color: #3E3E3E;
+  text-align: right;
+  font-family: Poppins;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}

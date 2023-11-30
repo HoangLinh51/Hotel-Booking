@@ -1,0 +1,328 @@
+.infor-hosted .header {
+  display: flex;
+  gap: 25px;
+  margin: 0px 950px 34px 128px;
+}
+
+.infor-hosted .header .title {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-top: 6px;
+}
+
+.infor-hosted .header .title label {
+  color: #3E3E3E;
+  font-family: Poppins;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.infor-hosted .body {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.infor-hosted .body .evaluate {
+  width: 396px;
+  height: 21px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0px 182px 15px 128px;
+}
+
+.infor-hosted .body .evaluate .star {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.infor-hosted .body .evaluate .star label {
+  color: #3E3E3E;
+  font-family: Poppins;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+}
+
+.infor-hosted .body .evaluate .reviews {
+  color: #3E3E3E;
+  font-family: Poppins;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.infor-hosted .body .evaluate .popularity {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+.infor-hosted .body .evaluate .popularity label {
+  color: #3E3E3E;
+  font-family: Poppins;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+}
+
+.infor-hosted .body .evaluate .verified {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+.infor-hosted .body .evaluate .verified label {
+  color: #3E3E3E;
+  font-family: Poppins;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+}
+
+.infor-hosted label.language {
+  width: 429px;
+  color: #3E3E3E;
+  font-family: Poppins;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin: 0px 305px 19px 0px;
+}
+
+.infor-hosted label.summary {
+  width: 428px;
+  color: #3E3E3E;
+  font-family: Poppins;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin: -14px 150px 31px 128px;
+}
+
+.infor-hosted label.rate {
+  color: #3E3E3E;
+  font-family: Poppins;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin: 0px 610px 19px 0px;
+  height: 21px;
+}
+
+.infor-hosted .during {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  margin: -10px 420px 25px 128px;
+}
+
+.infor-hosted .during label {
+  color: #3E3E3E;
+  font-family: Poppins;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.infor-hosted label.response {
+  color: #3E3E3E;
+  font-family: Poppins;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin: 0px 524px 39px 0px;
+}
+
+.infor-hosted .button {
+  display: flex;
+  width: 164px;
+  height: 39px;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+  border-radius: 12px;
+  border: 1px solid #3E3E3E;
+}
+
+.infor-hosted .button label {
+  color: #3E3E3E;
+  font-family: Poppins;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.infor-hosted .decrip {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  margin: 0px 149px 50px 127px;
+  width: 429px;
+}
+
+.infor-hosted .decrip label {
+  color: #3E3E3E;
+  font-family: Poppins;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.infor-hosted .last {
+  display: flex;
+  flex-direction: column;
+}
+
+.infor-hosted .last .title {
+  color: #3E3E3E;
+  font-family: Poppins;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin: 0px 1055px 30px 129px;
+}
+
+.infor-hosted .last .item {
+  margin: 0px 129px 81px 128px;
+  display: flex;
+}
+
+.infor-hosted .last .item .rules {
+  width: 178px;
+  height: 175px;
+  flex-shrink: 0;
+  margin-right: 228px;
+  display: flex;
+  flex-direction: column;
+}
+
+.infor-hosted .last .item .rules .name {
+  color: #3E3E3E;
+  font-family: Poppins;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  margin-bottom: 15px;
+}
+
+.infor-hosted .last .item .rules .properties {
+  color: #3E3E3E;
+  font-family: Poppins;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-bottom: 15px;
+}
+
+.infor-hosted .last .item .rules .more {
+  color: #3E3E3E;
+  font-family: Poppins;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  text-decoration-line: underline;
+}
+
+.infor-hosted .last .item .safety {
+  width: 173px;
+  height: 175px;
+  flex-shrink: 0;
+  margin-right: 229px;
+  display: flex;
+  flex-direction: column;
+}
+
+.infor-hosted .last .item .safety .name {
+  color: #3E3E3E;
+  font-family: Poppins;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  margin-bottom: 15px;
+}
+
+.infor-hosted .last .item .safety .properties {
+  color: #3E3E3E;
+  font-family: Poppins;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-bottom: 15px;
+}
+
+.infor-hosted .last .item .safety .more {
+  color: #3E3E3E;
+  font-family: Poppins;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  text-decoration-line: underline;
+}
+
+.infor-hosted .last .item .policy {
+  width: 376px;
+  height: 175px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.infor-hosted .last .item .policy .name {
+  color: #3E3E3E;
+  font-family: Poppins;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  margin-bottom: 15px;
+}
+
+.infor-hosted .last .item .policy .properties {
+  color: #3E3E3E;
+  font-family: Poppins;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-bottom: 15px;
+}
+
+.infor-hosted .last .item .policy .more {
+  color: #3E3E3E;
+  font-family: Poppins;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  text-decoration-line: underline;
+}

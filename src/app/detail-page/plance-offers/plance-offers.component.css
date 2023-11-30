@@ -1,0 +1,95 @@
+.plance-offers {
+  margin: 0px 129px 53px 129px;
+}
+
+.plance-offers .title {
+  color: #3E3E3E;
+  font-family: Poppins;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 1000;
+  line-height: normal;
+  margin-bottom: 27px;
+  display: flex;
+}
+
+.plance-offers .navigate {
+  display: flex;
+}
+
+.plance-offers .left {
+  width: 838px;
+}
+
+.plance-offers .left label {
+  color: #3E3E3E;
+  font-family: Poppins;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.plance-offers .left .beach {
+  display: inline-flex;
+  align-items: center;
+  gap: 17px;
+  margin: 0px 184px 27px 0px;
+}
+
+.plance-offers .left .tv {
+  display: inline-flex;
+  align-items: center;
+  gap: 17px;
+  margin: 0px 197px 26px 0px;
+}
+
+.plance-offers .left .pool {
+  display: inline-flex;
+  align-items: center;
+  gap: 17px;
+  margin: 0px 26px 31px 0px;
+}
+
+.plance-offers .left .parking {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  margin: 4px 197px 0px 0px;
+}
+
+.plance-offers .left .wifi {
+  display: inline-flex;
+  align-items: center;
+  gap: 17px;
+  margin: 0px 190px 0px 5px;
+}
+
+.plance-offers .left .air {
+  display: inline-flex;
+  align-items: center;
+  gap: 17px;
+}
+
+.plance-offers .right {
+  width: 230px;
+  height: 40px;
+  margin: 19px 0px 6px 92px;
+  display: flex;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+  border-radius: 12px;
+  border: 1px solid #3E3E3E;
+}
+
+.plance-offers .right label {
+  color: #3E3E3E;
+  font-family: Poppins;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}

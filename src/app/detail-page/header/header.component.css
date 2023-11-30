@@ -1,0 +1,125 @@
+.header {
+  margin: -14px 0px 25px 0px
+}
+
+.header .top-bar {
+  width: 1440px;
+  height: 92px;
+  flex-shrink: 0;
+  background: #FFF;
+  box-shadow: 0px 0px 2px 0px rgba(34, 34, 34, 0.25);
+  display: flex;
+  align-items: center;
+}
+
+.header .top-bar .logo {
+  color: #FF385C;
+  font-family: Poppins;
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin: 27px 0px 27px 45px;
+}
+
+.header .top-bar .search {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 45px;
+  width: 272px;
+  padding: 5px 10px 5px 20px;
+  gap: 60px;
+  flex-shrink: 0;
+  border-radius: 30px;
+  background: #FFF;
+  box-shadow: 0px 0px 15px 0px rgba(34, 34, 34, 0.10), 0px 0px 2px 0px rgba(34, 34, 34, 0.25);
+  margin: 18px 252px 19px 420px;
+}
+
+.header .top-bar .search .filter {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.header .top-bar .search .filter input {
+  border: none;
+  color: #BBB;
+  font-family: Poppins;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+}
+
+.header .top-bar .search .button {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.header .top-bar .search .button i {
+  color: #fff;
+  padding: 10px;
+  border-radius: 100px;
+  background: red;
+}
+
+.header .top-bar .user {
+  width: 288px;
+  height: 55px;
+  flex-shrink: 0;
+  margin: 12px 45px 18px 0px;
+  display: flex;
+}
+
+.header .top-bar .user .site {
+  display: flex;
+  width: 103px;
+  height: 45px;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+  border-radius: 30px;
+}
+
+.header .top-bar .user .site label {
+  color: #3E3E3E;
+  font-family: Poppins;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  cursor: pointer;
+}
+
+.header .top-bar .user .language {
+  display: flex;
+  width: 45px;
+  height: 45px;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+.header .top-bar .user .profile {
+  display: inline-flex;
+  width: 100px;
+  height: 55px;
+  justify-content: center;
+  align-items: center;
+  gap: 13px;
+  flex-shrink: 0;
+  border-radius: 30px;
+  background: #FFF;
+  box-shadow: 0px 0px 2px 0px rgba(34, 34, 34, 0.25);
+  cursor: pointer;
+}
