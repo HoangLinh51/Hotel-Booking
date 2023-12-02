@@ -1,16 +1,16 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomePageComponent } from './home-page/home-page.component';
-import { DetailPageComponent } from './detail-page/detail-page.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: HomePageComponent,
+    loadChildren: () =>
+      import('./modules/home/home.module').then((m) => m.HomeModule),
   },
   {
     path: 'detail',
-    component: DetailPageComponent,
+    loadChildren: () =>
+      import('./modules/detail/detail.module').then((m) => m.DetailModule),
   },
 ];
 

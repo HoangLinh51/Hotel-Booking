@@ -3,12 +3,12 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HomePageModule } from './home-page/home-page.module';
-import { DetailPageModule } from './detail-page/detail-page.module';
+import { SharedModule } from './shared/shared.module';
+import { HomeModule } from './modules/home/home.module';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, HomePageModule, AppRoutingModule, DetailPageModule],
+  imports: [BrowserModule, HomeModule, AppRoutingModule, SharedModule],
   providers: [],
   bootstrap: [AppComponent],
 })
