@@ -1,17 +1,16 @@
-.infor-hosted .header {
-  display: flex;
-  gap: 25px;
+.header {
+  height: 80px;
   margin: 0px 950px 34px 128px;
 }
 
-.infor-hosted .header .title {
+.header .title {
   display: flex;
   flex-direction: column;
   gap: 4px;
   margin-top: 6px;
 }
 
-.infor-hosted .header .title label {
+.header label.title {
   color: #3E3E3E;
   font-family: Poppins;
   font-size: 28px;
@@ -20,28 +19,12 @@
   line-height: normal;
 }
 
-.infor-hosted .body {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.infor-hosted .body .evaluate {
-  width: 396px;
+.body .evaluate {
   height: 21px;
-  flex-shrink: 0;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  margin: 0px 182px 15px 128px;
+  margin: 0px 162px 15px 128px;
 }
 
-.infor-hosted .body .evaluate .star {
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-}
-
-.infor-hosted .body .evaluate .star label {
+.body .evaluate label.star {
   color: #3E3E3E;
   font-family: Poppins;
   font-size: 14px;
@@ -50,7 +33,7 @@
   line-height: normal;
 }
 
-.infor-hosted .body .evaluate .reviews {
+.body .evaluate .reviews {
   color: #3E3E3E;
   font-family: Poppins;
   font-size: 14px;
@@ -59,14 +42,7 @@
   line-height: normal;
 }
 
-.infor-hosted .body .evaluate .popularity {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  gap: 5px;
-}
-
-.infor-hosted .body .evaluate .popularity label {
+.body .evaluate label.popularity {
   color: #3E3E3E;
   font-family: Poppins;
   font-size: 14px;
@@ -75,14 +51,7 @@
   line-height: normal;
 }
 
-.infor-hosted .body .evaluate .verified {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  gap: 5px;
-}
-
-.infor-hosted .body .evaluate .verified label {
+.body .evaluate label.verified {
   color: #3E3E3E;
   font-family: Poppins;
   font-size: 14px;
@@ -91,7 +60,7 @@
   line-height: normal;
 }
 
-.infor-hosted label.language {
+label.language {
   width: 429px;
   color: #3E3E3E;
   font-family: Poppins;
@@ -102,7 +71,7 @@
   margin: 0px 305px 19px 0px;
 }
 
-.infor-hosted label.summary {
+label.summary {
   width: 428px;
   color: #3E3E3E;
   font-family: Poppins;
@@ -113,7 +82,7 @@
   margin: -14px 150px 31px 128px;
 }
 
-.infor-hosted label.rate {
+label.rate {
   color: #3E3E3E;
   font-family: Poppins;
   font-size: 14px;
@@ -124,15 +93,12 @@
   height: 21px;
 }
 
-.infor-hosted .during {
-  display: inline-flex;
-  flex-direction: column;
-  align-items: flex-start;
+.during {
   gap: 10px;
   margin: -10px 420px 25px 128px;
 }
 
-.infor-hosted .during label {
+.during label {
   color: #3E3E3E;
   font-family: Poppins;
   font-size: 14px;
@@ -141,7 +107,7 @@
   line-height: normal;
 }
 
-.infor-hosted label.response {
+label.response {
   color: #3E3E3E;
   font-family: Poppins;
   font-size: 14px;
@@ -151,20 +117,13 @@
   margin: 0px 524px 39px 0px;
 }
 
-.infor-hosted .button {
-  display: flex;
-  width: 164px;
-  height: 39px;
-  padding: 10px;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  flex-shrink: 0;
-  border-radius: 12px;
+.button {
+  width: 185px;
+  height: 60px;
   border: 1px solid #3E3E3E;
 }
 
-.infor-hosted .button label {
+.button label {
   color: #3E3E3E;
   font-family: Poppins;
   font-size: 14px;
@@ -173,16 +132,12 @@
   line-height: normal;
 }
 
-.infor-hosted .decrip {
-  display: inline-flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 10px;
+.decrip {
   margin: 0px 149px 50px 127px;
   width: 429px;
 }
 
-.infor-hosted .decrip label {
+.decrip label {
   color: #3E3E3E;
   font-family: Poppins;
   font-size: 14px;
@@ -191,12 +146,16 @@
   line-height: normal;
 }
 
-.infor-hosted .last {
-  display: flex;
-  flex-direction: column;
+.line {
+  width: 1183px;
+  height: 1px;
+  flex-shrink: 0;
+  background: #E6E6E6;
+  margin: 4px 128px 45px 129px;
 }
 
-.infor-hosted .last .title {
+
+.last .title {
   color: #3E3E3E;
   font-family: Poppins;
   font-size: 28px;
@@ -206,21 +165,16 @@
   margin: 0px 1055px 30px 129px;
 }
 
-.infor-hosted .last .item {
+.last .item {
   margin: 0px 129px 81px 128px;
-  display: flex;
 }
 
-.infor-hosted .last .item .rules {
-  width: 178px;
+.last .item .rules {
   height: 175px;
-  flex-shrink: 0;
-  margin-right: 228px;
-  display: flex;
-  flex-direction: column;
+  margin-right: 229px;
 }
 
-.infor-hosted .last .item .rules .name {
+.last .item .rules .name {
   color: #3E3E3E;
   font-family: Poppins;
   font-size: 14px;
@@ -230,7 +184,7 @@
   margin-bottom: 15px;
 }
 
-.infor-hosted .last .item .rules .properties {
+.last .item .rules .properties {
   color: #3E3E3E;
   font-family: Poppins;
   font-size: 14px;
@@ -240,7 +194,7 @@
   margin-bottom: 15px;
 }
 
-.infor-hosted .last .item .rules .more {
+.last .item .rules .more {
   color: #3E3E3E;
   font-family: Poppins;
   font-size: 14px;
@@ -250,16 +204,13 @@
   text-decoration-line: underline;
 }
 
-.infor-hosted .last .item .safety {
+.last .item .safety {
   width: 173px;
   height: 175px;
-  flex-shrink: 0;
   margin-right: 229px;
-  display: flex;
-  flex-direction: column;
 }
 
-.infor-hosted .last .item .safety .name {
+.last .item .safety .name {
   color: #3E3E3E;
   font-family: Poppins;
   font-size: 14px;
@@ -269,7 +220,7 @@
   margin-bottom: 15px;
 }
 
-.infor-hosted .last .item .safety .properties {
+.last .item .safety .properties {
   color: #3E3E3E;
   font-family: Poppins;
   font-size: 14px;
@@ -279,7 +230,7 @@
   margin-bottom: 15px;
 }
 
-.infor-hosted .last .item .safety .more {
+.last .item .safety .more {
   color: #3E3E3E;
   font-family: Poppins;
   font-size: 14px;
@@ -289,15 +240,12 @@
   text-decoration-line: underline;
 }
 
-.infor-hosted .last .item .policy {
-  width: 376px;
+.last .item .policy {
+  width: 372px;
   height: 175px;
-  flex-shrink: 0;
-  display: flex;
-  flex-direction: column;
 }
 
-.infor-hosted .last .item .policy .name {
+.last .item .policy .name {
   color: #3E3E3E;
   font-family: Poppins;
   font-size: 14px;
@@ -307,7 +255,7 @@
   margin-bottom: 15px;
 }
 
-.infor-hosted .last .item .policy .properties {
+.last .item .policy .properties {
   color: #3E3E3E;
   font-family: Poppins;
   font-size: 14px;
@@ -317,7 +265,7 @@
   margin-bottom: 15px;
 }
 
-.infor-hosted .last .item .policy .more {
+.last .item .policy .more {
   color: #3E3E3E;
   font-family: Poppins;
   font-size: 14px;

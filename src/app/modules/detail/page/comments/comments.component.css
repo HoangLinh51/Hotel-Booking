@@ -1,40 +1,16 @@
-.comments {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.comments .decrip {
-  display: flex;
-  height: 132px;
-  width: 407px;
+.decrip {
   gap: 28px;
-  flex-direction: column;
-  margin: 0px 305px 50px 129px;
+  width: 407px;
+  margin: 0px 305px 53px 129px;
 }
 
-.comments .decrip2 {
-  display: flex;
-  height: 122px;
-  width: 433px;
+.decrip2 {
   gap: 18px;
-  flex-direction: column;
+  width: 433px;
   margin: 0px 166px 60px 0px;
 }
 
-.comments .title {
-  display: flex;
-  gap: 15px;
-}
-
-.comments .title .name {
-  display: inline-flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 5px;
-}
-
-.comments .title .name .avt {
+.avt {
   color: #3E3E3E;
   font-family: Poppins;
   font-size: 14px;
@@ -43,7 +19,7 @@
   line-height: normal;
 }
 
-.comments .title .name .mount {
+.mount {
   color: #B8B8B8;
   font-family: Poppins;
   font-size: 14px;
@@ -52,7 +28,7 @@
   line-height: normal;
 }
 
-.comments .comment {
+.comment {
   color: #3E3E3E;
   font-family: Poppins;
   font-size: 14px;
@@ -61,21 +37,14 @@
   line-height: normal;
 }
 
-.comments .show-all {
-  display: flex;
-  width: 230px;
-  height: 40px;
-  padding: 10px;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  flex-shrink: 0;
-  border-radius: 12px;
+.show-all {
+  width: 250px;
+  height: 60px;
   border: 1px solid #3E3E3E;
   margin: 30px 345px 102px -3px;
 }
 
-.comments .show-all label {
+.show-all label {
   color: #3E3E3E;
   font-family: Poppins;
   font-size: 14px;

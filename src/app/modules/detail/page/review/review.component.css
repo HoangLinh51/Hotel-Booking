@@ -1,21 +1,11 @@
-.review .title {
-  width: 299px;
+.title {
+  /* width: 299px; */
   height: 42px;
   flex-shrink: 0;
-  display: flex;
-  gap: 10px;
-  align-items: center;
-  margin: 0px 1102px 35px 129px
+  margin: 0px 987px 35px 129px
 }
 
-.review .title .star {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  gap: 8px;
-}
-
-.review .title .star label {
+.title .star label {
   color: #3E3E3E;
   font-family: Poppins;
   font-size: 28px;
@@ -24,7 +14,7 @@
   line-height: normal;
 }
 
-.review .title label {
+.title label {
   color: #3E3E3E;
   font-family: Poppins;
   font-size: 28px;
@@ -33,19 +23,15 @@
   line-height: normal;
 }
 
-.review .evaluate {
-  display: flex;
-  flex-wrap: wrap;
-  margin: 0px 130px 50px 129px;
+.evaluate {
+  margin: 0px 120px 53px 129px;
 }
 
-.review .evaluate .clean {
-  display: flex;
-  align-items: center;
-  margin: 0px 194px 30px 0px;
+.evaluate .clean {
+  margin: 0px 195px 30px 0px;
 }
 
-.review .evaluate .clean label.name {
+.evaluate .clean label.name {
   color: #3E3E3E;
   font-family: Poppins;
   font-size: 14px;
@@ -55,13 +41,25 @@
   margin-right: 234px;
 }
 
-.review .evaluate .accuracy {
+.evaluate .accuracy {
   margin-bottom: 30px;
-  display: flex;
-  align-items: center;
 }
 
-.review .evaluate .accuracy label.name {
+.evaluate .accuracy label.name {
+  color: #3E3E3E;
+  font-family: Poppins;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-right: 202px;
+}
+
+.evaluate .communication {
+  margin: 0px 195px 30px 0px;
+}
+
+.evaluate .communication label.name {
   color: #3E3E3E;
   font-family: Poppins;
   font-size: 14px;
@@ -71,45 +69,25 @@
   margin-right: 200px;
 }
 
-.review .evaluate .communication {
-  margin: 0px 194px 30px 0px;
-  display: flex;
-  align-items: center;
-}
-
-.review .evaluate .communication label.name {
-  color: #3E3E3E;
-  font-family: Poppins;
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-  margin-right: 200px;
-}
-
-.review .evaluate .location {
+.evaluate .location {
   margin-bottom: 30px;
-  display: flex;
-  align-items: center;
 }
 
-.review .evaluate .location label.name {
+.evaluate .location label.name {
   color: #3E3E3E;
   font-family: Poppins;
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-  margin-right: 207px;
+  margin-right: 209px;
 }
 
-.review .evaluate .checkin {
-  margin: 0px 194px 30px 0px;
-  display: flex;
-  align-items: center;
+.evaluate .checkin {
+  margin: 0px 195px 30px 0px;
 }
 
-.review .evaluate .checkin label.name {
+.evaluate .checkin label.name {
   color: #3E3E3E;
   font-family: Poppins;
   font-size: 14px;
@@ -119,23 +97,21 @@
   margin-right: 250px;
 }
 
-.review .evaluate .value {
+.evaluate .value {
   margin-bottom: 30px;
-  display: flex;
-  align-items: center;
 }
 
-.review .evaluate .value label.name {
+.evaluate .value label.name {
   color: #3E3E3E;
   font-family: Poppins;
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-  margin-right: 226px;
+  margin-right: 228px;
 }
 
-.review .evaluate label.number {
+.evaluate label.number {
   color: #3E3E3E;
   font-family: Poppins;
   font-size: 12px;

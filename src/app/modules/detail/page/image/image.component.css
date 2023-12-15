@@ -1,8 +1,8 @@
 .image {
-  width: 1181px;
+  /* width: 1181px;
   height: 450px;
-  display: flex;
-  margin: 0px 129px 71px 130px;
+  display: flex; */
+  margin: 0px 129px 52px 130px;
 }
 
 .image .left-image {
@@ -16,11 +16,6 @@
   border-radius: 15px 0px 0px 15px;
 }
 
-.image .right-image {
-  display: flex;
-  flex-wrap: wrap;
-}
-
 .image .right-image img {
   width: 283px;
   height: 215px;
@@ -32,22 +27,15 @@
   height: 215px;
   flex-shrink: 0;
   border-radius: 0px 0px 15px 0px;
-  background: url('https://s3-alpha-sig.figma.com/img/370d/f4e5/ee0712d299cd2bf283bffcef05a35dfa?Expires=1702252800&Signature=V~Unp5WKetpiKO27ujghwchaW9CzUzviiMXfirfvPFhhpCFCnl8S1BgAHkaUMI5eh3ndkCSk~V6wxG36-UABdM4X3Iu6SO0iJih1u2KXtMJs11Io52yyBsGTrkackvhFzrqFHgpgsbAKEUXgFjrwSIbyBpgBMMj98J2m4ZJnTuy5ZJpTr-yvqQLMXuFsxl87Attk~I4rigtyamj4Ug07J-mERSzZZooBg2igLJ1mMUzct8yBZA9rjTLMeI1G2KU~dDSo5BXATgSozQnlWqIwVd7yED4xsMEFxA5jwHbfUUoMKLQROF35iXF~DIOvVrNQlNh8WErePxxPHp9DevBVIQ__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4') no-repeat;
+  background: url('/assets/image/detail/image5.png') no-repeat;
   background-size: 283px 215px;
 }
 
 .image .right-image .img-showall .button-showall {
-  display: flex;
-  width: 150px;
-  height: 20px;
   padding: 10px;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  flex-shrink: 0;
-  border-radius: 5px;
+  width: 170px;
+  height: 40px;
   border: 1px solid #3E3E3E;
-  background: #FFF;
   margin: 160px 20px 15px 93px;
 }
 

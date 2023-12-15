@@ -1,6 +1,4 @@
 .map .title {
-  display: flex;
-  flex-direction: column;
   gap: 10px;
   margin: 0px 1095px 45px 129px;
 }
@@ -19,7 +17,7 @@
   height: 530px;
   flex-shrink: 0;
   border-radius: 5px;
-  background: url('https://s3-alpha-sig.figma.com/img/2c2f/d3e7/889916b07ebd1d6b363a1577cd3cc008?Expires=1702252800&Signature=WX77u7eNwjpyyaMKSKfsM-EFEkXo6tn~Yl~Ea5RwuFfGX3wAKB3OuBnJLe2cHb0OSW7apXHTbyCFYctDtbhwXA2VYseXBIg~0cFkufB86HQ3vu8yXH5OoP-1udWuVkC8lMuVPpxxfa4ufQDEg5-It40IV677gcEIGkwS~Vv85nXD6vhB8caUAsHMBL4QEno~r8FPED0RH8IXWhZZPjZtzc-AqtlyVpUoMjvnWnmUEK9Sm3NGK4AoHo3-QqiCTU9JRUkWOYo-KGzJnQwZqzG-6K66wzSIo802wXNHehoBTKX8s8D37ONYdHxOHH7fn4~ly3pIOyIypNQd0WOgblLEVg__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4'),no-repeat;
+  background: url('/assets/image/detail/map.png'),no-repeat;
   background-size: 1184px 530px;
   margin: 0px 128px 60px 128px;
 }

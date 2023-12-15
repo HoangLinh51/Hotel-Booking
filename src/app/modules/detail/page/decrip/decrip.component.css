@@ -1,24 +1,12 @@
-
-.decrip {
-  display: flex;
+.review {
+  margin: 6px 500px 34px 129px;
 }
 
-.decrip .review {
-  width: 490px;
-  height: 21px;
-  display: flex;
-  align-items: center;
-  gap: 7px;
-  margin: 8px 557px 34px 129px;
-}
-
-.decrip .review .star {
-  display: inline-flex;
-  align-items: center;
+.review .star {
   gap: 5px;
 }
 
-.decrip .review .star label {
+.review .star label {
   color: #3E3E3E;
   font-family: Poppins;
   font-size: 14px;
@@ -27,7 +15,7 @@
   line-height: normal;
 }
 
-.decrip .review .reviews {
+.review .reviews {
   color: #3E3E3E;
   font-family: Poppins;
   font-size: 14px;
@@ -37,7 +25,7 @@
   text-decoration-line: underline;
 }
 
-.decrip .review .popularity {
+.review .popularity {
   color: #3E3E3E;
   font-family: Poppins;
   font-size: 14px;
@@ -46,7 +34,7 @@
   line-height: normal;
 }
 
-.decrip .review .location {
+.review .location {
   color: #3E3E3E;
   font-family: Poppins;
   font-size: 14px;
@@ -56,19 +44,15 @@
   text-decoration-line: underline;
 }
 
-.decrip .interact {
-  display: flex;
+.interact {
   margin: 8px 128px 35px 1px;
-  gap: 20px;
 }
 
-.decrip .interact .share {
-  display: inline-flex;
-  align-items: center;
+.interact .share {
   gap: 5px;
 }
 
-.decrip .interact .share label {
+.interact .share label {
   color: #3E3E3E;
   font-family: Poppins;
   font-size: 14px;
@@ -78,13 +62,11 @@
   text-decoration-line: underline;
 }
 
-.decrip .interact .save {
-  display: inline-flex;
-  align-items: center;
+.interact .save {
   gap: 5px;
 }
 
-.decrip .interact .save label {
+.interact .save label {
   color: #3E3E3E;
   font-family: Poppins;
   font-size: 14px;

@@ -4,9 +4,6 @@
   flex-shrink: 0;
   background: #FFF;
   box-shadow: 0px 0px 2px 0px rgba(34, 34, 34, 0.25);
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .top-bar .logo {
@@ -16,36 +13,18 @@
   font-style: normal;
   font-weight: 700;
   line-height: normal;
-  margin: 27px 0px 27px 45px;
+  margin: 27px 0px 27px 47px;
 }
 
 .top-bar .search {
-  display: inline-flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 45px;
-  width: 302px;
+  height: 55px;
+  width: 332px;
   padding: 5px 10px 5px 20px;
-  flex-shrink: 0;
-  border-radius: 30px;
-  background: #FFF;
   box-shadow: 0px 0px 15px 0px rgba(34, 34, 34, 0.10), 0px 0px 2px 0px rgba(34, 34, 34, 0.25);
-  margin: 18px 221px 19px 416px;
+  margin: 18px 238px 19px 416px;
 }
 
-.top-bar .search .filter {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-}
-
-.top-bar .search .filter .input {
-  display: flex;
-  height: 20px;
-  width: 199px;
-}
-
-.top-bar .search .filter .input label.text {
+.top-bar .search label.text {
   color: #BBB;
   font-family: Poppins;
   font-size: 14px;
@@ -59,13 +38,11 @@
   justify-content: center;
 }
 
-.top-bar .search .filter .input .flip {
+.top-bar .search .flip {
   height: 20px;
-  overflow: hidden;
-  width: 95px;
 }
 
-.top-bar .search .filter .input .flip>div>div {
+.top-bar .search .flip>div>div {
   padding: 0px 4px;
   height: 20px;
   margin-bottom: 5px;
@@ -78,7 +55,7 @@
   line-height: normal;
 }
 
-.top-bar .search .filter .input .flip div:first-child {
+.top-bar .search .flip div:first-child {
   animation: show 3s linear infinite;
 }
 
@@ -86,63 +63,55 @@
 
   0%,
   100% {
-    margin-top: 0px;
+    margin-top: -3px;
   }
 
   12.5% {
-    margin-top: 0px;
+    margin-top: -3px;
   }
 
   25% {
-    margin-top: -24px;
+    margin-top: -32px;
   }
 
   37.5% {
-    margin-top: -24px;
+    margin-top: -32px;
   }
 
   50% {
-    margin-top: -48px;
+    margin-top: -60px;
   }
 
   62.5% {
-    margin-top: -48px;
+    margin-top: -60px;
   }
 
   75% {
-    margin-top: -72px;
+    margin-top: -89px;
   }
 
   87.5% {
-    margin-top: -72px;
+    margin-top: -89px;
   }
 }
 
-
-.top-bar .search .button {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-}
-
-.top-bar .search .button i {
+.top-bar .search i {
   color: #fff;
   padding: 10px;
   border-radius: 100px;
   background: red;
 }
-
+/*
 .top-bar .user {
   width: 288px;
   height: 55px;
-  flex-shrink: 0;
-  margin: 13px 45px 25px 0px;
   display: flex;
-}
+  align-items: center;
+  gap: 10px ;
+  flex-shrink: 0;
+} */
 
-.top-bar .user .site {
+/* .top-bar .user .site {
   display: flex;
   width: 103px;
   height: 45px;
@@ -152,9 +121,10 @@
   gap: 10px;
   flex-shrink: 0;
   border-radius: 30px;
-}
+  margin-right:11px ;
+} */
 
-.top-bar .user .site label {
+.top-bar label.site  {
   color: #3E3E3E;
   font-family: Poppins;
   font-size: 14px;
@@ -164,7 +134,7 @@
   cursor: pointer;
 }
 
-.top-bar .user .language {
+/* .top-bar .language {
   display: flex;
   width: 45px;
   height: 45px;
@@ -174,9 +144,9 @@
   gap: 10px;
   flex-shrink: 0;
   cursor: pointer;
-}
+} */
 
-.top-bar .user .profile {
+.top-bar .profile {
   display: inline-flex;
   width: 100px;
   height: 55px;
@@ -187,6 +157,5 @@
   border-radius: 30px;
   background: #FFF;
   box-shadow: 0px 0px 2px 0px rgba(34, 34, 34, 0.25);
-  margin: 3px 0px 0px 2px;
   cursor: pointer;
 }
