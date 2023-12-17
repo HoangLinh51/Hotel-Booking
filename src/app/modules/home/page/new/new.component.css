@@ -1,0 +1,200 @@
+.post {
+  display: flex;
+  flex-direction: row;
+  margin-top: 3px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.post .beach {
+  width: 315px;
+  height: 443px;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+
+.post .beach .image {
+  position: relative;
+  width: 315px;
+  height: 320px;
+  overflow: hidden;
+  border-radius: 15px;
+}
+
+.post .beach .image-slider {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+}
+
+.post .beach .image-slider img {
+  flex-shrink: 0;
+  width: 315px;
+  height: 320px;
+  scroll-snap-align: start;
+}
+
+.post .beach .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.post .beach .image:hover .overlay {
+  opacity: 1;
+}
+
+.post .beach .overlay .next-prev {
+  display: flex;
+  justify-content: space-between;
+  gap: 215px;
+  margin: 0px 20px 145px 20px;
+}
+
+.post .beach .overlay .next-prev button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+
+.post .beach .overlay .next-prev .next {
+  right: 10px;
+  cursor: pointer;
+}
+
+.post .beach .overlay .next-prev .previous {
+  left: 10px;
+  cursor: pointer;
+}
+
+.post .beach .overlay .next-prev .next:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.post .beach .overlay .next-prev .previous:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.post .beach .overlay div.favorite {
+  font-size: 20px;
+  margin: 15px 15px 112px 282px;
+  fill: #222222;
+  fill-opacity: 0.2;
+  stroke: white;
+  cursor: pointer;
+}
+
+.post .beach .overlay div.favorite.favorite-hover {
+  color: #FF385C;
+  fill-opacity: 1;
+}
+
+.post .beach .btn {
+  padding: 10px 20px;
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.post .beach .heart-btn {
+  font-size: 24px;
+  background: none;
+  border: none;
+  color: #e74c3c;
+  cursor: pointer;
+}
+
+
+
+.post .beach .title {
+  width: 313px;
+  height: 95px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin: 15px 2px 13px 0px;
+}
+
+.post .beach .title .infor {
+  width: 186px;
+  height: 95px;
+  flex-shrink: 0;
+}
+
+.post .beach .title .infor .location {
+  color: #3E3E3E;
+  font-family: Poppins;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 1000;
+  line-height: normal;
+  margin: 0px 0px 2px 0px;
+}
+
+.post .beach .title .infor .where,
+.date {
+  color: #B8B8B8;
+  font-family: Poppins;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  margin: 0px 0px 2px 0px;
+}
+
+.post .beach .title .infor div.price {
+  margin-top: 7px;
+  display: flex;
+  gap: 2px;
+}
+
+.post .beach .title .infor div.price label.price {
+  color: #3E3E3E;
+  font-family: Poppins;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 1000;
+  line-height: normal;
+}
+
+.post .beach .title .infor div.price .time {
+  color: #3E3E3E;
+  font-family: Poppins;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+}
+
+.post .beach .title .star {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.post .beach .title .star .point {
+  color: #3E3E3E;
+  font-family: Poppins;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+}
