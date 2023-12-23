@@ -154,7 +154,7 @@
 .infor-hosted .button {
   display: flex;
   width: 164px;
-  height: 39px;
+  height: 49px;
   padding: 10px;
   justify-content: center;
   align-items: center;
@@ -171,6 +171,7 @@
   font-style: normal;
   font-weight: 600;
   line-height: normal;
+  margin: 0px;
 }
 
 .infor-hosted .decrip {

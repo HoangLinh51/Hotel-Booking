@@ -59,12 +59,13 @@
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+  margin: 0px;
 }
 
 .comments .show-all {
   display: flex;
   width: 230px;
-  height: 40px;
+  height: 60px;
   padding: 10px;
   justify-content: center;
   align-items: center;
@@ -82,4 +83,5 @@
   font-style: normal;
   font-weight: 600;
   line-height: normal;
+  margin: 0px;
 }

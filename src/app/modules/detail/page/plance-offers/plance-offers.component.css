@@ -73,7 +73,7 @@
 
 .plance-offers .right {
   width: 230px;
-  height: 40px;
+  height: 50px;
   margin: 19px 0px 6px 92px;
   display: flex;
   padding: 10px;
@@ -92,4 +92,5 @@
   font-style: normal;
   font-weight: 600;
   line-height: normal;
+  margin: 0px;
 }

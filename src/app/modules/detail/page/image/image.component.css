@@ -38,8 +38,8 @@
 
 .image .right-image .img-showall .button-showall {
   display: flex;
-  width: 150px;
-  height: 20px;
+  width: 160px;
+  height: 40px;
   padding: 10px;
   justify-content: center;
   align-items: center;
@@ -58,4 +58,5 @@
   font-style: normal;
   font-weight: 600;
   line-height: normal;
+  margin: 0px;
 }
