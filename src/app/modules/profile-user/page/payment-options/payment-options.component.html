@@ -1,0 +1,48 @@
+<div class="outputdirectional">
+  <label class="title">Add Payment</label>
+  <div class="frame1">
+
+    <div class="card">
+      <div class="payment">
+        <button (click)="showDialog(!visible)"><i class="fa-solid fa-plus" style="color: #fff;"></i></button>
+        <label>Add Card</label>
+      </div>
+      <div class="payment">
+        <button (click)="showDialog(!visible)"><i class="fa-solid fa-plus" style="color: #fff;"></i></button>
+        <label>Add Card</label>
+      </div>
+      <div class="payment">
+        <button (click)="showDialog(!visible)"><i class="fa-solid fa-plus" style="color: #fff;"></i></button>
+        <label>Add Card</label>
+      </div>
+    </div>
+  </div>
+  <div class="panel">
+    <img src="/assets/image/payment.jpg" alt="">
+  </div>
+</div>
+<p-dialog [(visible)]="visible" [modal]="true" [style]="{ width: '40vw' }" [draggable]="false" [resizable]="false">
+  <ng-template pTemplate="header">
+    <label class="title">Add Card</label>
+  </ng-template>
+  <div class="dialog">
+    <div class="form">
+      <label class="header">Card Number</label>
+      <input type="text" >
+    </div>
+    <div class="infor">
+      <div class="form">
+        <label class="header">Valid Until</label>
+        <input type="text" >
+      </div>
+      <div class="form">
+        <label class="header">CVV</label>
+        <input type="text">
+      </div>
+    </div>
+    <div class="form">
+      <label class="header">Name On Card</label>
+      <input type="text" >
+    </div>
+  </div>
+</p-dialog>

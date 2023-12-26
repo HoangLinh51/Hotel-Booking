@@ -6,14 +6,22 @@ import { HeaderComponent } from '../layout/header/header.component';
 import { FooterComponent } from '../layout/footer/footer.component';
 import { TabViewModule } from 'primeng/tabview';
 import { MenuModule } from 'primeng/menu';
+import { DialogModule } from 'primeng/dialog';
 
 @NgModule({
-  imports: [CommonModule, RouterModule, TabViewModule, MenuModule],
+  imports: [
+    CommonModule,
+    RouterModule,
+    TabViewModule,
+    MenuModule,
+    DialogModule,
+  ],
   declarations: [NavComponent, HeaderComponent, FooterComponent],
   exports: [
     CommonModule,
     RouterModule,
     TabViewModule,
+    DialogModule,
     MenuModule,
     NavComponent,
     HeaderComponent,

@@ -7,51 +7,12 @@
   <div class="directional">
     <div class="manage">
       <p class="title">Manage My Account</p>
-      <a routerLink="#" class="body">My Profile</a>
-      <a routerLink="#" class="body">My Payment Options</a>
+      <a routerLink="/profile/myprofile" class="body">My Profile</a>
+      <a routerLink="/profile/payment" class="body">My Payment Options</a>
     </div>
-    <div class="order">
-      <p class="title">My Orders</p>
-      <a routerLink="#" class="body">Tri History</a>
-      <a routerLink="#" class="body">Booked Trip</a>
-      <a routerLink="#" class="body">Trip Was Cancelled</a>
-    </div>
-    <div class="favourite">
-      <a routerLink="#" class="title" style="text-decoration: none;">My Favourite</a>
-    </div>
+    <a class="title" routerLink="/profile/booked-trip">My Booked Trip</a>
+    <a class="title" routerLink="/profile/favorite">My Favourite</a>
   </div>
-  <div class="outputdirectional">
-    <label class="title">Edit Your Profile</label>
-    <div class="frame1">
-      <div class="first">
-        <label class="header">First Name</label>
-        <input placeholder="Nginep">
-      </div>
-      <div class="last">
-        <label class="header">Last Name</label>
-        <input placeholder="Nginep">
-      </div>
-    </div>
-    <div class="frame2">
-      <div class="email">
-        <label class="header">Email</label>
-        <input placeholder="nginep@gmail.com">
-      </div>
-      <div class="phone">
-        <label class="header">Phone</label>
-        <input placeholder="0123456789">
-      </div>
-    </div>
-    <div class="password">
-      <label class="header">Password</label>
-      <input placeholder="Current Password">
-      <input placeholder="New Password">
-      <input placeholder="Confirm Password">
-    </div>
-    <div class="frame3">
-      <button class="cancel">Cancel</button>
-      <button class="save">Save Change</button>
-    </div>
-  </div>
+  <router-outlet></router-outlet>
 </div>
 <app-footer></app-footer>

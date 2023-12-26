@@ -1,0 +1,110 @@
+.outputdirectional {
+  display: flex;
+  border-radius: 15px;
+  flex-direction: column;
+  width: 750px;
+  gap: 20px;
+}
+
+.outputdirectional .title {
+  color: #FF385C;
+  font-family: Poppins;
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin: 0px;
+}
+
+.outputdirectional .panel {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin: 0px;
+  border-top: 1px solid #e3e3e3;
+  border-bottom: 1px solid #e3e3e3;
+}
+
+.outputdirectional .panel img {
+  height: 100px;
+}
+
+.outputdirectional .frame1 {
+  display: flex;
+  gap: 25px;
+  position: relative;
+  flex-direction: column;
+}
+.outputdirectional .frame1 .card{
+  display: flex;
+  gap: 25px;
+}
+.outputdirectional .frame1 .payment {
+  width: 234px;
+  height: 140px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column  ;
+  border: 1px solid rgb(148, 146, 146);
+  border-radius: 10px;
+}
+.outputdirectional .frame1 .payment label{
+  color: #3E3E3E;
+  font-family: Poppins;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin: 0px;
+}
+
+.outputdirectional .frame1 .payment button {
+  width: 40px;
+  height: 40px;
+  border-radius: 50px;
+  border: 1px solid #7d7c7c;
+  background-color: #FF385C;
+}
+
+.title {
+  color: #3E3E3E;
+  font-family: Poppins;
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  margin: 0px;
+}
+label.header{
+  color: #3E3E3E;
+  font-family: Poppins;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin: 0px;
+}
+.dialog {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 20px;
+}
+.dialog input{
+  height: 35px;
+  border: 1px solid;
+  border-radius: 8px;
+}
+.dialog .form{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.dialog .infor{
+  display: flex;
+  justify-content: space-between;
+}
+.dialog .infor input{
+width: 290px;
+}

@@ -1,0 +1,120 @@
+
+.outputdirectional {
+  display: flex;
+  border-radius: 15px;
+  flex-direction: column;
+  width: 750px;
+  gap: 20px;
+}
+
+.outputdirectional .title {
+  color: #FF385C;
+  font-family: Poppins;
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin: 0px;
+}
+
+.outputdirectional .frame1 {
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+}
+
+.outputdirectional .frame1 .first {
+  display: flex;
+  flex-direction: column;
+  width: 350px;
+  gap: 10px;
+}
+
+.outputdirectional .frame1 .last {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 350px;
+}
+
+.outputdirectional .frame2 {
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+}
+
+.outputdirectional .frame2 .email {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 350px;
+}
+
+.outputdirectional .frame2 .phone {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 350px;
+}
+
+.outputdirectional .password {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.outputdirectional label.header {
+  color: #3E3E3E;
+  font-family: Poppins;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  margin: 0px;
+}
+
+.outputdirectional input {
+  color: #3E3E3E;
+  font-family: Poppins;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 30px;
+  border: none;
+  border-bottom: 1px solid #E6E6E6;
+  width: 100%;
+  outline: none;
+}
+
+.outputdirectional .frame3{
+ display: flex;
+ justify-content: flex-end;
+}
+.outputdirectional .frame3 .cancel {
+  display: flex;
+  padding: 16px 48px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 15px;
+  border: 1px solid white;
+  background: white ;
+}
+.outputdirectional .frame3 .save {
+  display: flex;
+  padding: 16px 48px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 15px;
+  border: 1px solid white;
+  background: var(--Button2, #FF385C);
+  color: #fff;
+  font-family: Poppins;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  margin: 0px;
+
+}
