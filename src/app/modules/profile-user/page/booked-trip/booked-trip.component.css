@@ -1,0 +1,134 @@
+.outputdirectional {
+  display: flex;
+  border-radius: 15px;
+  flex-direction: column;
+  width: 750px;
+  gap: 20px;
+}
+
+.outputdirectional .title {
+  color: #FF385C;
+  font-family: Poppins;
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin: 0px;
+}
+
+.outputdirectional .header {
+  display: flex;
+  border-bottom: 1px solid #807f7f;
+}
+
+.outputdirectional .header .name {
+  width: 108px;
+  border-left: 1px solid #3E3E3E;
+  border-right: 1px solid #3E3E3E;
+}
+
+.outputdirectional .header .name label {
+  color: #3E3E3E;
+  font-family: Poppins;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  margin: 0px;
+  margin-left: 10px;
+}
+
+.outputdirectional .body {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.outputdirectional .body .product {
+  display: flex;
+  border-bottom: 1px solid #838383;
+}
+
+.outputdirectional .body .product label.id {
+  width: 98px;
+  color: #3E3E3E;
+  font-family: Poppins;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin: 0px;
+  margin-left: 10px;
+}
+
+.outputdirectional .body .product label.date {
+  width: 98px;
+  color: #3E3E3E;
+  font-family: Poppins;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin: 0px;
+  margin-left: 10px;
+}
+
+.outputdirectional .body .product label.location {
+  width: 98px;
+  color: #3E3E3E;
+  font-family: Poppins;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin: 0px;
+  margin-left: 10px;
+}
+
+.outputdirectional .body .product label.total {
+  width: 98px;
+  color: #3E3E3E;
+  font-family: Poppins;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin: 0px;
+  margin-left: 10px;
+}
+
+.outputdirectional .body .product label.payment {
+  width: 98px;
+  color: #3E3E3E;
+  font-family: Poppins;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin: 0px;
+  margin-left: 10px;
+}
+
+.outputdirectional .body .product label.status {
+  width: 98px;
+  color: #3E3E3E;
+  font-family: Poppins;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin: 0px;
+  margin-left: 10px;
+}
+
+.outputdirectional .body .product label.view {
+  width: 98px;
+  color: #3E3E3E;
+  font-family: Poppins;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin: 0px;
+  margin-left: 10px;
+}

@@ -1,0 +1,106 @@
+.outputdirectional {
+  display: flex;
+  border-radius: 15px;
+  flex-direction: column;
+  width: 750px;
+  gap: 20px;
+}
+
+.outputdirectional .title {
+  color: #FF385C;
+  font-family: Poppins;
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin: 0px;
+}
+
+.outputdirectional .header {
+  display: flex
+}
+
+.outputdirectional .header .stt {
+  width: 108px;
+  border-left: 1px solid #3E3E3E;
+  border-right: 1px solid #3E3E3E;
+}
+
+.outputdirectional .header .location {
+  width: 290px;
+}
+
+.outputdirectional .header .image {
+  width: 244px;
+  border-left: 1px solid #3E3E3E;
+}
+
+.outputdirectional .header .view {
+  width: 108px;
+  border-left: 1px solid #3E3E3E;
+  border-right: 1px solid #3E3E3E;
+}
+
+.outputdirectional .header label {
+  color: #3E3E3E;
+  font-family: Poppins;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  margin: 0px;
+  margin-left: 10px;
+}
+.outputdirectional .body{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+.outputdirectional label.stt {
+  width: 98px;
+  color: #3E3E3E;
+  font-family: Poppins;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin: 0px;
+  margin-left: 10px;
+}
+
+.outputdirectional label.location {
+  width: 280px;
+  color: #3E3E3E;
+  font-family: Poppins;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin: 0px;
+  margin-left: 10px;
+}
+
+.outputdirectional label.image {
+  width: 234px;
+  color: #3E3E3E;
+  font-family: Poppins;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin: 0px;
+  margin-left: 10px;
+}
+
+.outputdirectional label.view {
+  color: #3E3E3E;
+  font-family: Poppins;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin: 0px;
+  margin-left: 10px;
+  width: 98px;
+  cursor: pointer;
+}
