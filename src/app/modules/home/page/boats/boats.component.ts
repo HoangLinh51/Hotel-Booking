@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ListBeach } from 'src/app/data/schema/beach';
+import { ListBeach } from 'src/app/data/modal/beach';
 
 @Component({
   selector: 'app-boats',

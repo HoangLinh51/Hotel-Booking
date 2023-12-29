@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ListBeach } from 'src/app/data/schema/beach';
+import { ListBeach } from 'src/app/data/modal/beach';
 
 @Component({
   selector: 'app-beach',
@@ -409,5 +409,16 @@ export class BeachComponent {
   }
   toggleFavorite(index: number): void {
     this.favoriteStatus[index] = !this.favoriteStatus[index];
+  }
+
+  product(abc: any) {
+    const a = JSON.parse(localStorage.getItem('listFavorite')!) || [];
+    if (a) {
+      a.push(abc);
+      localStorage.removeItem(a);
+    }
+    localStorage.setItem('listFavorite', JSON.stringify(a));
+
+    console.log('id----->', a);
   }
 }

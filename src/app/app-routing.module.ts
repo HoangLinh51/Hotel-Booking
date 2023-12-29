@@ -12,7 +12,6 @@ const routes: Routes = [
     loadChildren: () =>
       import('./modules/detail/detail.module').then((m) => m.DetailModule),
   },
-
   {
     path: 'about-us',
     loadChildren: () =>
@@ -24,7 +23,7 @@ const routes: Routes = [
       import('./modules/auth/auth.module').then((m) => m.AuthModule),
   },
   {
-    path: 'profile',
+    path: '',
     loadChildren: () =>
       import('./modules/profile-user/profile-user.module').then(
         (m) => m.ProfileUserModule

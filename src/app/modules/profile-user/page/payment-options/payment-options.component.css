@@ -35,21 +35,24 @@
   position: relative;
   flex-direction: column;
 }
-.outputdirectional .frame1 .card{
+
+.outputdirectional .frame1 .card {
   display: flex;
   gap: 25px;
 }
+
 .outputdirectional .frame1 .payment {
   width: 234px;
   height: 140px;
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column  ;
+  flex-direction: column;
   border: 1px solid rgb(148, 146, 146);
   border-radius: 10px;
 }
-.outputdirectional .frame1 .payment label{
+
+.outputdirectional .frame1 .payment label {
   color: #3E3E3E;
   font-family: Poppins;
   font-size: 14px;
@@ -76,7 +79,8 @@
   line-height: normal;
   margin: 0px;
 }
-label.header{
+
+label.header {
   color: #3E3E3E;
   font-family: Poppins;
   font-size: 16px;
@@ -85,26 +89,54 @@ label.header{
   line-height: normal;
   margin: 0px;
 }
+
 .dialog {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 15px;
   margin-top: 20px;
 }
-.dialog input{
+
+.dialog input {
   height: 35px;
   border: 1px solid;
   border-radius: 8px;
+  color: #3E3E3E;
+  font-family: Poppins;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
 }
-.dialog .form{
+
+.dialog .form {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  width: 100%;
 }
-.dialog .infor{
+
+.dialog .infor {
   display: flex;
-  justify-content: space-between;
+  gap: 65px
 }
-.dialog .infor input{
-width: 290px;
+
+.dialog .infor input {
+  width: 240px;
+}
+
+.dialog .save {
+  width: 100px;
+  height: 50px;
+  background-color: #FF385C;
+  color: #fff;
+  font-family: Poppins;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin: 0px;
+  border: none;
+  border-radius: 15px;
 }

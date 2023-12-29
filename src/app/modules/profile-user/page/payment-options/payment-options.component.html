@@ -21,7 +21,7 @@
     <img src="/assets/image/payment.jpg" alt="">
   </div>
 </div>
-<p-dialog [(visible)]="visible" [modal]="true" [style]="{ width: '40vw' }" [draggable]="false" [resizable]="false">
+<p-dialog [(visible)]="visible" [modal]="true" [style]="{ width: '30vw' }" [draggable]="false" [resizable]="false">
   <ng-template pTemplate="header">
     <label class="title">Add Card</label>
   </ng-template>
@@ -44,5 +44,9 @@
       <label class="header">Name On Card</label>
       <input type="text" >
     </div>
+    <div class="checkbox">
+      <input type="checkbox"><p>By tapping the button above, you have agreed to Nginep<label>Terms & Conditions</label> and<label>Privacy Policy</label>.</p>
+    </div>
+    <button class="save">Add Card</button>
   </div>
 </p-dialog>

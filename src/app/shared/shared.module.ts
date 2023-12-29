@@ -8,6 +8,8 @@ import { TabViewModule } from 'primeng/tabview';
 import { MenuModule } from 'primeng/menu';
 import { DialogModule } from 'primeng/dialog';
 
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 @NgModule({
   imports: [
     CommonModule,
@@ -15,6 +17,8 @@ import { DialogModule } from 'primeng/dialog';
     TabViewModule,
     MenuModule,
     DialogModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
   declarations: [NavComponent, HeaderComponent, FooterComponent],
   exports: [
@@ -26,6 +30,8 @@ import { DialogModule } from 'primeng/dialog';
     NavComponent,
     HeaderComponent,
     FooterComponent,
+    FormsModule,
+    ReactiveFormsModule,
   ],
 })
 export class SharedModule {}

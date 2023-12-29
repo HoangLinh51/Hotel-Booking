@@ -36,7 +36,11 @@
   font-weight: 500;
   line-height: 30px;
 }
-
+.body .input .forminput{
+  display: flex;
+  flex-direction:  column;
+  gap: 30px
+}
 .body .input .form {
   display: flex;
   flex-direction: column;

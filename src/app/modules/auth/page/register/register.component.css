@@ -21,6 +21,11 @@ img {
   width: 360px;
 }
 
+.body .input .forminput{
+  display: flex;
+  flex-direction:  column;
+  gap: 30px
+}
 .body .input .title {
   display: flex;
   flex-direction: column;

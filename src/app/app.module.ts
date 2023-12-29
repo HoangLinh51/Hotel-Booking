@@ -1,24 +1,22 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
-import { HomeModule } from './modules/home/home.module';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientModule } from '@angular/common/http';
+
+import { fakeBackendProvider } from './data/helpers/fake-backend';
 
 @NgModule({
   declarations: [AppComponent],
   imports: [
-    BrowserModule,
     BrowserAnimationsModule,
-    HomeModule,
     HttpClientModule,
     AppRoutingModule,
     SharedModule,
   ],
-  providers: [],
+  providers: [fakeBackendProvider],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
