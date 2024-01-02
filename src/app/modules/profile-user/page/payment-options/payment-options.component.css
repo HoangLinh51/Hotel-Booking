@@ -67,7 +67,7 @@
   height: 40px;
   border-radius: 50px;
   border: 1px solid #7d7c7c;
-  background-color: #FF385C;
+  background-color: #FF859b;
 }
 
 .title {
@@ -95,16 +95,37 @@ label.header {
   flex-direction: column;
   align-items: center;
   gap: 15px;
-  margin-top: 20px;
 }
 
 .dialog input {
-  height: 35px;
   border: 1px solid;
   border-radius: 8px;
   color: #3E3E3E;
   font-family: Poppins;
   font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+
+.dialog .checkbox{
+  display: flex;
+  margin: 0px;
+}
+
+.dialog .checkbox input{
+  width: 18px ;
+  height: 18px;
+}
+
+.dialog .checkbox p{
+  width: 450px;
+  margin: 0px;
+  margin-left: 5px;
+  color: #3E3E3E;
+  font-family: Poppins;
+  font-size: 14px;
   font-style: normal;
   font-weight: 500;
   line-height: normal;

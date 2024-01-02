@@ -1,41 +1,21 @@
 <div class="outputdirectional">
   <label class="title">Booking History</label>
-  <div class="header">
-    <div class="stt">
-      <label>Stt</label>
-    </div>
-    <div class="location" style="width: 290px; border: none;">
-      <label>Location</label>
-    </div>
-    <div class="image" style="width: 244px; border-right: none">
-      <label>Image</label>
-    </div>
-    <div class="view"></div>
-  </div>
-  <div class="body">
-    <div class="product">
-      <label class="stt">1</label>
-      <label class="location">abc,tanbinh,hcmc</label>
-      <label class="image">image.png</label>
-      <label routerLink="/detail" class="view">View detail</label>
-    </div>
-    <div class="product">
-      <label class="stt">1</label>
-      <label class="location">abc,tanbinh,hcmc</label>
-      <label class="image">image.png</label>
-      <label routerLink="/detail" class="view">View detail</label>
-    </div>
-    <div class="product">
-      <label class="stt">1</label>
-      <label class="location">abc,tanbinh,hcmc</label>
-      <label class="image">image.png</label>
-      <label routerLink="/detail" class="view">View detail</label>
-    </div>
-    <div class="product">
-      <label class="stt">1</label>
-      <label class="location">abc,tanbinh,hcmc</label>
-      <label class="image">image.png</label>
-      <label routerLink="/detail" class="view">View detail</label>
-    </div>
-  </div>
+  <p-dataView #dv [value]="listFavorite" [rows]="5" [paginator]="true">
+    <ng-template let-listFavorite pTemplate="list">
+      <div class="body">
+        <div class="post" *ngFor="let favorite of listFavorite; let first = first"
+          [ngClass]="{ 'border-top-1 surface-border': !first }">
+          <img class="image" [src]="favorite.image[0]" [alt]="favorite.location" />
+          <div class="location">{{ favorite.location }}</div>
+          <div class="categories">
+            <i class="fa-solid fa-tag"></i>
+            <span>{{ favorite.categories }}</span>
+          </div>
+          <div>
+            <a routerLink="/detail" class="view">View detail</a>
+          </div>
+        </div>
+      </div>
+    </ng-template>
+  </p-dataView>
 </div>

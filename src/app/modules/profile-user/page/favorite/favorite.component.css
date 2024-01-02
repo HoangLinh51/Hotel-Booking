@@ -16,91 +16,70 @@
   margin: 0px;
 }
 
-.outputdirectional .header {
-  display: flex
+.outputdirectional .body {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 5px;
+  list-style: none;
+  padding: 0px;
 }
 
-.outputdirectional .header .stt {
-  width: 108px;
-  border-left: 1px solid #3E3E3E;
-  border-right: 1px solid #3E3E3E;
+.outputdirectional .body .post {
+  display: flex;
+  align-items: center;
 }
 
-.outputdirectional .header .location {
-  width: 290px;
+.outputdirectional .body img {
+  width: 250px;
+  height: 100px;
+  border-radius: 15px;
+}
+.outputdirectional .body .categories{
+  width: 102px;
+  display: flex;
+  align-items: center;
+  gap: 3px;
 }
 
-.outputdirectional .header .image {
-  width: 244px;
-  border-left: 1px solid #3E3E3E;
+.outputdirectional .body .categories span{
+  color: #3E3E3E;
+  font-family: Poppins;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin: 0px;
+  cursor: pointer;
 }
-
-.outputdirectional .header .view {
-  width: 108px;
-  border-left: 1px solid #3E3E3E;
-  border-right: 1px solid #3E3E3E;
-}
-
-.outputdirectional .header label {
+.outputdirectional .body .stt {
+  width: 70px;
   color: #3E3E3E;
   font-family: Poppins;
   font-size: 16px;
   font-style: normal;
-  font-weight: 600;
+  font-weight: 500;
   line-height: normal;
-  margin: 0px;
-  margin-left: 10px;
+  padding: 0px 5px;
 }
-.outputdirectional .body{
-  display: flex;
-  flex-wrap: wrap;
-  gap: 5px;
-}
-.outputdirectional label.stt {
-  width: 98px;
+.outputdirectional .body .location {
+  width: 300px;
   color: #3E3E3E;
   font-family: Poppins;
-  font-size: 14px;
+  font-size: 16px;
   font-style: normal;
   font-weight: 500;
   line-height: normal;
-  margin: 0px;
-  margin-left: 10px;
+  padding: 0px 10px;
 }
 
-.outputdirectional label.location {
-  width: 280px;
+.outputdirectional .body .view {
+  width: 100px;
   color: #3E3E3E;
   font-family: Poppins;
-  font-size: 14px;
+  font-size: 16px;
   font-style: normal;
   font-weight: 500;
   line-height: normal;
-  margin: 0px;
-  margin-left: 10px;
-}
-
-.outputdirectional label.image {
-  width: 234px;
-  color: #3E3E3E;
-  font-family: Poppins;
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: normal;
-  margin: 0px;
-  margin-left: 10px;
-}
-
-.outputdirectional label.view {
-  color: #3E3E3E;
-  font-family: Poppins;
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: normal;
-  margin: 0px;
-  margin-left: 10px;
-  width: 98px;
-  cursor: pointer;
+  padding: 0px 5px;
 }

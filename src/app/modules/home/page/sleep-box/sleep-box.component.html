@@ -5,7 +5,7 @@
         <img [src]="getCurrentImageSource(i)" alt="Image">
       </div>
       <div class="overlay">
-        <div class="favorite" (click)="toggleFavorite(i)" [ngClass]="{'favorite-hover': favoriteStatus[i]}">
+        <div class="favorite" (click)="toggleFavorite(beach,i)" [ngClass]="{'favorite-hover': favoriteStatus[i]}">
           <i class="fas fa-heart"></i>
         </div>
         <div class="next-prev">

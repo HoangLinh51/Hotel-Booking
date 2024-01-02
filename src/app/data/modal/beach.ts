@@ -7,4 +7,5 @@ export interface ListBeach {
   price: string;
   time: string;
   star: string;
+  categories: string;
 }

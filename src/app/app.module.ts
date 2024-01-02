@@ -7,6 +7,8 @@ import { SharedModule } from './shared/shared.module';
 import { HttpClientModule } from '@angular/common/http';
 
 import { fakeBackendProvider } from './data/helpers/fake-backend';
+import { PostService } from './data/service/post.service';
+import { LocalStorageService } from './data/service/localstorage.service';
 
 @NgModule({
   declarations: [AppComponent],
@@ -16,7 +18,7 @@ import { fakeBackendProvider } from './data/helpers/fake-backend';
     AppRoutingModule,
     SharedModule,
   ],
-  providers: [fakeBackendProvider],
+  providers: [fakeBackendProvider, PostService, LocalStorageService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
