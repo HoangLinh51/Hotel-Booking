@@ -12,7 +12,6 @@ export class PageComponent {
 
   constructor(private postService: PostService) {
     this.posts = this.postService.getAllPost();
-    console.log(this.uniqueCategories);
   }
   get uniqueCategories(): string[] {
     return Array.from(new Set(this.posts.map((posts) => posts.categories)));

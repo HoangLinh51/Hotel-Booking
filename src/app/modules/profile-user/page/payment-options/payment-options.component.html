@@ -25,28 +25,52 @@
   <ng-template pTemplate="header">
     <label class="title">Add Card</label>
   </ng-template>
-  <div class="dialog">
-    <div class="form">
-      <label class="header">Card Number</label>
-      <input type="text" >
-    </div>
-    <div class="infor">
+  <form [formGroup]="form" (ngSubmit)="addPayment()">
+    <div class="dialog">
       <div class="form">
-        <label class="header">Valid Until</label>
-        <input type="text" >
+        <label class="header">Card Number</label>
+        <input type="text" formControlName="cardNumber" minlength="6">
+        <ng-container *ngIf="f['cardNumber'].invalid && f['cardNumber'].touched">
+          <div class="invalid-message" *ngIf="f['cardNumber'].errors?.['required']">This Card Number cannot be left blank.</div>
+          <div class="invalid-message" *ngIf="f['cardNumber'].errors?.['minlength']">Card Number is not in correct format (Card Number is too short).</div>
+        </ng-container>
+      </div>
+      <div class="infor">
+        <div class="form">
+          <label class="header">Valid Date Until</label>
+          <p-calendar [(ngModel)]="date" formControlName="validUntil"></p-calendar>
+          <ng-container *ngIf="f['validUntil'].invalid && f['validUntil'].touched">
+            <div class="invalid-message" *ngIf="f['validUntil'].errors?.['required']">This Valid Date Until cannot be left blank.</div>
+          </ng-container>
+        </div>
+        <div class="form">
+          <label class="header">CVV</label>
+          <input type="text" pInputText formControlName="cvv" />
+          <!-- <input type="text" formControlName="cvv"> -->
+          <ng-container *ngIf="f['cvv'].invalid && f['cvv'].touched">
+            <div class="invalid-message" *ngIf="f['cvv'].errors?.['required']">This CVV cannot be left blank.</div>
+            <div class="invalid-message" *ngIf="f['cvv'].errors?.['minlength']">CVV is not in correct format (CVV is too short).</div>
+          </ng-container>
+        </div>
       </div>
       <div class="form">
-        <label class="header">CVV</label>
-        <input type="text">
+        <label class="header">Name On Card</label>
+        <input type="text" formControlName="name">
+        <ng-container *ngIf="f['name'].invalid && f['name'].touched">
+          <div class="invalid-message" *ngIf="f['name'].errors?.['required']">This Name cannot be left blank.</div>
+          <div class="invalid-message" *ngIf="f['name'].errors?.['minlength']">Name is not in correct format (Name is too short).</div>
+        </ng-container>
+      </div>
+      <div class="checkbox">
+        <input type="checkbox" formControlName="checkBox">
+        <p>By tapping the button above, you have agreed to Nginep Terms & Conditions and Privacy Policy.</p>
+      </div>
+      <ng-container *ngIf="f['name'].invalid">
+        <div class="invalid-message" *ngIf="f['name'].errors?.['required']">Cannot be left blank.</div>
+      </ng-container>
+      <div class="submit">
+        <button (click)="visible = false" class="save" type="submit"[disabled]="form.invalid">Add Card</button>
       </div>
     </div>
-    <div class="form">
-      <label class="header">Name On Card</label>
-      <input type="text" >
-    </div>
-    <div class="checkbox">
-      <input type="checkbox"><p>By tapping the button above, you have agreed to Nginep Terms & Conditions and Privacy Policy.</p>
-    </div>
-    <button class="save">Add Card</button>
-  </div>
+  </form>
 </p-dialog>

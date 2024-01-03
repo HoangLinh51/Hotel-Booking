@@ -93,7 +93,6 @@ label.header {
 .dialog {
   display: flex;
   flex-direction: column;
-  align-items: center;
   gap: 15px;
 }
 
@@ -108,21 +107,21 @@ label.header {
   line-height: normal;
 }
 
-
-.dialog .checkbox{
+.dialog .checkbox {
   display: flex;
+  align-items: center;
   margin: 0px;
 }
 
-.dialog .checkbox input{
-  width: 18px ;
+.dialog .checkbox input {
+  width: 18px;
   height: 18px;
+  margin: 0px;
 }
 
-.dialog .checkbox p{
-  width: 450px;
+.dialog .checkbox p {
   margin: 0px;
-  margin-left: 5px;
+  margin-left: 30px;
   color: #3E3E3E;
   font-family: Poppins;
   font-size: 14px;
@@ -138,13 +137,21 @@ label.header {
   width: 100%;
 }
 
-.dialog .infor {
+.dialog .infor .form {
   display: flex;
-  gap: 65px
+  flex-direction: column;
+  gap: 10px;
+  width: 45%;
 }
 
-.dialog .infor input {
-  width: 240px;
+.dialog .infor {
+  display: flex;
+  justify-content: space-between;
+}
+
+.dialog .submit {
+  display: flex;
+  justify-content: center;
 }
 
 .dialog .save {
@@ -157,7 +164,6 @@ label.header {
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-  margin: 0px;
   border: none;
   border-radius: 15px;
 }

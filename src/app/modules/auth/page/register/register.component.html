@@ -11,12 +11,30 @@
     <form class="forminput" [formGroup]="form" (ngSubmit)="onSubmit()">
     <div class="form">
       <input formControlName="name" type="text" placeholder="Name">
-      <input formControlName="email" type="text" placeholder="Email">
-      <input formControlName="phoneNumber" type="text" placeholder="Phone Number">
-      <input formControlName="password" type="text" placeholder="Password">
+      <ng-container *ngIf="f['name'].invalid && f['name'].touched">
+        <div class="invalid-message" *ngIf="f['name'].errors?.['required']">This name cannot be left blank.</div>
+      </ng-container>
+
+      <input formControlName="email" type="text" placeholder="Email" minlength="8">
+      <ng-container *ngIf="f['email'].invalid && f['email'].touched">
+        <div class="invalid-message" *ngIf="f['email'].errors?.['required']">This email cannot be left blank.</div>
+        <div class="invalid-message" *ngIf="f['email'].errors?.['minlength']">Email is too short</div>
+      </ng-container>
+
+      <input formControlName="phoneNumber" type="text" placeholder="Phone Number"minlength="6">
+      <ng-container *ngIf="f['phoneNumber'].invalid && f['phoneNumber'].touched">
+        <div class="invalid-message" *ngIf="f['phoneNumber'].errors?.['required']">This phone number cannot be left blank.</div>
+        <div class="invalid-message" *ngIf="f['phoneNumber'].errors?.['minlength']">Phone number is too short</div>
+      </ng-container>
+
+      <input formControlName="password" type="text" placeholder="Password" minlength="6">
+      <ng-container *ngIf="f['password'].invalid && f['password'].touched">
+        <div class="invalid-message" *ngIf="f['password'].errors?.['required']">This password cannot be left blank.</div>
+        <div class="invalid-message" *ngIf="f['password'].errors?.['minlength']">Password is too short</div>
+      </ng-container>
     </div>
     <div class="create-acc">
-      <button>Create Accout</button>
+      <button [disabled]="form.invalid">Create Accout</button>
     </div>
     <div class="login-gmail">
       <button>

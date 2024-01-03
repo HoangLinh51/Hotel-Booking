@@ -11,6 +11,8 @@ import { TabViewModule } from 'primeng/tabview';
 import { MenuModule } from 'primeng/menu';
 import { DialogModule } from 'primeng/dialog';
 import { DataViewModule } from 'primeng/dataview';
+import { CalendarModule } from 'primeng/calendar';
+import { InputTextModule } from 'primeng/inputtext';
 
 @NgModule({
   imports: [
@@ -22,6 +24,8 @@ import { DataViewModule } from 'primeng/dataview';
     FormsModule,
     ReactiveFormsModule,
     DataViewModule,
+    CalendarModule,
+    InputTextModule,
   ],
   declarations: [NavComponent, HeaderComponent, FooterComponent],
   exports: [
@@ -36,6 +40,8 @@ import { DataViewModule } from 'primeng/dataview';
     FormsModule,
     ReactiveFormsModule,
     DataViewModule,
+    CalendarModule,
+    InputTextModule,
   ],
 })
 export class SharedModule {}
