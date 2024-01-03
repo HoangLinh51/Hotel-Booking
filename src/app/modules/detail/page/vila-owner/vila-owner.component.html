@@ -139,7 +139,8 @@
       </div>
 
       <div class="button">
-        <label>Reserve</label>
+        <label (click)="showdialog(!visible)">Reserve</label>
+
       </div>
       <label
         style="color: #3E3E3E;font-family: Poppins;font-size: 14px;font-style: normal;font-weight: 400;line-height: normal;margin: 0px 98px 42px 104px;display: flex;">
@@ -160,3 +161,6 @@
     </div>
   </div>
 </div>
+<p-dialog header="header" [(visible)]="visible" [style]="{width: '50vw'}" [modal]="true">
+  <app-payments></app-payments>
+</p-dialog>

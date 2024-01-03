@@ -1,0 +1,51 @@
+<div class="container1">
+  <label class="title">Checkin / Checkout</label>
+  <div class="header">
+    <div class="checkinout">
+      <div class="check-in">
+        <label class="header">Check In</label>
+        <p-calendar class="body" [(ngModel)]="date"></p-calendar>
+      </div>
+      <div class="check-out">
+        <label class="header">Check Out</label>
+        <p-calendar class="body" [(ngModel)]="date2"></p-calendar>
+      </div>
+    </div>
+    <div class="guest">
+      <label class="header">Guest</label>
+      <p-dropdown [options]="guest" [(ngModel)]="selectedGuest" optionLabel="name" [showClear]="true"
+        placeholder="How many Guest?" tooltipPosition="bottom"></p-dropdown>
+    </div>
+    <div class="total">
+      <label class="header">Total</label>
+      <label class="body">151$/1 night x 4 night</label>
+      <div class="line"></div>
+      <label class="body" style="font-weight: 600;">total : 604$</label>
+    </div>
+  </div>
+  <div class="note">
+    <label class="header">Note</label>
+    <textarea rows="5" cols="100" pInputTextarea [(ngModel)]="value" class="body"></textarea>
+  </div>
+</div>
+<div class="paymentmethod">
+  <label class="title">Select your Payment Method</label>
+  <div class="method">
+    <div class="input">
+      <input name="method" type="radio">
+      <label class="namemethod">Cash</label>
+    </div>
+    <div class="input">
+      <input name="method" type="radio">
+      <label class="namemethod">Bank transfer</label>
+    </div>
+    <div class="input">
+      <input name="method" type="radio">
+      <label class="namemethod">Bank Card</label>
+    </div>
+  </div>
+</div>
+
+<div class="button">
+  <button class="body">Done</button>
+</div>

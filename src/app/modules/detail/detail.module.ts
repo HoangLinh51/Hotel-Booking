@@ -10,6 +10,7 @@ import { MapComponent } from './page/map/map.component';
 import { PlanceOffersComponent } from './page/plance-offers/plance-offers.component';
 import { ReviewComponent } from './page/review/review.component';
 import { VilaOwnerComponent } from './page/vila-owner/vila-owner.component';
+import { PaymentsComponent } from './page/vila-owner/payments/payments.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { VilaOwnerComponent } from './page/vila-owner/vila-owner.component';
     InforHostedComponent,
     PlanceOffersComponent,
     CommentsComponent,
+    PaymentsComponent,
   ],
   imports: [DetailRoutingModule, SharedModule],
 })

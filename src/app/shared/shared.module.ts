@@ -13,6 +13,9 @@ import { DialogModule } from 'primeng/dialog';
 import { DataViewModule } from 'primeng/dataview';
 import { CalendarModule } from 'primeng/calendar';
 import { InputTextModule } from 'primeng/inputtext';
+import { StepsModule } from 'primeng/steps';
+import { InputTextareaModule } from 'primeng/inputtextarea';
+import { DropdownModule } from 'primeng/dropdown';
 
 @NgModule({
   imports: [
@@ -26,6 +29,9 @@ import { InputTextModule } from 'primeng/inputtext';
     DataViewModule,
     CalendarModule,
     InputTextModule,
+    StepsModule,
+    InputTextareaModule,
+    DropdownModule,
   ],
   declarations: [NavComponent, HeaderComponent, FooterComponent],
   exports: [
@@ -42,6 +48,9 @@ import { InputTextModule } from 'primeng/inputtext';
     DataViewModule,
     CalendarModule,
     InputTextModule,
+    StepsModule,
+    InputTextareaModule,
+    DropdownModule,
   ],
 })
 export class SharedModule {}
