@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { LUser } from 'src/app/data/modal/user';
+import { AuthService } from 'src/app/data/service/auth.service';
 
 @Component({
   selector: 'app-header',
@@ -7,4 +9,14 @@ import { Component } from '@angular/core';
 })
 export class HeaderComponent {
   public linkAboutus = '/about-us';
+  user?: LUser | null;
+
+  constructor(private authService: AuthService) {
+    this.authService.user.subscribe((x) => (this.user = x));
+    console.log('this.user--->', this.user);
+  }
+
+  logout() {
+    this.authService.logout();
+  }
 }
