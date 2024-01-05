@@ -5,6 +5,7 @@ import { PaymentOptionsComponent } from './page/payment-options/payment-options.
 import { MyProfileComponent } from './page/my-profile/my-profile.component';
 import { BookedTripComponent } from './page/booked-trip/booked-trip.component';
 import { FavoriteComponent } from './page/favorite/favorite.component';
+import { HistoryDetailComponent } from './page/booked-trip/history-detail/history-detail.component';
 
 const routes: Routes = [
   {
@@ -27,6 +28,10 @@ const routes: Routes = [
       {
         path: 'favorite',
         component: FavoriteComponent,
+      },
+      {
+        path: 'history-booking',
+        component: HistoryDetailComponent,
       },
     ],
   },

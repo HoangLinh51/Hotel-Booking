@@ -40,7 +40,7 @@ export class LoginComponent {
   onSubmit() {
     if (this.form.valid) {
       this.authService
-        .login(this.form.value.email, this.form.value.password)
+        .login(this.f['email'].value, this.f['password'].value)
         .pipe(first())
         .subscribe({
           next: () => {

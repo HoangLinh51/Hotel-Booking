@@ -1,33 +1,29 @@
+<form [formGroup]="form">
 <div class="outputdirectional">
   <label class="title">Edit Your Profile</label>
   <div class="frame1">
     <div class="first">
       <label class="header">First Name</label>
-      <input placeholder="Nginep">
+      <input [placeholder]="user?.firstName" formControlName="firstName">
     </div>
     <div class="last">
       <label class="header">Last Name</label>
-      <input placeholder="Nginep">
+      <input [placeholder]="user?.lastName" formControlName="lastName">
     </div>
   </div>
   <div class="frame2">
     <div class="email">
       <label class="header">Email</label>
-      <input placeholder="nginep@gmail.com">
+      <input [placeholder]="user?.email" formControlName="email">
     </div>
     <div class="phone">
       <label class="header">Phone</label>
-      <input placeholder="0123456789">
+      <input [placeholder]="user?.phoneNumber" formControlName="phoneNumber">
     </div>
-  </div>
-  <div class="password">
-    <label class="header">Password</label>
-    <input placeholder="Current Password">
-    <input placeholder="New Password">
-    <input placeholder="Confirm Password">
   </div>
   <div class="frame3">
     <button class="cancel">Cancel</button>
-    <button class="save">Save Change</button>
+    <button class="save" type="submit">Save Change</button>
   </div>
 </div>
+</form>

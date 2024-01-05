@@ -10,9 +10,14 @@
 
     <form class="forminput" [formGroup]="form" (ngSubmit)="onSubmit()">
     <div class="form">
-      <input formControlName="name" type="text" placeholder="Name">
-      <ng-container *ngIf="f['name'].invalid && f['name'].touched">
-        <div class="invalid-message" *ngIf="f['name'].errors?.['required']">This name cannot be left blank.</div>
+      <input formControlName="firstName" type="text" placeholder="First Name">
+      <ng-container *ngIf="f['firstName'].invalid && f['firstName'].touched">
+        <div class="invalid-message" *ngIf="f['firstName'].errors?.['required']">This first name cannot be left blank.</div>
+      </ng-container>
+
+      <input formControlName="lastName" type="text" placeholder="Last Name">
+      <ng-container *ngIf="f['lastName'].invalid && f['lastName'].touched">
+        <div class="invalid-message" *ngIf="f['lastName'].errors?.['required']">This last name cannot be left blank.</div>
       </ng-container>
 
       <input formControlName="email" type="text" placeholder="Email" minlength="8">
