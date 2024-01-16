@@ -10,7 +10,9 @@ import { MapComponent } from './page/map/map.component';
 import { PlanceOffersComponent } from './page/plance-offers/plance-offers.component';
 import { ReviewComponent } from './page/review/review.component';
 import { VilaOwnerComponent } from './page/vila-owner/vila-owner.component';
-import { PaymentsComponent } from './page/vila-owner/payments/payments.component';
+import { DatePipe } from '@angular/common';
+import { InforBookingComponent } from './page/vila-owner/infor-booking/infor-booking.component';
+import { PaymentMethodComponent } from './page/vila-owner/payment-method/payment-method.component';
 
 @NgModule({
   declarations: [
@@ -23,8 +25,10 @@ import { PaymentsComponent } from './page/vila-owner/payments/payments.component
     InforHostedComponent,
     PlanceOffersComponent,
     CommentsComponent,
-    PaymentsComponent,
+    InforBookingComponent,
+    PaymentMethodComponent,
   ],
   imports: [DetailRoutingModule, SharedModule],
+  providers: [DatePipe],
 })
 export class DetailModule {}

@@ -1,0 +1,81 @@
+label {
+  margin: 0px;
+}
+
+.title {
+  color: #FF385C;
+  font-family: Poppins;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.box {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.box label.header {
+  color: #3E3E3E;
+  font-family: Poppins;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.box .body {
+  color: #3E3E3E;
+  font-family: Poppins;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.box .line {
+  width: 100%;
+  height: 1px;
+  flex-shrink: 0;
+  background: #E6E6E6;
+  margin: 0px;
+}
+
+.box .total {
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+}
+
+.box .paymentmethod {
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+}
+.box .paymentmethod .method .input{
+  display: flex;
+  gap: 10px;
+}
+.box .paymentmethod .method .input input{
+margin: 0px
+}
+.button {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.button button {
+  padding: 8px 15px;
+  border: none;
+  border-radius: 10px;
+  background: #FF385C;
+  color: #fff;
+  font-family: Poppins;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin: 0px;
+}

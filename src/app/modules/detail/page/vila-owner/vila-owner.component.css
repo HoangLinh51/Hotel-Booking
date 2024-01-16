@@ -1,3 +1,6 @@
+label{
+  margin: 0px;
+}
 
 .vila-owner {
   display: flex;
@@ -87,7 +90,6 @@
   font-style: normal;
   font-weight: 600;
   line-height: normal;
-  margin: 0px;
 }
 
 .vila-owner .left .describe .frame1 .text .body {
@@ -120,7 +122,6 @@
   font-style: normal;
   font-weight: 600;
   line-height: normal;
-  margin: 0px;
 }
 
 .vila-owner .left .describe .frame2 .text .body {
@@ -152,7 +153,6 @@
   font-style: normal;
   font-weight: 600;
   line-height: normal;
-  margin: 0px;
 }
 
 .vila-owner .left .describe .frame3 .text .body {
@@ -167,7 +167,7 @@
 
 .vila-owner .left div.attention {
   width: 727px;
-  height: 70px;
+  height: 75px;
   flex-shrink: 0;
   border-radius: 10px;
   background: #FFF;
@@ -205,8 +205,7 @@
 }
 
 .vila-owner .right {
-  width: 383px;
-  height: 519px;
+  height: 215px;
   flex-shrink: 0;
   border-radius: 15px;
   border: 2px solid #E6E6E6;
@@ -218,13 +217,12 @@
   margin: 0px;
 }
 
-.vila-owner .right .header .cost {
-  width: 116px;
+.vila-owner .right .cost {
   height: 42px;
-  margin: 27px 67px 31px 25px;
+  margin: 25px;
 }
 
-.vila-owner .right .header .cost .price {
+.vila-owner .right .cost .price {
   color: #3E3E3E;
   font-family: Poppins;
   font-size: 28px;
@@ -233,7 +231,7 @@
   line-height: normal;
 }
 
-.vila-owner .right .header .cost .day {
+.vila-owner .right .cost .day {
   color: #3E3E3E;
   font-family: Poppins;
   font-size: 20px;
@@ -242,16 +240,21 @@
   line-height: normal;
 }
 
-.vila-owner .right .header .star {
+.vila-owner .right .rating {
+  display: flex;
+  gap: 10px;
+  margin: 25px;
+}
+
+.vila-owner .right .rating .star {
   width: 49px;
   height: 21px;
   display: inline-flex;
   align-items: center;
   gap: 5px;
-  margin: 41px 15px 39px -4px;
 }
 
-.vila-owner .right .header .star label {
+.vila-owner .right .rating .star label {
   color: #3E3E3E;
   font-family: Poppins;
   font-size: 14px;
@@ -260,7 +263,7 @@
   line-height: normal;
 }
 
-.vila-owner .right .header .review {
+.vila-owner .right .rating .review {
   color: #3E3E3E;
   font-family: Poppins;
   font-size: 14px;
@@ -268,120 +271,10 @@
   font-weight: 1000;
   line-height: normal;
   text-decoration-line: underline;
-  margin: 41px 22px 39px 2px;
 }
 
 .vila-owner .right .body {
   margin: -1px 0px 0px -2px;
-}
-
-.vila-owner .right .body .date {
-  width: 337px;
-  height: 130px;
-  flex-shrink: 0;
-  border-radius: 8px;
-  border: 0.8px solid #979797;
-  background: rgba(255, 255, 255, 0.45);
-  margin: 0px 25px 20px 25px;
-}
-
-.vila-owner .right .body .date .check-in-out {
-  display: flex;
-  border-bottom: 0.8px solid #979797;
-}
-
-.vila-owner .right .body .date .check-in-out .check-in {
-  width: 155px;
-  height: 44px;
-  flex-shrink: 0;
-  margin: 19px 2px 6px 10px;
-}
-
-.vila-owner .right .body .date .check-in-out .check-in p {
-  color: #3E3E3E;
-  font-family: Poppins;
-  font-size: 10px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-  margin: 0px;
-}
-
-.vila-owner .right .body .date .check-in-out .check-in label {
-  color: #3E3E3E;
-  font-family: Poppins;
-  font-size: 12px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-  display: flex;
-  margin-top: -1px;
-}
-
-.vila-owner .right .body .date .check-in-out .line1 {
-  width: 1px;
-  height: 69px;
-  background: #979797;
-}
-
-.vila-owner .right .body .date .check-in-out .check-out {
-  width: 156px;
-  height: 44px;
-  flex-shrink: 0;
-  margin: 19px -2px 5px 14px;
-}
-
-.vila-owner .right .body .date .check-in-out .check-out p {
-  color: #3E3E3E;
-  font-family: Poppins;
-  font-size: 10px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-  margin: 0px;
-}
-
-.vila-owner .right .body .date .check-in-out .check-out label {
-  color: #3E3E3E;
-  font-family: Poppins;
-  font-size: 12px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-  display: flex;
-  margin-top: -2px;
-}
-
-.vila-owner .right .body .date .guests {
-  width: 327px;
-  height: 45px;
-  flex-shrink: 0;
-  margin: 6px 5px 9px 5px;
-  display: flex;
-}
-
-.vila-owner .right .body .date .guests .text {
-  width: 106px;
-  margin: 7px 258px 6px 6px;
-}
-
-.vila-owner .right .body .date .guests .text p {
-  color: #3E3E3E;
-  font-family: Poppins;
-  font-size: 10px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-  margin: 0px;
-}
-
-.vila-owner .right .body .date .guests .text label {
-  color: #3E3E3E;
-  font-family: Poppins;
-  font-size: 12px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
 }
 
 .vila-owner .right .body .button {
@@ -395,7 +288,7 @@
   flex-shrink: 0;
   border-radius: 8px;
   background: #FF385C;
-  margin: 0px 25px 20px 25px;
+  margin: 25px;
 }
 
 .vila-owner .right .body .button label {
@@ -405,7 +298,6 @@
   font-style: normal;
   font-weight: 600;
   line-height: normal;
-  margin: 0px;
 }
 
 
@@ -466,3 +358,126 @@
   font-weight: 600;
   line-height: normal;
 }
+.container1 {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+.title {
+  color: #FF385C;
+  font-family: Poppins;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+
+/*.container1 label.header {
+  color: #3E3E3E;
+  font-family: Poppins;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  margin: 0px;
+}
+
+.container1 .body {
+  color: #3E3E3E;
+  font-family: Poppins;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin: 0px;
+}
+
+.container1 .header {
+  display: flex;
+  justify-content: space-between;
+  gap: 5%;
+}
+
+.container1 .header .checkinout, .guest, .total{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 30%;
+}
+
+.container1 .header .checkinout .check-in, .check-out {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+
+.container1 .header .total .line {
+  width: 100%;
+  height: 1px;
+  flex-shrink: 0;
+  background: #E6E6E6;
+  margin: 0px;
+}
+
+.button {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.button button {
+  padding: 8px 15px;
+  border: none;
+  border-radius: 10px;
+  background: #FF385C;
+  color: #fff;
+  font-family: Poppins;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin: 0px;
+}
+
+.paymentmethod {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.paymentmethod .title {
+  color: #FF385C;
+  font-family: Poppins;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.paymentmethod .method {
+  margin-left: 30px;
+  display: flex;
+  gap: 20px;
+}
+
+.paymentmethod .method .input {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.paymentmethod .method .input input{
+width: 15px ;
+height: 15px;
+margin: 0px;
+}
+.paymentmethod .method .input label.namemethod{
+  color: #3e3e3e;
+  font-family: Poppins;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin: 0px;
+} */

@@ -1,1 +1,40 @@
-<p>history-detail works!</p>
+<div class="outputdirectional">
+  <label class="title">Detail Booking</label>
+  <div class="detail">
+    <div class="date">
+      <label class="header">Date</label>
+      <div class="checkin">
+        <label class="title">Check-in</label>
+        <label class="decrip">12/10/2001</label>
+      </div>
+      <div class="checkout">
+        <label class="title">Check-out</label>
+        <label class="decrip">12/10/2023</label>
+      </div>
+    </div>
+    <div class="total">
+      <label class="header">Total</label>
+      <div class="amount">
+        <label class="decrip">151$/1 night x 4 night x 1 guest</label>
+        <div class="line"></div>
+        <label class="decrip" style="font-weight: 600;">total : 604$</label>
+      </div>
+    </div>
+    <div class="status">
+      <label class="header">Status</label>
+      <label class="decrip" style="color: green;">Complete</label>
+    </div>
+  </div>
+  <div class="infor">
+    <label class="header" style="width: 100%;">Information in the location</label>
+    <div class="decrip">
+      <label class="decrip">Location: </label>
+      <label class="decrip">Distance:</label>
+      <label class="decrip">Star:</label>
+      <label class="decrip">Category:</label>
+    </div>
+  </div>
+  <div class="button">
+    <button (click)="goBackToList()">Back to list</button>
+  </div>
+</div>

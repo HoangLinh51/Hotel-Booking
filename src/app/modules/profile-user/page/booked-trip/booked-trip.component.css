@@ -121,7 +121,7 @@
   margin-left: 10px;
 }
 
-.outputdirectional .body .product label.view {
+.outputdirectional .body .product a.view {
   width: 98px;
   color: #3E3E3E;
   font-family: Poppins;

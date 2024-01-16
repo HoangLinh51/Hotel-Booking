@@ -13,7 +13,7 @@ export class LocalStorageService {
     return item ? JSON.parse(item) : null;
   }
 
-  clear(): void {
-    localStorage.clear();
+  delete(key: string): void {
+    localStorage.removeItem(key);
   }
 }

@@ -1,5 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { ListBeach } from 'src/app/data/modal/beach';
+import { LUser } from 'src/app/data/modal/user';
+import { AuthService } from 'src/app/data/service/auth.service';
 import { LocalStorageService } from 'src/app/data/service/localstorage.service';
 import { PostService } from 'src/app/data/service/post.service';
 
@@ -18,13 +20,16 @@ export class CampingComponent {
   showNextButton = true;
   showPrevButton = false;
   currentImageIndex: number[] = [];
+  user!: LUser | null;
 
   constructor(
     private postService: PostService,
-    private localStorageService: LocalStorageService
+    private localStorageService: LocalStorageService,
+    private authService: AuthService
   ) {}
 
   ngOnInit(): void {
+    this.user = this.authService.userValue;
     this.listBeach = this.postService.getProductsByCategory(this.category);
     this.restoreFavoriteStatus();
   }
@@ -45,7 +50,7 @@ export class CampingComponent {
 
   restoreFavoriteStatus(): void {
     const favoritePosts =
-      this.localStorageService.getItem(this.FAVORITE_KEY) || [];
+      this.localStorageService.getItem(this.FAVORITE_KEY + this.user?.id) || [];
     this.listBeach.forEach((beach, index) => {
       this.favoriteStatus[index] = favoritePosts.some(
         (post: any) => post.id === beach.id
@@ -55,7 +60,7 @@ export class CampingComponent {
 
   toggleFavorite(beach: any, index: number): void {
     const favoritePosts =
-      this.localStorageService.getItem(this.FAVORITE_KEY) || [];
+      this.localStorageService.getItem(this.FAVORITE_KEY + this.user?.id) || [];
     const postIndex = favoritePosts.findIndex((p: any) => p.id === beach.id);
 
     if (postIndex !== -1) {
@@ -66,6 +71,9 @@ export class CampingComponent {
       this.favoriteStatus[index] = true;
     }
 
-    this.localStorageService.saveItem(this.FAVORITE_KEY, favoritePosts);
+    this.localStorageService.saveItem(
+      this.FAVORITE_KEY + this.user?.id,
+      favoritePosts
+    );
   }
 }

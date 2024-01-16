@@ -26,12 +26,12 @@ const routes: Routes = [
         component: BookedTripComponent,
       },
       {
-        path: 'favorite',
-        component: FavoriteComponent,
+        path: 'booked-trip/history-booking',
+        component: HistoryDetailComponent,
       },
       {
-        path: 'history-booking',
-        component: HistoryDetailComponent,
+        path: 'favorite',
+        component: FavoriteComponent,
       },
     ],
   },

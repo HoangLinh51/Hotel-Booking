@@ -1,76 +1,122 @@
 <div class="outputdirectional">
   <label class="title">Add Payment</label>
-  <div class="frame1">
-
-    <div class="card">
-      <div class="payment">
-        <button (click)="showDialog(!visible)"><i class="fa-solid fa-plus" style="color: #fff;"></i></button>
-        <label>Add Card</label>
-      </div>
-      <div class="payment">
-        <button (click)="showDialog(!visible)"><i class="fa-solid fa-plus" style="color: #fff;"></i></button>
-        <label>Add Card</label>
-      </div>
-      <div class="payment">
-        <button (click)="showDialog(!visible)"><i class="fa-solid fa-plus" style="color: #fff;"></i></button>
-        <label>Add Card</label>
+  <ng-container *ngIf="payment === null else tempalte">
+    <div class="frame1">
+      <div class="card">
+        <div class="payment">
+          <button (click)="showDialog(!visible)"><i class="fa-solid fa-plus" style="color: #fff;"></i></button>
+          <label>Add Card</label>
+        </div>
+        <!-- <div class="payment">
+          <button (click)="showDialog(!visible)"><i class="fa-solid fa-plus" style="color: #fff;"></i></button>
+          <label>Add Card</label>
+        </div>
+        <div class="payment">
+          <button (click)="showDialog(!visible)"><i class="fa-solid fa-plus" style="color: #fff;"></i></button>
+          <label>Add Card</label>
+        </div> -->
       </div>
     </div>
-  </div>
+    <p-dialog [(visible)]="visible" [modal]="true" [style]="{ width: '30vw' }" [draggable]="false" [resizable]="false">
+      <ng-template pTemplate="header">
+        <label class="title">Add Card</label>
+      </ng-template>
+      <div class="dialog">
+        <form [formGroup]="form" (ngSubmit)="onSubmit()">
+          <div class="form">
+            <label class="header">Card Number</label>
+            <input type="text" formControlName="cardNumber" minlength="6">
+            <ng-container *ngIf="f['cardNumber'].invalid && f['cardNumber'].touched">
+              <div class="invalid-message" *ngIf="f['cardNumber'].errors?.['required']">
+                This Card Number cannot be left blank.
+              </div>
+              <div class="invalid-message" *ngIf="f['cardNumber'].errors?.['minlength']">
+                Card Number is not in correct format (Card Number is too short).
+              </div>
+            </ng-container>
+          </div>
+          <div class="infor">
+            <div class="form">
+              <label class="header">Valid Date Until</label>
+              <p-calendar formControlName="validUntil" dateFormat="dd.mm.yy"></p-calendar>
+              <ng-container *ngIf="f['validUntil'].invalid && f['validUntil'].touched">
+                <div class="invalid-message" *ngIf="f['validUntil'].errors?.['required']">
+                  This Valid Date Until cannot be left blank.</div>
+              </ng-container>
+            </div>
+            <div class="form">
+              <label class="header">CVV</label>
+              <input type="text" pInputText formControlName="cvv" />
+              <ng-container *ngIf="f['cvv'].invalid && f['cvv'].touched">
+                <div class="invalid-message" *ngIf="f['cvv'].errors?.['required']">This CVV cannot be left blank.</div>
+                <div class="invalid-message" *ngIf="f['cvv'].errors?.['minlength']">
+                  CVV is not in correct format (CVV is too short).
+                </div>
+              </ng-container>
+            </div>
+          </div>
+          <div class="form">
+            <label class="header">Name On Card</label>
+            <input type="text" formControlName="name">
+            <ng-container *ngIf="f['name'].invalid && f['name'].touched">
+              <div class="invalid-message" *ngIf="f['name'].errors?.['required']">This Name cannot be left blank.</div>
+              <div class="invalid-message" *ngIf="f['name'].errors?.['minlength']">
+                Name is not in correct format (Name is too short).
+              </div>
+            </ng-container>
+          </div>
+          <div class="checkbox">
+            <input type="checkbox" formControlName="checkBox">
+            <p>By tapping the button above, you have agreed to Nginep Terms & Conditions and Privacy Policy.</p>
+          </div>
+          <ng-container *ngIf="f['checkBox'].invalid">
+            <div class="invalid-message" *ngIf="f['checkBox'].errors?.['required']">Cannot be left blank.</div>
+          </ng-container>
+          <div class="submit">
+            <button type="submit" class="save" [disabled]="form.invalid">Add Card</button>
+          </div>
+        </form>
+      </div>
+    </p-dialog>
+  </ng-container>
+
+  <ng-template #tempalte>
+    <div class="frame1" (click)="showDialog2(!visible2)">
+      <div class="paymentTemplate">
+        <label style="font-weight: 600;">{{payment.cardNumber}}</label>
+        <label>{{payment.name}}</label>
+        <label>{{payment.validUntil}}</label>
+      </div>
+    </div>
+
+    <p-dialog [(visible)]="visible2" [modal]="true" [style]="{ width: '30vw' }" [draggable]="false" [resizable]="false">
+      <div class="dialog">
+        <div class="form">
+          <label class="header">Card Number</label>
+          <label class="body">{{payment.cardNumber}}</label>
+        </div>
+        <div class="infor">
+          <div class="form">
+            <label class="header">Valid Date Until</label>
+            <label class="body">{{payment.validUntil}}</label>
+          </div>
+          <div class="form">
+            <label class="header">CVV</label>
+            <label class="body">{{payment.cvv}}</label>
+          </div>
+        </div>
+        <div class="form">
+          <label class="header">Name On Card</label>
+          <label class="body">{{payment.name}}</label>
+        </div>
+        <div class="submit">
+          <button (click)="visible = false" class="save" (click)="deleteCard()">Delete Card</button>
+        </div>
+      </div>
+    </p-dialog>
+  </ng-template>
+
   <div class="panel">
     <img src="/assets/image/payment.jpg" alt="">
   </div>
 </div>
-<p-dialog [(visible)]="visible" [modal]="true" [style]="{ width: '30vw' }" [draggable]="false" [resizable]="false">
-  <ng-template pTemplate="header">
-    <label class="title">Add Card</label>
-  </ng-template>
-  <form [formGroup]="form" (ngSubmit)="addPayment()">
-    <div class="dialog">
-      <div class="form">
-        <label class="header">Card Number</label>
-        <input type="text" formControlName="cardNumber" minlength="6">
-        <ng-container *ngIf="f['cardNumber'].invalid && f['cardNumber'].touched">
-          <div class="invalid-message" *ngIf="f['cardNumber'].errors?.['required']">This Card Number cannot be left blank.</div>
-          <div class="invalid-message" *ngIf="f['cardNumber'].errors?.['minlength']">Card Number is not in correct format (Card Number is too short).</div>
-        </ng-container>
-      </div>
-      <div class="infor">
-        <div class="form">
-          <label class="header">Valid Date Until</label>
-          <p-calendar [(ngModel)]="date" formControlName="validUntil"></p-calendar>
-          <ng-container *ngIf="f['validUntil'].invalid && f['validUntil'].touched">
-            <div class="invalid-message" *ngIf="f['validUntil'].errors?.['required']">This Valid Date Until cannot be left blank.</div>
-          </ng-container>
-        </div>
-        <div class="form">
-          <label class="header">CVV</label>
-          <input type="text" pInputText formControlName="cvv" />
-          <!-- <input type="text" formControlName="cvv"> -->
-          <ng-container *ngIf="f['cvv'].invalid && f['cvv'].touched">
-            <div class="invalid-message" *ngIf="f['cvv'].errors?.['required']">This CVV cannot be left blank.</div>
-            <div class="invalid-message" *ngIf="f['cvv'].errors?.['minlength']">CVV is not in correct format (CVV is too short).</div>
-          </ng-container>
-        </div>
-      </div>
-      <div class="form">
-        <label class="header">Name On Card</label>
-        <input type="text" formControlName="name">
-        <ng-container *ngIf="f['name'].invalid && f['name'].touched">
-          <div class="invalid-message" *ngIf="f['name'].errors?.['required']">This Name cannot be left blank.</div>
-          <div class="invalid-message" *ngIf="f['name'].errors?.['minlength']">Name is not in correct format (Name is too short).</div>
-        </ng-container>
-      </div>
-      <div class="checkbox">
-        <input type="checkbox" formControlName="checkBox">
-        <p>By tapping the button above, you have agreed to Nginep Terms & Conditions and Privacy Policy.</p>
-      </div>
-      <ng-container *ngIf="f['name'].invalid">
-        <div class="invalid-message" *ngIf="f['name'].errors?.['required']">Cannot be left blank.</div>
-      </ng-container>
-      <div class="submit">
-        <button (click)="visible = false" class="save" type="submit"[disabled]="form.invalid">Add Card</button>
-      </div>
-    </div>
-  </form>
-</p-dialog>

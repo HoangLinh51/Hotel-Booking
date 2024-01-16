@@ -1,0 +1,31 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <div class="box">
+    <div class="total">
+      <label class="title">Total Amount</label>
+      <label class="body">Price : $123123/1 night x 4 night</label>
+      <div class="line"></div>
+      <label class="body" style="font-weight: 600;" formControlname="total">Total : {{123123 * 4}}$</label>
+    </div>
+
+    <div class="paymentmethod">
+      <label class="title">Select your Payment Method</label>
+      <div class="method">
+        <div class="input">
+          <input type="radio" formControlName="payment" name="payment" value="cash">
+          <label class="body">Cash</label>
+        </div>
+        <div class="input">
+          <input type="radio" formControlName="payment" name="payment" value="transfer">
+          <label class="body">Bank transfer</label>
+        </div>
+        <div class="input">
+          <input type="radio" formControlName="payment" name="payment" value="card">
+          <label class="body">Bank Card</label>
+        </div>
+      </div>
+    </div>
+    <div class="button">
+      <button type="submit">Next</button>
+    </div>
+  </div>
+</form>

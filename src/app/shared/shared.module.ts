@@ -12,45 +12,45 @@ import { MenuModule } from 'primeng/menu';
 import { DialogModule } from 'primeng/dialog';
 import { DataViewModule } from 'primeng/dataview';
 import { CalendarModule } from 'primeng/calendar';
-import { InputTextModule } from 'primeng/inputtext';
 import { StepsModule } from 'primeng/steps';
 import { InputTextareaModule } from 'primeng/inputtextarea';
 import { DropdownModule } from 'primeng/dropdown';
+import { MessagesModule } from 'primeng/messages';
 
 @NgModule({
   imports: [
     CommonModule,
     RouterModule,
+    FormsModule,
     TabViewModule,
     MenuModule,
     DialogModule,
-    FormsModule,
     ReactiveFormsModule,
     DataViewModule,
     CalendarModule,
-    InputTextModule,
     StepsModule,
     InputTextareaModule,
     DropdownModule,
+    MessagesModule,
   ],
   declarations: [NavComponent, HeaderComponent, FooterComponent],
   exports: [
     CommonModule,
     RouterModule,
+    FormsModule,
     TabViewModule,
     DialogModule,
     MenuModule,
     NavComponent,
     HeaderComponent,
     FooterComponent,
-    FormsModule,
     ReactiveFormsModule,
     DataViewModule,
     CalendarModule,
-    InputTextModule,
     StepsModule,
     InputTextareaModule,
     DropdownModule,
+    MessagesModule,
   ],
 })
 export class SharedModule {}
