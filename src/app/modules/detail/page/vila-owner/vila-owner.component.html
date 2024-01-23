@@ -129,7 +129,7 @@
     </ng-container>
 
     <ng-container *ngSwitchCase="1">
-      <app-payment-method></app-payment-method>
+      <app-payment-method [activeIndex]="activeIndex" (moveToNextStep)="moveToNextStep()"></app-payment-method>
     </ng-container>
 
     <ng-container *ngSwitchCase="2">

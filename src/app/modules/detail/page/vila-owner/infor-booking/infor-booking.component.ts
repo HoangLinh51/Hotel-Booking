@@ -30,8 +30,10 @@ export class InforBookingComponent {
 
   ngOnInit() {
     this.form = this.formBuilder.group({
-      checkin: ['', Validators.required],
-      checkout: ['', Validators.required],
+      name: ['', Validators.required],
+      country: ['', Validators.required],
+      email: ['', Validators.required],
+      phone: ['', Validators.required],
       guest: ['', Validators.required],
       note: ['', Validators.required],
       post: [this.post, Validators.required],
@@ -46,29 +48,14 @@ export class InforBookingComponent {
   }
 
   onSubmit() {
-    const a =
-      this.localStorageService.getItem(this.BOOKING_KEY + this.user?.id) || [];
-
-    if (Array.isArray(a)) {
-      const inforData = this.form.value;
-      a.push(inforData);
-      this.localStorageService.saveItem(this.BOOKING_KEY + this.user?.id, a);
-      console.log('inforData', inforData);
+    if (this.form.valid) {
+      const date = this.localStorageService.getItem('date' + this.user?.id);
+      const ifUser = this.form.value;
+      const b = { ifUser, date };
+      localStorage.setItem('abc', JSON.stringify(b));
       this.moveToNextStep.emit();
+    } else {
+      this.form.markAllAsTouched();
     }
   }
-  // onSubmit() {
-  //   const a =
-  //     this.localStorageService.getItem(this.BOOKING_KEY + this.user?.id)! || [];
-  //   if (a!) {
-  //     const inforData = this.form.value;
-  //     a.push(inforData);
-  //     this.localStorageService.saveItem(
-  //       this.BOOKING_KEY + this.user?.id,
-  //       inforData
-  //     );
-  //     console.log('inforData', inforData);
-  //     this.moveToNextStep.emit();
-  //   }
-  // }
 }

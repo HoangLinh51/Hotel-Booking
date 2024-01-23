@@ -12,39 +12,21 @@
   </div>
 
   <app-header></app-header>
-<div class="tabpanel">
-  <p-tabView [(activeIndex)]="activeIndex">
-    <!-- <svg xmlns="http://www.w3.org/2000/svg" width="78" height="78" viewBox="0 0 78 78" fill="none"
-      style="margin: 10px -22px 23px 11px" (click)="changeActive(activeIndex)">
-      <g filter="url(#filter0_f_26_914)">
-        <circle cx="27" cy="27" r="27" transform="matrix(-1 0 0 1 66 12)" fill="white" />
-      </g>
-      <g filter="url(#filter1_d_26_914)">
-        <circle cx="15" cy="15" r="15" transform="matrix(-1 0 0 1 54 24)" fill="white" />
-      </g>
-      <path d="M42 43.59L37.6734 39L42 34.41L40.668 33L35 39L40.668 45L42 43.59Z" fill="#3E3E3E" />
-      <defs>
-        <filter id="filter0_f_26_914" x="0" y="0" width="78" height="78" filterUnits="userSpaceOnUse"
-          color-interpolation-filters="sRGB">
-          <feFlood flood-opacity="0" result="BackgroundImageFix" />
-          <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
-          <feGaussianBlur stdDeviation="6" result="effect1_foregroundBlur_26_914" />
-        </filter>
-        <filter id="filter1_d_26_914" x="22" y="22" width="34" height="34" filterUnits="userSpaceOnUse"
-          color-interpolation-filters="sRGB">
-          <feFlood flood-opacity="0" result="BackgroundImageFix" />
-          <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-            result="hardAlpha" />
-          <feOffset />
-          <feGaussianBlur stdDeviation="1" />
-          <feComposite in2="hardAlpha" operator="out" />
-          <feColorMatrix type="matrix" values="0 0 0 0 0.133333 0 0 0 0 0.133333 0 0 0 0 0.133333 0 0 0 0.25 0" />
-          <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_26_914" />
-          <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_26_914" result="shape" />
-        </filter>
-      </defs>
-    </svg> -->
 
+  <form [formGroup]="date" (ngSubmit)="onSubmit()">
+    <div class="date">
+      <div class="checkinout">
+        <label class="header">Check in</label>
+        <input type="date" formControlName="checkIn">
+      </div>
+      <div class="checkinout">
+        <label class="header">Check out</label>
+        <input type="date" formControlName="checkOut">
+      </div>
+      <button type="submit" >search</button>
+    </div>
+  </form>
+  <p-tabView [(activeIndex)]="activeIndex">
     <p-tabPanel #beachPanel header="Beach" [header]="uniqueCategories[0]">
       <ng-template pTemplate="header">
         <div class="nav">
@@ -91,7 +73,7 @@
           </div> -->
         </div>
       </ng-template>
-     <app-pools [category]="'pools'"></app-pools>
+      <app-pools [category]="'pools'"></app-pools>
     </p-tabPanel>
 
     <p-tabPanel header="Header 3" [header]="uniqueCategories[8]">
@@ -130,10 +112,10 @@
         </div>
 
       </ng-template>
-     <app-new [category]="'news'"></app-new>
+      <app-new [category]="'news'"></app-new>
     </p-tabPanel>
 
-    <p-tabPanel header="Header 4"[header]="uniqueCategories[10]">
+    <p-tabPanel header="Header 4" [header]="uniqueCategories[10]">
       <ng-template pTemplate="header">
         <div class="nav">
           <div class="basic">
@@ -253,7 +235,7 @@
       <app-camping [category]="'campings'"></app-camping>
     </p-tabPanel>
 
-    <p-tabPanel header="Header 7"[header]="uniqueCategories[7]">
+    <p-tabPanel header="Header 7" [header]="uniqueCategories[7]">
       <ng-template pTemplate="header">
         <div class="nav">
           <div class="basic">
@@ -439,7 +421,7 @@
       <app-desert [category]="'deserts'"></app-desert>
     </p-tabPanel>
 
-    <p-tabPanel header="Header 10"[header]="uniqueCategories[5]">
+    <p-tabPanel header="Header 10" [header]="uniqueCategories[5]">
       <ng-template pTemplate="header">
         <div class="nav">
           <div class="basic">
@@ -544,39 +526,8 @@
       </ng-template>
       <app-cabins [category]="'cabins'"></app-cabins>
     </p-tabPanel>
-
-    <!-- <svg xmlns="http://www.w3.org/2000/svg" width="78" height="78" viewBox="0 0 78 78" fill="none"
-      style="margin: 10px 12px 23px -23px; " (click)="changeActive(activeIndex)">
-      <g filter="url(#filter0_f_26_910)">
-        <circle cx="39" cy="39" r="27" fill="white" />
-      </g>
-      <g filter="url(#filter1_d_26_910)">
-        <circle cx="39" cy="39" r="15" fill="white" />
-      </g>
-      <path d="M36 43.59L40.3266 39L36 34.41L37.332 33L43 39L37.332 45L36 43.59Z" fill="#3E3E3E" />
-      <defs>
-        <filter id="filter0_f_26_910" x="0" y="0" width="78" height="78" filterUnits="userSpaceOnUse"
-          color-interpolation-filters="sRGB">
-          <feFlood flood-opacity="0" result="BackgroundImageFix" />
-          <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
-          <feGaussianBlur stdDeviation="6" result="effect1_foregroundBlur_26_910" />
-        </filter>
-        <filter id="filter1_d_26_910" x="22" y="22" width="34" height="34" filterUnits="userSpaceOnUse"
-          color-interpolation-filters="sRGB">
-          <feFlood flood-opacity="0" result="BackgroundImageFix" />
-          <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-            result="hardAlpha" />
-          <feOffset />
-          <feGaussianBlur stdDeviation="1" />
-          <feComposite in2="hardAlpha" operator="out" />
-          <feColorMatrix type="matrix" values="0 0 0 0 0.133333 0 0 0 0 0.133333 0 0 0 0 0.133333 0 0 0 0.25 0" />
-          <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_26_910" />
-          <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_26_910" result="shape" />
-        </filter>
-      </defs>
-    </svg> -->
   </p-tabView>
-</div>
+
   <app-showmap></app-showmap>
 
   <app-footer></app-footer>

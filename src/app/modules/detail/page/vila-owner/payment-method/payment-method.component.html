@@ -2,9 +2,9 @@
   <div class="box">
     <div class="total">
       <label class="title">Total Amount</label>
-      <label class="body">Price : $123123/1 night x 4 night</label>
+      <label class="body">Price : ${{price}}/night x {{numberOfDate}} night x {{guests}} guest</label>
       <div class="line"></div>
-      <label class="body" style="font-weight: 600;" formControlname="total">Total : {{123123 * 4}}$</label>
+      <label class="body" style="font-weight: 600;">${{calculateTotalCost()}}</label>
     </div>
 
     <div class="paymentmethod">

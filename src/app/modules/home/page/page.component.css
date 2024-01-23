@@ -1,9 +1,10 @@
 .main {
   width: 1440px;
   background: #FFF;
-  margin: 0px ;
+  margin: 0px;
   padding: 0px;
 }
+
 .question-bar {
   display: flex;
   height: 50px;
@@ -31,21 +32,62 @@
   line-height: normal;
 }
 
-.p-tabview-nav{
-  width: 1440px ;
+.p-tabview-nav {
+  width: 1440px;
 }
 
-/* .menu-bar {
-  width: 1440px;
-  height: 99px;
+.date label {
+  margin: 0px;
+}
+
+.date {
   display: flex;
   justify-content: center;
-} */
+  align-items: center;
+  gap: 10px;
+  padding: 20px;
+}
 
-.next {
-  width: 54px;
-  height: 54px;
-  flex-shrink: 0;
+.date .checkinout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.date .checkinout .header {
+  color: #3e3e3e;
+  font-family: Poppins;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.date button {
+  border: none;
+  border-radius: 10px;
+  padding: 5px;
+  background: #ff385c;
+  color: #fff;
+  font-family: Poppins;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.date .checkinout input {
+  margin: 0px;
+  width: 150px;
+  height: 35px;
+  border: 1px solid #bbbbbb;
+  border-radius: 10px;
+  color: #3e3e3e;
+  font-family: Poppins;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
 }
 
 .nav {
