@@ -37,7 +37,6 @@ export class PaymentOptionsComponent {
     this.payment = this.localStorageService.getItem(
       this.PAYMENT_KEY + this.user?.id
     );
-    console.log('ngOnInit', this.payment);
   }
   get f() {
     return this.form.controls;
@@ -53,7 +52,6 @@ export class PaymentOptionsComponent {
   onSubmit() {
     debugger;
     this.payment = this.form.value;
-    console.log('this.payment-->', this.payment);
     this.localStorageService.saveItem(
       this.PAYMENT_KEY + this.user?.id,
       this.payment

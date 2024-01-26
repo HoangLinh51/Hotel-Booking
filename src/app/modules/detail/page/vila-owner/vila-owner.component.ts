@@ -44,7 +44,6 @@ export class VilaOwnerComponent {
   }
   onActiveIndexChange(event: number) {
     this.activeIndex = event;
-    console.log('event ', event);
   }
   showdialog(val: boolean) {
     this.visible = val;

@@ -52,7 +52,7 @@ export class InforBookingComponent {
       const date = this.localStorageService.getItem('date' + this.user?.id);
       const ifUser = this.form.value;
       const b = { ifUser, date };
-      localStorage.setItem('abc', JSON.stringify(b));
+      localStorage.setItem('abc' + this.user?.id, JSON.stringify(b));
       this.moveToNextStep.emit();
     } else {
       this.form.markAllAsTouched();

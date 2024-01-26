@@ -5,13 +5,10 @@
     <div class="name">
       <label>Id</label>
     </div>
-    <div class="name" style="border: none;">
-      <label>Date</label>
-    </div>
-    <div class="name">
+    <div class="name" style="width: 178px;">
       <label>Location</label>
     </div>
-    <div class="name" style="border: none;">
+    <div class="name" style="border: none; width: 140px;">
       <label>Total</label>
     </div>
     <div class="name">
@@ -23,14 +20,13 @@
     <div class="name"></div>
   </div>
   <div class="body">
-    <div class="product">
-      <label class="id">1</label>
-      <label class="date">23/12/2023</label>
-      <label class="location">abc,phuong 13, Tan Binh, HCMC</label>
-      <label class="total">$123</label>
-      <label class="payment">Card</label>
+    <div class="product" *ngFor="let item of post">
+      <label class="id">{{item.orderInfo.ifUser.post.location}}</label>
+      <label class="location">{{item.orderInfo.ifUser.post.location}}</label>
+      <label class="total">${{item.payment.total}}</label>
+      <label class="payment">{{item.payment.payment}}</label>
       <label class="status">complete</label>
-      <a class="view" routerLink="/booked-trip/history-booking">View Detail</a>
+      <a class="view" routerLink='/booked-trip/history-booking' (click)="passDataToService(item)" >View Detail</a>
     </div>
   </div>
 </div>

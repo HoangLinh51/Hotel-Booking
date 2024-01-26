@@ -59,7 +59,6 @@ export class BeachComponent {
   }
 
   toggleFavorite(beach: any, index: number): void {
-    console.log(beach);
     const favoritePosts =
       this.localStorageService.getItem(this.FAVORITE_KEY + this.user?.id) || [];
     const postIndex = favoritePosts.findIndex((p: any) => p.id === beach.id);

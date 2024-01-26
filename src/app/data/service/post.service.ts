@@ -3036,20 +3036,16 @@ export class PostService {
   private dataSubject = new BehaviorSubject<any>({});
   public data$ = this.dataSubject.asObservable();
 
-  constructor(private httpClient: HttpClient) {}
-
   getAllPost(): any[] {
     return this.listBeach;
   }
 
   getProductById(id: number) {
     const p = this.listBeach.find((p) => p.id === id);
-    // console.log(p);
     return p;
   }
 
   getProductsByCategory(category: string): ListBeach[] {
-    // Lọc danh sách sản phẩm theo category
     return this.listBeach.filter(
       (listBeach) => listBeach.categories === category
     );
@@ -3066,7 +3062,6 @@ export class PostService {
     localStorage.setItem('myData', JSON.stringify(data));
   }
 
-  // Đọc dữ liệu từ local storage khi ứng dụng khởi động
   initDataFromLocalStorage() {
     const storedData = localStorage.getItem('myData');
     if (storedData) {

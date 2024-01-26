@@ -36,7 +36,8 @@ export class PaymentMethodComponent {
   }
 
   loadStorageData() {
-    const storedData = this.localStorageService.getItem('abc')! || [];
+    const storedData =
+      this.localStorageService.getItem('abc' + this.user?.id)! || [];
     const { ifUser, date } = storedData;
     this.numberOfDate = date.numberOfDays;
     this.guests = parseInt(ifUser.guest.id);
@@ -46,11 +47,9 @@ export class PaymentMethodComponent {
   onSubmit() {
     const bookings =
       this.localStorageService.getItem(this.BOOKING_KEY + this.user?.id) || [];
-    const orderInfo = this.localStorageService.getItem('abc') || [];
+    const orderInfo =
+      this.localStorageService.getItem('abc' + this.user?.id) || [];
     const payment = this.form.value;
-    console.log('Bookings:', bookings);
-    console.log('Order Info:', orderInfo);
-    console.log('Payment:', payment);
 
     const combinedData = { orderInfo, payment };
 
@@ -65,7 +64,7 @@ export class PaymentMethodComponent {
   }
   calculateTotalCost() {
     this.totalCost = this.price * this.guests * this.numberOfDate;
-    console.log('Total Cost:', this.totalCost);
+
     this.form.patchValue({ total: this.totalCost });
 
     return this.totalCost;

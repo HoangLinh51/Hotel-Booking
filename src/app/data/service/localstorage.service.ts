@@ -1,9 +1,13 @@
 import { Injectable } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class LocalStorageService {
+  private dataSubject = new BehaviorSubject<any>(null);
+  public data$ = this.dataSubject.asObservable();
+
   saveItem(key: string, value: any) {
     localStorage.setItem(key, JSON.stringify(value));
   }
@@ -15,5 +19,9 @@ export class LocalStorageService {
 
   delete(key: string): void {
     localStorage.removeItem(key);
+  }
+
+  setData(data: any) {
+    this.dataSubject.next(data);
   }
 }

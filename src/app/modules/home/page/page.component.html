@@ -13,19 +13,6 @@
 
   <app-header></app-header>
 
-  <form [formGroup]="date" (ngSubmit)="onSubmit()">
-    <div class="date">
-      <div class="checkinout">
-        <label class="header">Check in</label>
-        <input type="date" formControlName="checkIn">
-      </div>
-      <div class="checkinout">
-        <label class="header">Check out</label>
-        <input type="date" formControlName="checkOut">
-      </div>
-      <button type="submit" >search</button>
-    </div>
-  </form>
   <p-tabView [(activeIndex)]="activeIndex">
     <p-tabPanel #beachPanel header="Beach" [header]="uniqueCategories[0]">
       <ng-template pTemplate="header">

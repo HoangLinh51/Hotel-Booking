@@ -1,4 +1,3 @@
-
 .outputdirectional {
   display: flex;
   border-radius: 15px;
@@ -46,7 +45,7 @@
 }
 
 .outputdirectional .frame1 .payment {
-  width: 234px;
+  width: 300px;
   height: 140px;
   display: flex;
   justify-content: center;
@@ -57,14 +56,55 @@
 }
 
 .outputdirectional .frame1 .paymentTemplate {
-  width: 234px;
-  height: 140px;
-  display: flex;
-  justify-content: space-around;
-  flex-direction: column;
+  width: 300px;
+  height: 170px;
   padding: 10px;
-  border: 1px solid rgb(148, 146, 146);
+  border: none;
   border-radius: 10px;
+  background: url(/assets/image/background-card.jpg), 50% / cover no-repeat;
+  background-size: 300px 170px;
+}
+
+.outputdirectional .frame1 .paymentTemplate .background {
+  width: 280px;
+  height: 150px;
+  /* display: flex;
+  justify-content: space-around;
+  flex-direction: column; */
+  background: url(/assets/image/card.png), 50% / cover no-repeat;
+  background-size: 300px 170px;
+}
+
+.outputdirectional .frame1 .paymentTemplate .background .chip {
+  padding-top: 35px;
+}
+
+.outputdirectional .frame1 .paymentTemplate .component {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.outputdirectional .frame1 .paymentTemplate .component .validUntil{
+display: flex;
+flex-direction: column;
+}
+.outputdirectional .frame1 .paymentTemplate .component .header {
+  color: #d7d1d1;
+  font-family: Poppins;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.outputdirectional .frame1 .paymentTemplate .background label.body {
+  color: #fff;
+  font-family: Poppins;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
 }
 
 .outputdirectional .frame1 label {
@@ -84,12 +124,13 @@
   border: 1px solid #7d7c7c;
   background-color: #FF859b;
 }
-.dialog .form label.body{
+
+.dialog .form label.body {
   color: #3E3E3E;
   font-family: Poppins;
   font-size: 14px;
   font-style: normal;
-  font-weight: 400;
+  font-weight: 600;
   line-height: normal;
   margin: 0px;
 }
@@ -110,7 +151,7 @@ label.header {
   font-family: Poppins;
   font-size: 16px;
   font-style: normal;
-  font-weight: 400;
+  font-weight: 500;
   line-height: normal;
   margin: 0px;
 }

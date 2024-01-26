@@ -38,7 +38,6 @@ export class MyProfileComponent {
     });
   }
   saveInfor() {
-    console.log(this.form.value);
     this.user = JSON.parse(localStorage.getItem('user')!);
     localStorage.setItem('user', JSON.stringify(this.form.value));
   }
