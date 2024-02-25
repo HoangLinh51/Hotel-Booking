@@ -13,6 +13,7 @@ export class PaymentMethodComponent {
   @Input() activeIndex: any;
   @Output() moveToNextStep = new EventEmitter<void>();
   BOOKING_KEY = 'booking';
+  BOOKED_KEY = 'booked';
   user!: LUser | null;
   form!: FormGroup;
   totalCost!: number;
@@ -36,8 +37,9 @@ export class PaymentMethodComponent {
   }
 
   loadStorageData() {
+    //load dữ liệu sản phẩm
     const storedData =
-      this.localStorageService.getItem('abc' + this.user?.id)! || [];
+      this.localStorageService.getItem('first-step' + this.user?.id)! || [];
     const { ifUser, date } = storedData;
     this.numberOfDate = date.numberOfDays;
     this.guests = parseInt(ifUser.guest.id);
@@ -45,21 +47,36 @@ export class PaymentMethodComponent {
   }
 
   onSubmit() {
-    const bookings =
-      this.localStorageService.getItem(this.BOOKING_KEY + this.user?.id) || [];
-    const orderInfo =
-      this.localStorageService.getItem('abc' + this.user?.id) || [];
-    const payment = this.form.value;
+    if (this.form.valid) {
+      const bookings =
+        this.localStorageService.getItem(this.BOOKING_KEY + this.user?.id) ||
+        [];
+      const orderInfo =
+        this.localStorageService.getItem('first-step' + this.user?.id) || [];
+      const payment = this.form.value;
+      const combinedData = { orderInfo, payment };
 
-    const combinedData = { orderInfo, payment };
+      const idProduct = orderInfo.ifUser.post.id;
+      const dateBooked = orderInfo.date;
+      const inforBooked = { idProduct, dateBooked };
 
-    if (bookings) {
-      bookings.push(combinedData);
-      this.localStorageService.saveItem(
-        this.BOOKING_KEY + this.user?.id,
-        bookings
-      );
-      this.moveToNextStep.emit();
+      if (bookings) {
+        bookings.push(combinedData);
+        this.localStorageService.saveItem(
+          this.BOOKING_KEY + this.user?.id,
+          bookings
+        );
+        let bookedInfo =
+          this.localStorageService.getItem(this.BOOKED_KEY) || [];
+        if (!Array.isArray(bookedInfo)) {
+          bookedInfo = [];
+        }
+        bookedInfo.push(inforBooked);
+        this.localStorageService.saveItem(this.BOOKED_KEY, bookedInfo);
+        this.moveToNextStep.emit();
+      }
+    } else {
+      this.form.markAllAsTouched();
     }
   }
   calculateTotalCost() {

@@ -28,6 +28,7 @@ export class PageComponent {
   ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('id');
     this.post = this.postService.getProductById(Number(id));
+    console.log('product-id', this.postService.getProductById(Number(id)));
 
     const a = this.localStorage.getItem('date' + this.user?.id);
     if (a === null) {

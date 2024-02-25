@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ListBeach } from 'src/app/data/modal/beach';
 import { LUser } from 'src/app/data/modal/user';
 import { AuthService } from 'src/app/data/service/auth.service';
 import { LocalStorageService } from 'src/app/data/service/localstorage.service';
@@ -12,7 +13,7 @@ import { PostService } from 'src/app/data/service/post.service';
 })
 export class PageComponent {
   activeIndex: number = 0;
-  posts: any[];
+  posts: ListBeach[];
   user!: LUser | null;
 
   constructor(
@@ -22,14 +23,15 @@ export class PageComponent {
     this.posts = this.postService.getAllPost();
 
     this.user = this.authService.userValue;
+    this.uniqueCategories;
   }
-  get uniqueCategories(): string[] {
-    return Array.from(new Set(this.posts.map((posts) => posts.categories)));
+
+  uniqueCategories(categories: any) {
+    this.posts.filter((post) => post.categories === categories);
+    console.log(this.posts.filter((post) => post.categories === categories));
   }
 
   changeActive(event: number) {
     this.activeIndex = event;
-
-    
   }
 }
