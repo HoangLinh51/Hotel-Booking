@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { BOOKING_KEY } from 'src/app/data/constant/localstorage-key';
 import { LUser } from 'src/app/data/modal/user';
 import { AuthService } from 'src/app/data/service/auth.service';
 import { LocalStorageService } from 'src/app/data/service/localstorage.service';
@@ -19,7 +20,7 @@ export class BookedTripComponent {
   }
 
   ngOnInit() {
-    this.post = this.localstorage.getItem('booking' + this.user?.id);
+    this.post = this.localstorage.getItem(BOOKING_KEY + this.user?.id);
   }
 
   passDataToService(data: any) {

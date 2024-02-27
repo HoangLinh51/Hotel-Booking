@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { FAVORITE_KEY } from 'src/app/data/constant/localstorage-key';
 import { ListBeach } from 'src/app/data/modal/beach';
 import { LUser } from 'src/app/data/modal/user';
 import { AuthService } from 'src/app/data/service/auth.service';
@@ -13,7 +14,6 @@ import { PostService } from 'src/app/data/service/post.service';
 export class CabinsComponent {
   @Input() category!: string;
   public linkDetail = '/detail';
-  private FAVORITE_KEY = 'list-favorite';
 
   listBeach: ListBeach[] = [];
   favoriteStatus: boolean[] = [];
@@ -50,7 +50,7 @@ export class CabinsComponent {
 
   restoreFavoriteStatus(): void {
     const favoritePosts =
-      this.localStorageService.getItem(this.FAVORITE_KEY + this.user?.id) || [];
+      this.localStorageService.getItem(FAVORITE_KEY + this.user?.id) || [];
     this.listBeach.forEach((beach, index) => {
       this.favoriteStatus[index] = favoritePosts.some(
         (post: any) => post.id === beach.id
@@ -60,7 +60,7 @@ export class CabinsComponent {
 
   toggleFavorite(beach: any, index: number): void {
     const favoritePosts =
-      this.localStorageService.getItem(this.FAVORITE_KEY + this.user?.id) || [];
+      this.localStorageService.getItem(FAVORITE_KEY + this.user?.id) || [];
     const postIndex = favoritePosts.findIndex((p: any) => p.id === beach.id);
 
     if (postIndex !== -1) {
@@ -72,7 +72,7 @@ export class CabinsComponent {
     }
 
     this.localStorageService.saveItem(
-      this.FAVORITE_KEY + this.user?.id,
+      FAVORITE_KEY + this.user?.id,
       favoritePosts
     );
   }

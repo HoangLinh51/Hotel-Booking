@@ -1,10 +1,14 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { ListBeach } from '../modal/beach';
-import { BehaviorSubject, of } from 'rxjs';
+import { DateBooked, ListBeach, ProductBooked } from '../modal/beach';
+import { BehaviorSubject } from 'rxjs';
 import { LocalStorageService } from './localstorage.service';
 import { AuthService } from './auth.service';
 import { LUser } from '../modal/user';
+import {
+  BOOKED_KEY,
+  DATEINPUT_KEY,
+  PRODUCTLIST_KEY,
+} from '../constant/localstorage-key';
 
 @Injectable({
   providedIn: 'root',
@@ -12,9 +16,10 @@ import { LUser } from '../modal/user';
 export class PostService {
   private dataSubject = new BehaviorSubject<any>({});
   public data$ = this.dataSubject.asObservable();
-  private BOOKED_KEY = 'booked';
   user?: LUser | null;
-
+  dataPost: ListBeach[] = [];
+  productBooked: ProductBooked[] = [];
+  date!: DateBooked;
   constructor(
     private localStorageService: LocalStorageService,
     private authService: AuthService
@@ -3050,48 +3055,40 @@ export class PostService {
         categories: 'sleep-box',
       },
     ];
-    this.localStorageService.saveItem('listBeach', listBeach);
+    this.localStorageService.saveItem(PRODUCTLIST_KEY, listBeach);
   }
 
   getAllPost(): ListBeach[] {
-    return this.localStorageService.getItem('listBeach');
+    return this.localStorageService.getItem(PRODUCTLIST_KEY);
   }
 
   getProductById(id: number) {
-    const postData = this.localStorageService.getItem('listBeach');
-    return postData.find((postData: { id: number }) => postData.id === id);
+    this.dataPost = this.localStorageService.getItem(PRODUCTLIST_KEY);
+    return this.dataPost.find((postData: { id: number }) => postData.id === id);
   }
 
   getProductsByCategory(category: string): ListBeach[] {
-    const dataPost = this.localStorageService.getItem('listBeach');
-    const productBooked =
-      this.localStorageService.getItem(this.BOOKED_KEY) || [];
-    const date = this.localStorageService.getItem('date' + this.user?.id);
-    for (let i = 0; i < date.length; i++) {
-      productBooked.forEach((product: any) => {
+    this.dataPost = this.localStorageService.getItem(PRODUCTLIST_KEY);
+    this.productBooked = this.localStorageService.getItem(BOOKED_KEY) || [];
+    this.date = this.localStorageService.getItem(DATEINPUT_KEY + this.user?.id);
+    console.log('typeof', typeof this.date);
+    if (this.productBooked) {
+      this.productBooked.forEach((product: any) => {
         if (
-          product.dateBooked.checkIn === date.checkIn &&
-          product.dateBooked.checkOut === date.checkOut
+          product.dateBooked.checkIn === this.date.checkIn &&
+          product.dateBooked.checkOut === this.date.checkOut
         ) {
-          const foundProduct = dataPost.find(
-            (item: any) => item.id === product.idProduct
+          this.dataPost = this.dataPost.filter(
+            (p: { id: any }) =>
+              !this.productBooked.find(
+                (b: { idProduct: any }) => b.idProduct === p.id
+              )
           );
-          console.log('foundProduct', foundProduct);
-
-          let newListProduct = [];
-          for (let i = 0; i < dataPost.length; i++) {
-            if (foundProduct !== dataPost[i]) {
-              newListProduct.push(dataPost[i]);
-            }
-          }
-          console.log('listbeach', newListProduct);
-          // this.localStorageService.saveItem('listBeach', newListProduct);
         }
       });
     }
-    const p = this.localStorageService.getItem('listBeach');
-    if (p) {
-      return p.filter(
+    if (this.dataPost) {
+      return this.dataPost.filter(
         (product: { categories: string }) => product.categories === category
       );
     } else {

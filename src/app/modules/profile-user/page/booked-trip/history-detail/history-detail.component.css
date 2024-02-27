@@ -34,7 +34,7 @@
 
 .outputdirectional .detail .date,
 .total,
-.status {
+.infor {
   width: 245px;
   display: flex;
   flex-direction: column;
@@ -78,13 +78,13 @@
   background: #E6E6E6;
 }
 
-.outputdirectional .infor {
+.outputdirectional .inforproduct {
   padding: 10px;
   border: 1px solid #3e3e3e;
   border-radius: 15px;
 }
 
-.outputdirectional .infor .decrip {
+.outputdirectional .inforproduct .decrip {
   display: flex;
   flex-direction: column;
   gap: 7px;

@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { DATEINPUT_KEY } from 'src/app/data/constant/localstorage-key';
 import { Guest } from 'src/app/data/modal/guest';
 import { LUser } from 'src/app/data/modal/user';
 import { AuthService } from 'src/app/data/service/auth.service';
@@ -15,7 +16,6 @@ export class InforBookingComponent {
   @Input() activeIndex: any;
   @Output() moveToNextStep = new EventEmitter<void>();
 
-  BOOKING_KEY = 'booking';
   form!: FormGroup;
   user!: LUser | null;
   guest: Guest[] | undefined;
@@ -49,7 +49,9 @@ export class InforBookingComponent {
 
   onSubmit() {
     if (this.form.valid) {
-      const date = this.localStorageService.getItem('date' + this.user?.id);
+      const date = this.localStorageService.getItem(
+        DATEINPUT_KEY + this.user?.id
+      );
       const ifUser = this.form.value;
       const b = { ifUser, date };
       localStorage.setItem('first-step' + this.user?.id, JSON.stringify(b));

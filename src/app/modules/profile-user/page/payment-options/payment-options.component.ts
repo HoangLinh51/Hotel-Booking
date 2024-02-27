@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { PAYMENT_KEY } from 'src/app/data/constant/localstorage-key';
 import { LPayMent } from 'src/app/data/modal/payment';
 import { LUser } from 'src/app/data/modal/user';
 import { AuthService } from 'src/app/data/service/auth.service';
@@ -11,7 +12,6 @@ import { LocalStorageService } from 'src/app/data/service/localstorage.service';
   styleUrl: './payment-options.component.css',
 })
 export class PaymentOptionsComponent {
-  private PAYMENT_KEY = 'payment-options';
   visible: boolean = false;
   visible2: boolean = false;
   form!: FormGroup;
@@ -35,7 +35,7 @@ export class PaymentOptionsComponent {
     });
     this.user = this.authService.userValue;
     this.payment = this.localStorageService.getItem(
-      this.PAYMENT_KEY + this.user?.id
+      PAYMENT_KEY + this.user?.id
     );
   }
   get f() {
@@ -53,13 +53,13 @@ export class PaymentOptionsComponent {
     debugger;
     this.payment = this.form.value;
     this.localStorageService.saveItem(
-      this.PAYMENT_KEY + this.user?.id,
+      PAYMENT_KEY + this.user?.id,
       this.payment
     );
   }
 
   deleteCard() {
-    this.localStorageService.delete(this.PAYMENT_KEY + this.user?.id);
+    this.localStorageService.delete(PAYMENT_KEY + this.user?.id);
     window.location.reload();
   }
 }

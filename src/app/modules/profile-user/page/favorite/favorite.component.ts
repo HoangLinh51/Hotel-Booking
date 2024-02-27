@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
+import { FAVORITE_KEY } from 'src/app/data/constant/localstorage-key';
 import { ListBeach } from 'src/app/data/modal/beach';
+import { LUser } from 'src/app/data/modal/user';
+import { AuthService } from 'src/app/data/service/auth.service';
 import { LocalStorageService } from 'src/app/data/service/localstorage.service';
 
 @Component({
@@ -8,13 +11,19 @@ import { LocalStorageService } from 'src/app/data/service/localstorage.service';
   styleUrl: './favorite.component.css',
 })
 export class FavoriteComponent {
-  private FAVORITE_KEY = 'list-favorite';
-
+  user!: LUser | null;
   listFavorite: ListBeach[] = [];
 
-  constructor(private localStorageService: LocalStorageService) {}
+  constructor(
+    private localStorageService: LocalStorageService,
+    private authService: AuthService
+  ) {
+    this.user = this.authService.userValue;
+  }
 
   ngOnInit() {
-    this.listFavorite = this.localStorageService.getItem(this.FAVORITE_KEY);
+    this.listFavorite = this.localStorageService.getItem(
+      FAVORITE_KEY + this.user?.id
+    );
   }
 }

@@ -3,11 +3,11 @@
   flex-direction: row;
   margin-top: 3px;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: flex-start;
 }
 
 .post .beach {
-  width: 315px;
+  width: 320px;
   height: 443px;
   flex-shrink: 0;
   cursor: pointer;
@@ -16,7 +16,7 @@
 
 .post .beach .image {
   position: relative;
-  width: 315px;
+  width: 320px;
   height: 320px;
   overflow: hidden;
   border-radius: 15px;
@@ -30,7 +30,7 @@
 
 .post .beach .image-slider img {
   flex-shrink: 0;
-  width: 315px;
+  width: 320px;
   height: 320px;
   scroll-snap-align: start;
 }

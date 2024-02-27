@@ -12,7 +12,7 @@
             <span>{{ favorite.categories }}</span>
           </div>
           <div>
-            <a routerLink="/detail" class="view">View detail</a>
+            <a [routerLink]="['/detail/', favorite.id]" class="view">View detail</a>
           </div>
         </div>
       </div>
