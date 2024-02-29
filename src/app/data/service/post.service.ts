@@ -3071,7 +3071,6 @@ export class PostService {
     this.dataPost = this.localStorageService.getItem(PRODUCTLIST_KEY);
     this.productBooked = this.localStorageService.getItem(BOOKED_KEY) || [];
     this.date = this.localStorageService.getItem(DATEINPUT_KEY + this.user?.id);
-    console.log('typeof', typeof this.date);
     if (this.productBooked) {
       this.productBooked.forEach((product: any) => {
         if (

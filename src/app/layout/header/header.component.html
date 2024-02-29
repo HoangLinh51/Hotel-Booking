@@ -45,14 +45,14 @@
     </div>
 
     <form [formGroup]="date" (ngSubmit)="onSubmit()">
-      <div class="date">
+      <div class="date" *ngIf="dateStorage;">
         <div class="checkinout">
           <i class="fa-solid fa-arrow-right-to-bracket"></i>
-          <input type="date" formControlName="checkIn">
+          <input type="date" formControlName="checkIn" [(ngModel)]="dateStorage.checkIn">
         </div>
         <div class="checkinout">
           <i class="fa-solid fa-arrow-right-from-bracket"></i>
-          <input type="date" formControlName="checkOut">
+          <input type="date" formControlName="checkOut" [(ngModel)]="dateStorage.checkOut">
         </div>
         <button type="submit" >search</button>
       </div>
