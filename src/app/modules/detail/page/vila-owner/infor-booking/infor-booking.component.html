@@ -6,20 +6,32 @@
         <div class="infor">
           <label class="header">Name:</label>
           <input type="text" formControlName="name">
+          <ng-container *ngIf="f['name'].invalid && f['name'].touched">
+            <div class="invalid-message" *ngIf="f['name'].errors?.['required']">This name cannot be left blank.</div>
+          </ng-container>
         </div>
         <div class="infor">
           <label class="header">Country of residence: </label>
           <input type="text" formControlName="country">
+          <ng-container *ngIf="f['country'].invalid && f['country'].touched">
+            <div class="invalid-message" *ngIf="f['country'].errors?.['required']">This country cannot be left blank.</div>
+          </ng-container>
         </div>
       </div>
       <div class="decrip">
         <div class="infor">
           <label class="header">Email: </label>
           <input type="text" formControlName="email">
+          <ng-container *ngIf="f['email'].invalid && f['email'].touched">
+            <div class="invalid-message" *ngIf="f['email'].errors?.['required']">This email cannot be left blank.</div>
+          </ng-container>
         </div>
         <div class="infor">
           <label class="header">Phone Number: </label>
           <input type="text" formControlName="phone">
+          <ng-container *ngIf="f['phone'].invalid && f['phone'].touched">
+            <div class="invalid-message" *ngIf="f['phone'].errors?.['required']">This phone cannot be left blank.</div>
+          </ng-container>
         </div>
       </div>
       <div class="decrip">
@@ -27,6 +39,9 @@
           <label class="header">Guest</label>
           <p-dropdown [options]="guest" optionLabel="name" [showClear]="true" placeholder="How many Guest?"
             tooltipPosition="bottom" formControlName="guest"></p-dropdown>
+            <ng-container *ngIf="f['guest'].invalid && f['guest'].touched">
+              <div class="invalid-message" *ngIf="f['guest'].errors?.['required']">This guest cannot be left blank.</div>
+            </ng-container>
         </div>
       </div>
     </div>

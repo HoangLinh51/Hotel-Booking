@@ -32,7 +32,7 @@
         <p class="where">{{beach.distance}}</p>
         <p class="date">{{beach.date}}</p>
         <div class="price">
-          <label class="price">${{beach.price}} </label><label class="time">{{beach.time}}</label>
+          <label class="price">${{beach.price | number: '1.2-2'}} </label><label class="time">{{beach.time}}</label>
         </div>
       </div>
       <div class="star">

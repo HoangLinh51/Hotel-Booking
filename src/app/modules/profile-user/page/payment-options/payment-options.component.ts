@@ -31,7 +31,7 @@ export class PaymentOptionsComponent {
       validUntil: ['', Validators.required],
       cvv: ['', Validators.required],
       name: ['', Validators.required],
-      checkBox: ['', [Validators.required, Validators.minLength(6)]],
+      checkBox: ['', [Validators.required]],
     });
     this.user = this.authService.userValue;
     this.payment = this.localStorageService.getItem(
@@ -50,12 +50,31 @@ export class PaymentOptionsComponent {
   }
 
   onSubmit() {
-    debugger;
-    this.payment = this.form.value;
-    this.localStorageService.saveItem(
-      PAYMENT_KEY + this.user?.id,
-      this.payment
-    );
+    if (this.form.valid) {
+      const validUntilDate: Date = this.form.value.validUntil;
+
+      const day = validUntilDate.getDate().toString().padStart(2, '0');
+      const month = (validUntilDate.getMonth() + 1).toString().padStart(2, '0');
+      const year = validUntilDate.getFullYear();
+
+      const validUntilValue = `${day}.${month}.${year}`;
+
+      const paymentData = {
+        cardNumber: this.form.value.cardNumber,
+        validUntil: validUntilValue,
+        cvv: this.form.value.cvv,
+        name: this.form.value.name,
+        checkBox: this.form.value.checkBox,
+      };
+
+      this.localStorageService.saveItem(
+        PAYMENT_KEY + this.user?.id,
+        paymentData
+      );
+      window.location.reload();
+    } else {
+      this.form.markAllAsTouched();
+    }
   }
 
   deleteCard() {

@@ -35,7 +35,7 @@ export class InforBookingComponent {
       email: ['', Validators.required],
       phone: ['', Validators.required],
       guest: ['', Validators.required],
-      note: ['', Validators.required],
+      note: [''],
       post: [this.post, Validators.required],
     });
     this.guest = [
@@ -45,6 +45,9 @@ export class InforBookingComponent {
       { name: '4 guest', id: '4' },
       { name: '5 guest', id: '5' },
     ];
+  }
+  get f() {
+    return this.form.controls;
   }
 
   onSubmit() {

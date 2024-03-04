@@ -77,3 +77,10 @@ label {
   line-height: normal;
   margin: 0px;
 }
+
+.invalid-message{
+  color: red;
+}
+form .ng-invalid.ng-touched {
+  border-color: #e66262;
+}

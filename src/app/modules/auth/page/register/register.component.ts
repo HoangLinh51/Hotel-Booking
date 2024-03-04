@@ -27,7 +27,7 @@ export class RegisterComponent implements OnInit {
     this.form = this.formBuilder.group({
       firstName: ['', Validators.required],
       lastName: ['', Validators.required],
-      email: ['', Validators.required],
+      email: ['', Validators.required, Validators.minLength(8)],
       phoneNumber: ['', Validators.required],
       password: ['', [Validators.required, Validators.minLength(6)]],
     });
@@ -40,28 +40,26 @@ export class RegisterComponent implements OnInit {
   onSubmit() {
     this.submitted = true;
     // reset alerts on submit
-    this.alertService.clear();
 
-    // stop here if form is invalid
-    if (this.form.invalid) {
-      return;
+    if (this.form.valid) {
+      this.loading = true;
+      this.AuthService.register(this.form.value)
+        .pipe(first())
+        .subscribe({
+          next: () => {
+            this.alertService.success('Registration successful', {
+              keepAfterRouteChange: true,
+            });
+            this.router.navigate(['/login'], { relativeTo: this.route });
+          },
+          error: (error) => {
+            console.log('error', error);
+            this.alertService.error(error);
+            this.loading = false;
+          },
+        });
+    } else {
+      this.form.markAllAsTouched();
     }
-
-    this.loading = true;
-    this.AuthService.register(this.form.value)
-      .pipe(first())
-      .subscribe({
-        next: () => {
-          this.alertService.success('Registration successful', {
-            keepAfterRouteChange: true,
-          });
-          this.router.navigate(['/login'], { relativeTo: this.route });
-        },
-        error: (error) => {
-          console.log('error', error);
-          this.alertService.error(error);
-          this.loading = false;
-        },
-      });
   }
 }

@@ -105,3 +105,9 @@
   line-height: 30px;
   text-decoration: none;
 }
+.invalid-message{
+  color: red;
+}
+form .ng-invalid.ng-touched {
+  border-color: #e66262;
+}

@@ -38,6 +38,10 @@ export class PaymentMethodComponent {
     this.loadStorageData();
   }
 
+  get f() {
+    return this.form.controls;
+  }
+
   loadStorageData() {
     //load dữ liệu sản phẩm
     const storedData =

@@ -65,7 +65,7 @@
             <div class="invalid-message" *ngIf="f['checkBox'].errors?.['required']">Cannot be left blank.</div>
           </ng-container>
           <div class="submit">
-            <button type="submit" class="save" [disabled]="form.invalid">Add Card</button>
+            <button type="submit" class="save">Add Card</button>
           </div>
         </form>
       </div>
@@ -102,7 +102,6 @@
             </defs>
           </svg></div>
           <div class="cardNumber">
-            <!-- <label class="header">Card Number</label> -->
             <label class="body">{{payment.cardNumber}}</label>
           </div>
           <div class="component">

@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+import { HeaderComponent } from '../layout/header/header.component';
+import { HeaderNonsearchComponent } from '../layout/header-nonsearch/header-nonsearch.component';
 import { NavComponent } from '../layout/nav/nav.component';
 import { FooterComponent } from '../layout/footer/footer.component';
 
@@ -15,7 +17,6 @@ import { StepsModule } from 'primeng/steps';
 import { InputTextareaModule } from 'primeng/inputtextarea';
 import { DropdownModule } from 'primeng/dropdown';
 import { MessagesModule } from 'primeng/messages';
-import { HeaderComponent } from '../layout/header/header.component';
 
 @NgModule({
   imports: [
@@ -33,7 +34,12 @@ import { HeaderComponent } from '../layout/header/header.component';
     DropdownModule,
     MessagesModule,
   ],
-  declarations: [NavComponent, HeaderComponent, FooterComponent],
+  declarations: [
+    NavComponent,
+    HeaderComponent,
+    FooterComponent,
+    HeaderNonsearchComponent,
+  ],
   exports: [
     CommonModule,
     RouterModule,
@@ -43,6 +49,7 @@ import { HeaderComponent } from '../layout/header/header.component';
     MenuModule,
     NavComponent,
     HeaderComponent,
+    HeaderNonsearchComponent,
     FooterComponent,
     ReactiveFormsModule,
     DataViewModule,

@@ -4,7 +4,7 @@
       <label class="title">Total Amount</label>
       <label class="body">Price : ${{price}}/night x {{numberOfDate}} night x {{guests}} guest</label>
       <div class="line"></div>
-      <label class="body" style="font-weight: 600;">${{calculateTotalCost()}}</label>
+      <label class="body" style="font-weight: 600;">${{calculateTotalCost() | number: '1.2-2'}}</label>
     </div>
 
     <div class="paymentmethod">
@@ -22,6 +22,10 @@
           <input type="radio" formControlName="payment" name="payment" value="card">
           <label class="body">Bank Card</label>
         </div>
+
+        <ng-container *ngIf="f['payment'].invalid && f['payment'].touched">
+          <div class="invalid-message" *ngIf="f['payment'].errors?.['required']">This payment cannot be left blank.</div>
+        </ng-container>
       </div>
     </div>
     <div class="button">
