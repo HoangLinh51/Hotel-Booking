@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { DateBooked, ListBeach, ProductBooked } from '../modal/beach';
 import { BehaviorSubject } from 'rxjs';
 import { LocalStorageService } from './localstorage.service';
 import { AuthService } from './auth.service';
@@ -9,6 +8,8 @@ import {
   DATEINPUT_KEY,
   PRODUCTLIST_KEY,
 } from '../constant/localstorage-key';
+import { ListBeach } from '../modal/beach';
+import { ProductBooked, DateBooked } from '../modal/booking';
 
 @Injectable({
   providedIn: 'root',
@@ -3070,7 +3071,8 @@ export class PostService {
   getProductsByCategory(category: string): ListBeach[] {
     this.dataPost = this.localStorageService.getItem(PRODUCTLIST_KEY);
     this.productBooked = this.localStorageService.getItem(BOOKED_KEY) || [];
-    this.date = this.localStorageService.getItem(DATEINPUT_KEY + this.user?.id);
+    this.date =
+      this.localStorageService.getItem(DATEINPUT_KEY + this.user?.id) || '';
     if (this.productBooked) {
       this.productBooked.forEach((product: any) => {
         if (

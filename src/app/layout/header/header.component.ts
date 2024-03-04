@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { DATEINPUT_KEY } from 'src/app/data/constant/localstorage-key';
-import { DateBooked } from 'src/app/data/modal/beach';
+import { DateBooked } from 'src/app/data/modal/booking';
 import { LUser } from 'src/app/data/modal/user';
 import { AuthService } from 'src/app/data/service/auth.service';
 import { LocalStorageService } from 'src/app/data/service/localstorage.service';
@@ -15,7 +15,7 @@ export class HeaderComponent {
   public linkAboutus = '/about-us';
   date!: FormGroup;
   user?: LUser | null;
-  dateStorage!: DateBooked;
+  dateStorage!: DateBooked | null;
 
   constructor(
     private authService: AuthService,
@@ -56,9 +56,10 @@ export class HeaderComponent {
     const date = this.localStorageService.getItem(
       DATEINPUT_KEY + this.user?.id
     );
-    console.log('date', date.checkIn);
     if (date) {
       this.dateStorage = date;
+    } else {
+      this.dateStorage = null;
     }
   }
 

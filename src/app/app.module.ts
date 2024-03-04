@@ -9,6 +9,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { fakeBackendProvider } from './data/helpers/fake-backend';
 import { LocalStorageService } from './data/service/localstorage.service';
 import { PostService } from './data/service/post.service';
+import { CategoryService } from './data/service/category.service';
 
 @NgModule({
   declarations: [AppComponent],
@@ -18,7 +19,12 @@ import { PostService } from './data/service/post.service';
     AppRoutingModule,
     SharedModule,
   ],
-  providers: [fakeBackendProvider, PostService, LocalStorageService],
+  providers: [
+    fakeBackendProvider,
+    PostService,
+    LocalStorageService,
+    CategoryService,
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
