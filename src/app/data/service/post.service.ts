@@ -3068,32 +3068,32 @@ export class PostService {
     return this.dataPost.find((postData: { id: number }) => postData.id === id);
   }
 
-  getProductsByCategory(category: string): ListBeach[] {
-    this.dataPost = this.localStorageService.getItem(PRODUCTLIST_KEY);
-    this.productBooked = this.localStorageService.getItem(BOOKED_KEY) || [];
-    this.date =
-      this.localStorageService.getItem(DATEINPUT_KEY + this.user?.id) || '';
-    if (this.productBooked) {
-      this.productBooked.forEach((product: any) => {
-        if (
-          product.dateBooked.checkIn === this.date.checkIn &&
-          product.dateBooked.checkOut === this.date.checkOut
-        ) {
-          this.dataPost = this.dataPost.filter(
-            (p: { id: any }) =>
-              !this.productBooked.find(
-                (b: { idProduct: any }) => b.idProduct === p.id
-              )
-          );
-        }
-      });
-    }
-    if (this.dataPost) {
-      return this.dataPost.filter(
-        (product: { categories: string }) => product.categories === category
-      );
-    } else {
-      return [];
-    }
-  }
+  // getProductsByCategory(category: string): ListBeach[] {
+  //   this.dataPost = this.localStorageService.getItem(PRODUCTLIST_KEY);
+  //   this.productBooked = this.localStorageService.getItem(BOOKED_KEY) || [];
+  //   this.date =
+  //     this.localStorageService.getItem(DATEINPUT_KEY + this.user?.id) || '';
+  //   if (this.productBooked) {
+  //     this.productBooked.forEach((product: any) => {
+  //       if (
+  //         product.dateBooked.checkIn === this.date.checkIn &&
+  //         product.dateBooked.checkOut === this.date.checkOut
+  //       ) {
+  //         this.dataPost = this.dataPost.filter(
+  //           (p: { id: any }) =>
+  //             !this.productBooked.find(
+  //               (b: { idProduct: any }) => b.idProduct === p.id
+  //             )
+  //         );
+  //       }
+  //     });
+  //   }
+  //   if (this.dataPost) {
+  //     return this.dataPost.filter(
+  //       (product: { categories: string }) => product.categories === category
+  //     );
+  //   } else {
+  //     return [];
+  //   }
+  // }
 }

@@ -5,7 +5,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { HeaderComponent } from '../layout/header/header.component';
 import { HeaderNonsearchComponent } from '../layout/header-nonsearch/header-nonsearch.component';
-import { NavComponent } from '../layout/nav/nav.component';
 import { FooterComponent } from '../layout/footer/footer.component';
 
 import { TabViewModule } from 'primeng/tabview';
@@ -34,12 +33,7 @@ import { MessagesModule } from 'primeng/messages';
     DropdownModule,
     MessagesModule,
   ],
-  declarations: [
-    NavComponent,
-    HeaderComponent,
-    FooterComponent,
-    HeaderNonsearchComponent,
-  ],
+  declarations: [HeaderComponent, FooterComponent, HeaderNonsearchComponent],
   exports: [
     CommonModule,
     RouterModule,
@@ -47,7 +41,6 @@ import { MessagesModule } from 'primeng/messages';
     TabViewModule,
     DialogModule,
     MenuModule,
-    NavComponent,
     HeaderComponent,
     HeaderNonsearchComponent,
     FooterComponent,

@@ -1,5 +1,5 @@
 <div class="post">
-  <div class="beach" *ngFor="let beach of listBeach;let i = index" style="margin: 16px">
+  <div class="beach" *ngFor="let beach of postSelected;let i = index" style="margin: 16px">
     <div class="image">
       <div class="image-slider">
         <img [src]="getCurrentImageSource(i)" alt="Image">

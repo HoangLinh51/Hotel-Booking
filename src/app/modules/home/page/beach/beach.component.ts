@@ -4,7 +4,6 @@ import { ListBeach } from 'src/app/data/modal/beach';
 import { LUser } from 'src/app/data/modal/user';
 import { AuthService } from 'src/app/data/service/auth.service';
 import { LocalStorageService } from 'src/app/data/service/localstorage.service';
-import { PostService } from 'src/app/data/service/post.service';
 
 @Component({
   selector: 'app-beach',
@@ -13,9 +12,10 @@ import { PostService } from 'src/app/data/service/post.service';
 })
 export class BeachComponent {
   @Input() category!: string;
+  @Input() postSelected: ListBeach[] = [];
   public linkDetail = '';
 
-  listBeach: ListBeach[] = [];
+  status!: boolean;
   favoriteStatus: boolean[] = [];
   showNextButton = true;
   showPrevButton = false;
@@ -23,19 +23,17 @@ export class BeachComponent {
   user!: LUser | null;
 
   constructor(
-    private postService: PostService,
     private localStorageService: LocalStorageService,
     private authService: AuthService
   ) {}
 
   ngOnInit(): void {
     this.user = this.authService.userValue;
-    this.listBeach = this.postService.getProductsByCategory(this.category);
     this.restoreFavoriteStatus();
   }
 
   changeImage(isNext: boolean, index: number): void {
-    const maxIndex = this.listBeach[index].image.length - 1;
+    const maxIndex = this.postSelected[index].image.length - 1;
     this.currentImageIndex[index] =
       (this.currentImageIndex[index] + (isNext ? 1 : -1) + (maxIndex + 1)) %
       (maxIndex + 1);
@@ -45,16 +43,22 @@ export class BeachComponent {
   }
 
   getCurrentImageSource(index: number) {
-    return this.listBeach[index].image[0];
+    return this.postSelected[index].image[0];
   }
 
   restoreFavoriteStatus(): void {
     const favoritePosts =
       this.localStorageService.getItem(FAVORITE_KEY + this.user?.id) || [];
-    this.listBeach.forEach((beach, index) => {
+    this.postSelected.forEach((beach, index) => {
       this.favoriteStatus[index] = favoritePosts.some(
         (post: any) => post.id === beach.id
       );
+      console.log('----->', this.favoriteStatus[index]);
+      if (this.favoriteStatus[index] === true) {
+        this.status === true;
+      } else {
+        this.status === false;
+      }
     });
   }
 

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Output } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { DATEINPUT_KEY } from 'src/app/data/constant/localstorage-key';
 import { DateBooked } from 'src/app/data/modal/booking';
@@ -50,6 +50,8 @@ export class HeaderComponent {
         this.localStorageService.saveItem(DATEINPUT_KEY + this.user?.id, date);
       }
     }
+
+    window.location.reload();
   }
 
   getDateStorage() {

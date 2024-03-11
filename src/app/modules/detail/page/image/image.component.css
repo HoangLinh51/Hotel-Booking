@@ -21,38 +21,3 @@
   line-height: normal;
   margin: 0px;
 }
-/*
-.image .img-showall .button-showall {
-  display: flex;
-  align-items: center;
-  padding: 10px;
-  gap: 10px;
-  border: 1px solid #3E3E3E;
-  border-radius: 10px;
-  background: #FFF;
-  position: absolute;
-  bottom: -55%;
-  left: 70%;
-} */
-/*
-.image .left-image {
-  width: 581px;
-  height: 450px;
-  flex-shrink: 0;
-  margin-right: 18px;
-}
-
-.image .left-image img {
-  border-radius: 15px 0px 0px 15px;
-}
-
-.image .right-image {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.image .right-image img {
-  width: 283px;
-  height: 215px;
-  flex-shrink: 0;
-} */
