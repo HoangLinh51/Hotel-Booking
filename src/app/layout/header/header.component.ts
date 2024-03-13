@@ -34,7 +34,7 @@ export class HeaderComponent {
     this.getDateStorage();
   }
   addNewItem(value: string) {
-    console.log('value header--->', value);
+    console.log('input header--->', value);
     this.newItemEvent.emit(value);
   }
 

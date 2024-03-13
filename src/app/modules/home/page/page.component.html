@@ -13,21 +13,40 @@
 
   <app-header (newItemEvent)="addItem($event)"></app-header>
 
-
-  <p-tabView [(activeIndex)]="activeIndex" (click)="onChangeTab(activeIndex)">
-    <p-tabPanel *ngFor="let category of category">
-      <ng-template pTemplate="header">
-        <div class="nav">
-          <div class="basic">
-            <div [innerHTML]="category.icon"></div>
-            <label class="active">{{category.name}}</label>
+  <ng-container *ngIf="postSearch.length !== 0  else templateSearch ">
+    <p-tabView>
+      <p-tabPanel>
+        <ng-template pTemplate="header">
+          <div class="nav">
+            <div class="basic">
+              <div><i class="fa-solid fa-magnifying-glass" style="width: 50px; height: 40px; margin: 20px 30px 13px; color:#3E3E3E ;"></i></div>
+              <label class="active">Your Search </label>
+            </div>
           </div>
-        </div>
-      </ng-template>
-    </p-tabPanel>
-  </p-tabView>
+        </ng-template>
+      </p-tabPanel>
+    </p-tabView>
+  <app-beach [postSelected]="postSearch"></app-beach>
 
-  <app-beach [postSelected]="postSelected"></app-beach>
+  </ng-container>
+
+  <ng-template #templateSearch>
+    <p-tabView [(activeIndex)]="activeIndex" (click)="onChangeTab(activeIndex)">
+      <p-tabPanel *ngFor="let category of category">
+        <ng-template pTemplate="header">
+          <div class="nav">
+            <div class="basic">
+              <div [innerHTML]="category.icon"></div>
+              <label class="active">{{category.name}}</label>
+            </div>
+          </div>
+        </ng-template>
+      </p-tabPanel>
+    </p-tabView>
+    <app-beach [postSelected]="postSelected"></app-beach>
+
+  </ng-template>
+
 
   <app-showmap></app-showmap>
 

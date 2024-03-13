@@ -24,6 +24,8 @@ export class PageComponent implements OnInit {
   user!: LUser | null;
   category!: Category[];
   postSelected: Beach[] = [];
+  postSearch: Beach[] = [];
+
   private _productBooked: ProductBooked[] = [];
   private _date!: DateBooked;
 
@@ -65,11 +67,13 @@ export class PageComponent implements OnInit {
     });
   }
 
-  onChangeTab($event: any) {
+  onChangeTab($event: number) {
     this.productBooked = this.localStorageService.getItem(BOOKED_KEY) || [];
     this.date =
       this.localStorageService.getItem(DATEINPUT_KEY + this.user?.id) || '';
     const categorySelected = this.category[$event];
+
+    console.log('this.categorySelected', $event);
     this.postSelected = this.posts.filter(
       (i) => i.categories == categorySelected.name
     );
@@ -88,7 +92,19 @@ export class PageComponent implements OnInit {
     }
   }
 
-  addItem(newItem: string) {
-    console.log('newItem in home page--->', newItem);
+  addItem(newItem: string = '') {
+    console.log('input in home page--->', typeof newItem);
+
+    if (newItem !== '') {
+      this.postSearch = this.postService.searchPosts(newItem);
+      console.log('get product by category else: --->', this.postSearch);
+    } else {
+      window.location.reload();
+    }
   }
 }
+
+// this.postSelected.map((post) => {
+//   console.log('post.categories', post.categories);
+//   this.postService.getProductsByCategory(post.categories);
+// });
