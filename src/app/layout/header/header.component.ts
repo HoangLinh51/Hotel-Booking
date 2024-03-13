@@ -1,4 +1,4 @@
-import { Component, Output } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { DATEINPUT_KEY } from 'src/app/data/constant/localstorage-key';
 import { DateBooked } from 'src/app/data/modal/booking';
@@ -12,6 +12,7 @@ import { LocalStorageService } from 'src/app/data/service/localstorage.service';
   styleUrls: ['./header.component.css'],
 })
 export class HeaderComponent {
+  @Output() newItemEvent = new EventEmitter<string>();
   public linkAboutus = '/about-us';
   date!: FormGroup;
   user?: LUser | null;
@@ -32,6 +33,10 @@ export class HeaderComponent {
     });
     this.getDateStorage();
   }
+  addNewItem(value: string) {
+    console.log('value header--->', value);
+    this.newItemEvent.emit(value);
+  }
 
   onSubmit(): void {
     if (this.date.valid) {
@@ -50,8 +55,6 @@ export class HeaderComponent {
         this.localStorageService.saveItem(DATEINPUT_KEY + this.user?.id, date);
       }
     }
-
-    window.location.reload();
   }
 
   getDateStorage() {

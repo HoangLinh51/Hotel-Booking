@@ -1,4 +1,4 @@
-export interface ListBeach {
+export interface Beach {
   id: number;
   image: string[];
   location: string;
@@ -8,4 +8,5 @@ export interface ListBeach {
   time: string;
   star: string;
   categories: string;
+  isFavorite: boolean;
 }

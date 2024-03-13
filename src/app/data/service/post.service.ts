@@ -8,7 +8,7 @@ import {
   DATEINPUT_KEY,
   PRODUCTLIST_KEY,
 } from '../constant/localstorage-key';
-import { ListBeach } from '../modal/beach';
+import { Beach } from '../modal/beach';
 import { ProductBooked, DateBooked } from '../modal/booking';
 
 @Injectable({
@@ -18,7 +18,7 @@ export class PostService {
   private dataSubject = new BehaviorSubject<any>({});
   public data$ = this.dataSubject.asObservable();
   user?: LUser | null;
-  dataPost: ListBeach[] = [];
+  dataPost: Beach[] = [];
   productBooked: ProductBooked[] = [];
   date!: DateBooked;
   constructor(
@@ -3059,7 +3059,7 @@ export class PostService {
     this.localStorageService.saveItem(PRODUCTLIST_KEY, listBeach);
   }
 
-  getAllPost(): ListBeach[] {
+  getAllPost(): Beach[] {
     return this.localStorageService.getItem(PRODUCTLIST_KEY);
   }
 
@@ -3068,7 +3068,7 @@ export class PostService {
     return this.dataPost.find((postData: { id: number }) => postData.id === id);
   }
 
-  // getProductsByCategory(category: string): ListBeach[] {
+  // getProductsByCategory(category: string): Beach[] {
   //   this.dataPost = this.localStorageService.getItem(PRODUCTLIST_KEY);
   //   this.productBooked = this.localStorageService.getItem(BOOKED_KEY) || [];
   //   this.date =

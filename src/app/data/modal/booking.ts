@@ -1,4 +1,4 @@
-import { ListBeach } from './beach';
+import { Beach } from './beach';
 import { Guest } from './guest';
 
 export class DateBooked {
@@ -24,7 +24,7 @@ export class IUser {
   phone!: string;
   note!: string;
   guest!: Guest;
-  post!: ListBeach;
+  post!: Beach;
 }
 
 export class OrderInformation {

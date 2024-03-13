@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { DATEINPUT_KEY } from 'src/app/data/constant/localstorage-key';
-import { ListBeach } from 'src/app/data/modal/beach';
+import { Beach } from 'src/app/data/modal/beach';
 import { LUser } from 'src/app/data/modal/user';
 import { AuthService } from 'src/app/data/service/auth.service';
 import { LocalStorageService } from 'src/app/data/service/localstorage.service';
@@ -13,7 +13,7 @@ import { PostService } from 'src/app/data/service/post.service';
   styleUrls: ['./page.component.css'],
 })
 export class PageComponent {
-  post!: ListBeach | undefined;
+  post!: Beach | undefined;
   user!: LUser | null;
 
   constructor(

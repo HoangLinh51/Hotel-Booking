@@ -11,7 +11,7 @@
     </svg>
   </div>
 
-  <app-header></app-header>
+  <app-header (newItemEvent)="addItem($event)"></app-header>
 
 
   <p-tabView [(activeIndex)]="activeIndex" (click)="onChangeTab(activeIndex)">

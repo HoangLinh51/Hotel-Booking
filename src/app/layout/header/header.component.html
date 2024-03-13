@@ -26,7 +26,7 @@
           fill="#3E3E3E" />
       </svg>
       <div class="input">
-        <input class="text" placeholder="Staycation to" >
+        <input class="text" placeholder="Staycation to" #newItem>
         <div class="flip">
           <div>
             <div>Bali</div>
@@ -48,13 +48,13 @@
       <div class="date" *ngIf="dateStorage">
         <div class="checkinout">
           <i class="fa-solid fa-arrow-right-to-bracket"></i>
-          <input type="date" formControlName="checkIn" [ngModel]="dateStorage.checkIn" >
+          <input type="date" formControlName="checkIn" [ngModel]="dateStorage.checkIn">
         </div>
         <div class="checkinout">
           <i class="fa-solid fa-arrow-right-from-bracket"></i>
           <input type="date" formControlName="checkOut" [ngModel]="dateStorage.checkOut">
         </div>
-        <button type="submit" >search</button>
+        <button type="submit" (click)="addNewItem(newItem.value)">search</button>
       </div>
       <div class="date" *ngIf="dateStorage === null ">
         <div class="checkinout">
@@ -65,7 +65,7 @@
           <i class="fa-solid fa-arrow-right-from-bracket"></i>
           <input type="date" formControlName="checkOut">
         </div>
-        <button type="submit" >search</button>
+        <button type="submit" (click)="addNewItem(newItem.value)">search</button>
       </div>
     </form>
   </div>

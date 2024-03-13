@@ -1,10 +1,10 @@
-import { Component, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import {
   BOOKED_KEY,
   DATEINPUT_KEY,
 } from 'src/app/data/constant/localstorage-key';
-import { ListBeach } from 'src/app/data/modal/beach';
+import { Beach } from 'src/app/data/modal/beach';
 import { DateBooked, ProductBooked } from 'src/app/data/modal/booking';
 import { Category } from 'src/app/data/modal/category';
 import { LUser } from 'src/app/data/modal/user';
@@ -18,15 +18,14 @@ import { PostService } from 'src/app/data/service/post.service';
   templateUrl: './page.component.html',
   styleUrls: ['./page.component.css'],
 })
-export class PageComponent {
+export class PageComponent implements OnInit {
   activeIndex: number = 0;
-  posts: ListBeach[];
+  posts: Beach[] = [];
   user!: LUser | null;
   category!: Category[];
-  icon: any;
-  postSelected: ListBeach[] = [];
-  productBooked: ProductBooked[] = [];
-  date!: DateBooked;
+  postSelected: Beach[] = [];
+  private _productBooked: ProductBooked[] = [];
+  private _date!: DateBooked;
 
   constructor(
     private postService: PostService,
@@ -34,12 +33,30 @@ export class PageComponent {
     private categoryService: CategoryService,
     private sanitizer: DomSanitizer,
     private localStorageService: LocalStorageService
-  ) {
+  ) {}
+
+  ngOnInit() {
     this.posts = this.postService.getAllPost();
     this.user = this.authService.userValue;
     this.category = this.categoryService.getCategoryinLocalstorage();
     this.getIcon();
     this.onChangeTab(this.activeIndex);
+  }
+
+  get productBooked(): ProductBooked[] {
+    return this._productBooked;
+  }
+
+  set productBooked(value: ProductBooked[]) {
+    this._productBooked = value;
+  }
+
+  get date(): DateBooked {
+    return this._date;
+  }
+
+  set date(value: DateBooked) {
+    this._date = value;
   }
 
   getIcon() {
@@ -63,13 +80,15 @@ export class PageComponent {
           product.dateBooked.checkOut === this.date.checkOut
         ) {
           this.postSelected = this.postSelected.filter(
-            (p: { id: any }) =>
-              !this.productBooked.find(
-                (b: { idProduct: any }) => b.idProduct === p.id
-              )
+            (listProduct: { id: number }) =>
+              listProduct.id !== product.idProduct
           );
         }
       });
     }
+  }
+
+  addItem(newItem: string) {
+    console.log('newItem in home page--->', newItem);
   }
 }

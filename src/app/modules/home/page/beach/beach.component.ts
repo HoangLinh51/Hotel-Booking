@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { FAVORITE_KEY } from 'src/app/data/constant/localstorage-key';
-import { ListBeach } from 'src/app/data/modal/beach';
+import { Beach } from 'src/app/data/modal/beach';
 import { LUser } from 'src/app/data/modal/user';
 import { AuthService } from 'src/app/data/service/auth.service';
 import { LocalStorageService } from 'src/app/data/service/localstorage.service';
@@ -11,12 +11,11 @@ import { LocalStorageService } from 'src/app/data/service/localstorage.service';
   styleUrl: './beach.component.css',
 })
 export class BeachComponent {
-  @Input() category!: string;
-  @Input() postSelected: ListBeach[] = [];
+  @Input() postSelected: Beach[] = [];
   public linkDetail = '';
 
-  status!: boolean;
-  favoriteStatus: boolean[] = [];
+  // status: boolean = false;
+  // favoriteStatus!: boolean;
   showNextButton = true;
   showPrevButton = false;
   currentImageIndex: number[] = [];
@@ -29,7 +28,7 @@ export class BeachComponent {
 
   ngOnInit(): void {
     this.user = this.authService.userValue;
-    this.restoreFavoriteStatus();
+    this.loadFavoriteStatus();
   }
 
   changeImage(isNext: boolean, index: number): void {
@@ -46,38 +45,36 @@ export class BeachComponent {
     return this.postSelected[index].image[0];
   }
 
-  restoreFavoriteStatus(): void {
+  loadFavoriteStatus() {
     const favoritePosts =
       this.localStorageService.getItem(FAVORITE_KEY + this.user?.id) || [];
-    this.postSelected.forEach((beach, index) => {
-      this.favoriteStatus[index] = favoritePosts.some(
+
+    this.postSelected.forEach((beach) => {
+      const isFavorite = favoritePosts.some(
         (post: any) => post.id === beach.id
       );
-      console.log('----->', this.favoriteStatus[index]);
-      if (this.favoriteStatus[index] === true) {
-        this.status === true;
-      } else {
-        this.status === false;
-      }
+      beach.isFavorite = isFavorite;
     });
   }
+  //lấy list favorite lên -> tìm số index (với giá trị tìm là id ) nếu index khác -1 thì xóa index đó đi -> lưu xuống localstorage -> loasd lại trạng thái
 
-  toggleFavorite(beach: any, index: number): void {
+  addFavorite(beach: Beach) {
     const favoritePosts =
       this.localStorageService.getItem(FAVORITE_KEY + this.user?.id) || [];
-    const postIndex = favoritePosts.findIndex((p: any) => p.id === beach.id);
-
-    if (postIndex !== -1) {
-      favoritePosts.splice(postIndex, 1);
-      this.favoriteStatus[index] = false;
+    const index = favoritePosts.findIndex(
+      (favoritePost: Beach) => favoritePost.id === beach.id
+    );
+    console.log('index', index);
+    if (index !== -1) {
+      favoritePosts.splice(index, 1);
     } else {
       favoritePosts.push(beach);
-      this.favoriteStatus[index] = true;
     }
 
     this.localStorageService.saveItem(
       FAVORITE_KEY + this.user?.id,
       favoritePosts
     );
+    this.loadFavoriteStatus();
   }
 }
