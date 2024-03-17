@@ -32,8 +32,18 @@ export class InforBookingComponent {
     this.form = this.formBuilder.group({
       name: ['', Validators.required],
       country: ['', Validators.required],
-      email: ['', Validators.required],
-      phone: ['', Validators.required],
+      email: [
+        '',
+        [Validators.required, Validators.minLength(8), Validators.email],
+      ],
+      phone: [
+        '',
+        [
+          Validators.required,
+          Validators.minLength(10),
+          this.vietnamesePhoneNumberValidator(),
+        ],
+      ],
       guest: ['', Validators.required],
       note: [''],
       post: [this.post, Validators.required],
@@ -46,8 +56,18 @@ export class InforBookingComponent {
       { name: '5 guest', id: '5' },
     ];
   }
+
   get f() {
     return this.form.controls;
+  }
+
+  vietnamesePhoneNumberValidator() {
+    return (control: any) => {
+      const phoneNumber = control.value;
+      const phoneNumberPattern = /(84|\+84|0)(\d{9,10})/;
+      const isValid = phoneNumberPattern.test(phoneNumber);
+      return isValid ? null : { invalidPhoneNumber: true };
+    };
   }
 
   onSubmit() {

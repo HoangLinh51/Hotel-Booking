@@ -10,8 +10,9 @@
     <form class="forminput" [formGroup]="form" (ngSubmit)="onSubmit()">
       <div class="form">
         <input formControlName="email" type="text" placeholder="Email">
-        <ng-container *ngIf="f['email'].invalid && f['email'].touched">
+        <ng-container *ngIf="f['email'].invalid && (f['email'].dirty || f['email'].touched)">
           <div class="invalid-message" *ngIf="f['email'].errors?.['required']">This email cannot be left blank.</div>
+          <div class="invalid-message" *ngIf="f['email'].errors?.['email']">Invalid email format.</div>
         </ng-container>
 
         <input formControlName="password" type="password" placeholder="Password">

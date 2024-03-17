@@ -35,3 +35,8 @@ export class Booking {
   orderInfo!: OrderInformation;
   payment!: Payment;
 }
+
+export class InputSearch {
+  dateInput!: DateBooked;
+  input!: string;
+}

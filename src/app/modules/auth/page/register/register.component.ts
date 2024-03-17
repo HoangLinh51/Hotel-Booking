@@ -27,14 +27,34 @@ export class RegisterComponent implements OnInit {
     this.form = this.formBuilder.group({
       firstName: ['', Validators.required],
       lastName: ['', Validators.required],
-      email: ['', Validators.required, Validators.minLength(8)],
-      phoneNumber: ['', Validators.required],
+      email: [
+        '',
+        [Validators.required, Validators.minLength(8), Validators.email],
+      ],
+      phoneNumber: [
+        '',
+        [
+          Validators.required,
+          Validators.minLength(10),
+          this.vietnamesePhoneNumberValidator(),
+        ],
+      ],
       password: ['', [Validators.required, Validators.minLength(6)]],
     });
   }
 
   get f() {
     return this.form.controls;
+  }
+
+  vietnamesePhoneNumberValidator() {
+    return (control: any) => {
+      const phoneNumber = control.value;
+      const phoneNumberPattern = /(84|\+84|0)(\d{9,10})/;
+      const isValid = phoneNumberPattern.test(phoneNumber);
+
+      return isValid ? null : { invalidPhoneNumber: true };
+    };
   }
 
   onSubmit() {
