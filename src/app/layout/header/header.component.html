@@ -45,26 +45,19 @@
     </div>
 
     <form [formGroup]="date" (ngSubmit)="onSubmit()">
-      <div class="date" *ngIf="dateStorage">
-        <div class="checkinout">
-          <i class="fa-solid fa-arrow-right-to-bracket"></i>
-          <input type="date" formControlName="checkIn" [ngModel]="dateStorage.checkIn">
-        </div>
-        <div class="checkinout">
-          <i class="fa-solid fa-arrow-right-from-bracket"></i>
-          <input type="date" formControlName="checkOut" [ngModel]="dateStorage.checkOut">
-        </div>
-        <button type="submit" (click)="addNewItem(newItem.value)">search</button>
-      </div>
-      <div class="date" *ngIf="dateStorage === null ">
-        <div class="checkinout">
-          <i class="fa-solid fa-arrow-right-to-bracket"></i>
-          <input type="date" formControlName="checkIn">
-        </div>
-        <div class="checkinout">
-          <i class="fa-solid fa-arrow-right-from-bracket"></i>
-          <input type="date" formControlName="checkOut">
-        </div>
+      <div class="date">
+        <p-calendar class="checkinout" formControlName="checkIn" [ngModel]="dateStorage?.checkIn"
+          [iconDisplay]="'input'" [showIcon]="true" dateFormat="dd.mm.yy" placeholder="dd.mm.yyyy">
+          <ng-template pTemplate="inputicon" let-clickCallBack="clickCallBack">
+            <i class="pi pi-sign-in" (click)="clickCallBack($event)"></i>
+          </ng-template>
+        </p-calendar>
+        <p-calendar class="checkinout" formControlName="checkOut" [ngModel]="dateStorage?.checkOut"
+          [iconDisplay]="'input'" [showIcon]="true" dateFormat="dd.mm.yy" placeholder="dd.mm.yyyy">
+          <ng-template pTemplate="inputicon" let-clickCallBack="clickCallBack">
+            <i class="pi pi-sign-out" (click)="clickCallBack($event)"></i>
+          </ng-template>
+        </p-calendar>
         <button type="submit" (click)="addNewItem(newItem.value)">search</button>
       </div>
     </form>

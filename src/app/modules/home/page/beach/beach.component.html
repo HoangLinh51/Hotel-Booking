@@ -1,11 +1,11 @@
 <div class="post">
-  <div class="beach" *ngFor="let beach of postSelected;let i = index" style="margin: 16px">
+  <div class="beach" *ngFor="let beach of postSelected;let i = index" style="margin: 16px"  [routerLink]="['/detail/', beach.id]">
     <div class="image">
       <div class="image-slider">
         <img [src]="getCurrentImageSource(i)" alt="Image">
       </div>
       <div class="overlay">
-        <div class="favorite" (click)="addFavorite(beach)" [ngClass]="{'favorite-hover': beach.isFavorite}">
+        <div class="favorite" (click)="addFavorite(beach)" [ngClass]="{'favorite-hover': beach.isFavorite}"  href="#">
           <i class="fas fa-heart"></i>
         </div>
         <div class="next-prev">
@@ -26,7 +26,7 @@
         </div>
       </div>
     </div>
-    <div class="title" [routerLink]="['/detail/', beach.id]">
+    <div class="title">
       <div class="infor">
         <p class="location">{{beach.location}}</p>
         <p class="where">{{beach.distance}}</p>

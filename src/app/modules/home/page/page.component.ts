@@ -41,6 +41,9 @@ export class PageComponent implements OnInit {
     this.posts = this.postService.getAllPost();
     this.user = this.authService.userValue;
     this.category = this.categoryService.getCategoryinLocalstorage();
+    this.productBooked = this.localStorageService.getItem(BOOKED_KEY) || [];
+    this.date =
+      this.localStorageService.getItem(DATEINPUT_KEY + this.user?.id) || '';
     this.getIcon();
     this.onChangeTab(this.activeIndex);
   }
@@ -67,10 +70,28 @@ export class PageComponent implements OnInit {
     });
   }
 
+  addItem(newItem: string = '') {
+    if (newItem !== '') {
+      this.postSearch = this.postService.searchPosts(newItem);
+      if (this.productBooked) {
+        this.productBooked.forEach((product: any) => {
+          if (
+            product.dateBooked.checkIn === this.date.checkIn &&
+            product.dateBooked.checkOut === this.date.checkOut
+          ) {
+            this.postSearch = this.postSearch.filter(
+              (listProduct: { id: number }) =>
+                listProduct.id !== product.idProduct
+            );
+          }
+        });
+      }
+    } else {
+      window.location.reload();
+    }
+  }
+
   onChangeTab($event: number) {
-    this.productBooked = this.localStorageService.getItem(BOOKED_KEY) || [];
-    this.date =
-      this.localStorageService.getItem(DATEINPUT_KEY + this.user?.id) || '';
     const categorySelected = this.category[$event];
 
     console.log('this.categorySelected', $event);
@@ -89,17 +110,6 @@ export class PageComponent implements OnInit {
           );
         }
       });
-    }
-  }
-
-  addItem(newItem: string = '') {
-    console.log('input in home page--->', typeof newItem);
-
-    if (newItem !== '') {
-      this.postSearch = this.postService.searchPosts(newItem);
-      console.log('get product by category else: --->', this.postSearch);
-    } else {
-      window.location.reload();
     }
   }
 }

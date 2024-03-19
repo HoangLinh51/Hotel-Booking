@@ -14,6 +14,7 @@
   font-style: normal;
   font-weight: 700;
   line-height: normal;
+  cursor: pointer;
   margin: 27px 0px 27px 45px;
 }
 
@@ -39,7 +40,7 @@
 .top-bar .search .filter .input {
   display: flex;
   height: 20px;
-  width: 199px;
+  width: 185px;
 }
 
 .top-bar .search .filter .input label.text {
@@ -55,13 +56,16 @@
   flex-direction: column;
   justify-content: center;
 }
-.top-bar .search .filter .input input{
+
+.top-bar .search .filter .input input {
   width: 85px;
   border: none;
 }
+
 .top-bar .search .filter .input input:focus {
   outline: none;
 }
+
 .top-bar .search .filter .input .flip {
   height: 20px;
   overflow: hidden;
@@ -121,7 +125,6 @@
   }
 }
 
-
 .top-bar .search .button {
   display: flex;
   flex-direction: column;
@@ -179,7 +182,7 @@
   gap: 10px;
   flex-shrink: 0;
   cursor: pointer;
-  margin: 0px 10px ;
+  margin: 0px 10px;
 }
 
 .top-bar .user .profile {
@@ -195,11 +198,13 @@
   box-shadow: 0px 0px 2px 0px rgba(34, 34, 34, 0.25);
   cursor: pointer;
 }
-.top-bar .user .profile button{
+
+.top-bar .user .profile button {
   border: none;
   background: #fff;
 }
-.top-bar .user .profile a{
+
+.top-bar .user .profile a {
   color: #3E3E3E;
   font-family: Poppins;
   font-size: 14px;
@@ -207,7 +212,6 @@
   font-weight: 500;
   line-height: 30px;
 }
-
 
 .date {
   display: flex;
@@ -217,20 +221,7 @@
 }
 
 .date .checkinout {
-  display: flex;
-  align-items: center;
-  padding: 5px;
-  border: 1px solid #bbbbbb;
-  border-radius: 10px;
-}
-
-.date .checkinout .header {
-  color: #3e3e3e;
-  font-family: Poppins;
-  font-size: 15px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: normal;
+  width: 160px;
 }
 
 .date button {
@@ -239,18 +230,6 @@
   padding: 5px;
   background: #ff385c;
   color: #fff;
-  font-family: Poppins;
-  font-size: 12px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-}
-
-.date .checkinout input {
-  margin: 0px;
-  border: none;
-  margin-left: 10px;
-  color: #3e3e3e;
   font-family: Poppins;
   font-size: 12px;
   font-style: normal;
