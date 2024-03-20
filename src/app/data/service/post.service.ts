@@ -3,11 +3,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
 import { LocalStorageService } from './localstorage.service';
 import { AuthService } from './auth.service';
 import { LUser } from '../modal/user';
-import {
-  BOOKED_KEY,
-  DATEINPUT_KEY,
-  PRODUCTLIST_KEY,
-} from '../constant/localstorage-key';
+import { PRODUCTLIST_KEY } from '../constant/localstorage-key';
 import { Beach } from '../modal/beach';
 import { ProductBooked, DateBooked } from '../modal/booking';
 
@@ -3070,37 +3066,38 @@ export class PostService {
 
   searchPosts(keyword: string): any[] {
     this.dataPost = this.localStorageService.getItem(PRODUCTLIST_KEY);
-    keyword = keyword.toLowerCase();
+    const result = typeof keyword === 'string' ? keyword.toLowerCase() : '';
+    // keyword = keyword.toLowerCase();
     return this.dataPost.filter((post) =>
-      post.location.toLowerCase().includes(keyword)
+      post.location.toLowerCase().includes(result)
     );
   }
-  getProductsByCategory(category: string): Beach[] {
-    this.dataPost = this.localStorageService.getItem(PRODUCTLIST_KEY);
-    this.productBooked = this.localStorageService.getItem(BOOKED_KEY) || [];
-    this.date =
-      this.localStorageService.getItem(DATEINPUT_KEY + this.user?.id) || '';
-    if (this.productBooked) {
-      this.productBooked.forEach((product: any) => {
-        if (
-          product.dateBooked.checkIn === this.date.checkIn &&
-          product.dateBooked.checkOut === this.date.checkOut
-        ) {
-          this.dataPost = this.dataPost.filter(
-            (p: { id: any }) =>
-              !this.productBooked.find(
-                (b: { idProduct: any }) => b.idProduct === p.id
-              )
-          );
-        }
-      });
-    }
-    if (this.dataPost) {
-      return this.dataPost.filter(
-        (product: { categories: string }) => product.categories === category
-      );
-    } else {
-      return [];
-    }
-  }
+  //   getProductsByCategory(category: string): Beach[] {
+  //     this.dataPost = this.localStorageService.getItem(PRODUCTLIST_KEY);
+  //     this.productBooked = this.localStorageService.getItem(BOOKED_KEY) || [];
+  //     this.date =
+  //       this.localStorageService.getItem(DATEINPUT_KEY + this.user?.id) || '';
+  //     if (this.productBooked) {
+  //       this.productBooked.forEach((product: any) => {
+  //         if (
+  //           product.dateBooked.checkIn === this.date.checkIn &&
+  //           product.dateBooked.checkOut === this.date.checkOut
+  //         ) {
+  //           this.dataPost = this.dataPost.filter(
+  //             (p: { id: any }) =>
+  //               !this.productBooked.find(
+  //                 (b: { idProduct: any }) => b.idProduct === p.id
+  //               )
+  //           );
+  //         }
+  //       });
+  //     }
+  //     if (this.dataPost) {
+  //       return this.dataPost.filter(
+  //         (product: { categories: string }) => product.categories === category
+  //       );
+  //     } else {
+  //       return [];
+  //     }
+  //   }
 }

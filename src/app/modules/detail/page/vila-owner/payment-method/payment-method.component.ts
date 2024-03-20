@@ -43,10 +43,10 @@ export class PaymentMethodComponent {
   }
 
   loadStorageData() {
-    //load dữ liệu sản phẩm
     const storedData =
       this.localStorageService.getItem('first-step' + this.user?.id)! || [];
     const { ifUser, date } = storedData;
+    // console.log('date in payment: ---> ', date);
     this.numberOfDate = date.numberOfDays;
     this.guests = parseInt(ifUser.guest.id);
     this.price = ifUser.post.price;

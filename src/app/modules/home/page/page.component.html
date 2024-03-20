@@ -13,7 +13,7 @@
 
   <app-header (newItemEvent)="addItem($event)"></app-header>
 
-  <ng-container *ngIf="postSearch.length !== 0  else templateSearch ">
+  <ng-container *ngIf="postSearch.length !== 0  else templateSearch " (click)="onChangeTab(activeIndex,dataInput)">
     <p-tabView>
       <p-tabPanel>
         <ng-template pTemplate="header">
@@ -29,7 +29,7 @@
   </ng-container>
 
   <ng-template #templateSearch>
-    <p-tabView [(activeIndex)]="activeIndex" (click)="onChangeTab(activeIndex)">
+    <p-tabView [(activeIndex)]="activeIndex" (click)="onChangeTab(activeIndex,dataInput)">
       <p-tabPanel *ngFor="let category of category">
         <ng-template pTemplate="header">
           <div class="nav">

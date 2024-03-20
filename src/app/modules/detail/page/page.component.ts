@@ -1,10 +1,9 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
-import { DATEINPUT_KEY } from 'src/app/data/constant/localstorage-key';
+import { ActivatedRoute } from '@angular/router';
 import { Beach } from 'src/app/data/modal/beach';
+import { InputSearch } from 'src/app/data/modal/booking';
 import { LUser } from 'src/app/data/modal/user';
 import { AuthService } from 'src/app/data/service/auth.service';
-import { LocalStorageService } from 'src/app/data/service/localstorage.service';
 import { PostService } from 'src/app/data/service/post.service';
 
 @Component({
@@ -15,12 +14,13 @@ import { PostService } from 'src/app/data/service/post.service';
 export class PageComponent {
   post!: Beach | undefined;
   user!: LUser | null;
+  inputSearch!: InputSearch;
+  checkIn!: string;
+  checkOut!: string;
 
   constructor(
     private route: ActivatedRoute,
-    private router: Router,
     private postService: PostService,
-    private localStorage: LocalStorageService,
     private authService: AuthService
   ) {
     this.user = this.authService.userValue;
@@ -30,10 +30,9 @@ export class PageComponent {
     const id = this.route.snapshot.paramMap.get('id');
     this.post = this.postService.getProductById(Number(id));
     console.log('product-id', this.postService.getProductById(Number(id)));
-
-    const date = this.localStorage.getItem(DATEINPUT_KEY + this.user?.id);
-    if (date === null) {
-      this.router.navigate(['/']);
-    }
+    this.route.queryParams.subscribe((params) => {
+      this.checkIn = params['checkIn'];
+      this.checkOut = params['checkOut'];
+    });
   }
 }

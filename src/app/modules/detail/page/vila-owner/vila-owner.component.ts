@@ -1,11 +1,9 @@
 import { Component, Input } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { FormGroup } from '@angular/forms';
 import { MenuItem } from 'primeng/api';
 import { Guest } from 'src/app/data/modal/guest';
 import { LUser } from 'src/app/data/modal/user';
 import { AuthService } from 'src/app/data/service/auth.service';
-import { LocalStorageService } from 'src/app/data/service/localstorage.service';
-
 @Component({
   selector: 'app-vila-owner',
   templateUrl: './vila-owner.component.html',

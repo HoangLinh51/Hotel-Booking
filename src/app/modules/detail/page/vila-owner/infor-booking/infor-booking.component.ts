@@ -1,10 +1,9 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { DATEINPUT_KEY } from 'src/app/data/constant/localstorage-key';
+import { ActivatedRoute } from '@angular/router';
 import { Guest } from 'src/app/data/modal/guest';
 import { LUser } from 'src/app/data/modal/user';
 import { AuthService } from 'src/app/data/service/auth.service';
-import { LocalStorageService } from 'src/app/data/service/localstorage.service';
 
 @Component({
   selector: 'app-infor-booking',
@@ -19,11 +18,13 @@ export class InforBookingComponent {
   form!: FormGroup;
   user!: LUser | null;
   guest: Guest[] | undefined;
+  checkIn!: string;
+  checkOut!: string;
 
   constructor(
-    private localStorageService: LocalStorageService,
     private formBuilder: FormBuilder,
-    private authService: AuthService
+    private authService: AuthService,
+    private route: ActivatedRoute
   ) {
     this.user = this.authService.userValue;
   }
@@ -69,13 +70,28 @@ export class InforBookingComponent {
       return isValid ? null : { invalidPhoneNumber: true };
     };
   }
+  calculateDays(checkIn: string, checkOut: string): number {
+    const checkInDate = new Date(checkIn);
+    const checkOutDate = new Date(checkOut);
+
+    const timeDiff = Math.abs(checkOutDate.getTime() - checkInDate.getTime());
+    const numberOfDays = Math.ceil(timeDiff / (1000 * 3600 * 24));
+
+    return numberOfDays;
+  }
 
   onSubmit() {
     if (this.form.valid) {
-      const date = this.localStorageService.getItem(
-        DATEINPUT_KEY + this.user?.id
-      );
+      this.route.queryParams.subscribe((params) => {
+        this.checkIn = params['checkIn'];
+        this.checkOut = params['checkOut'];
+      });
+      const checkIn = this.checkIn;
+      const checkOut = this.checkOut;
+      const numberOfDays = this.calculateDays(checkIn, checkOut);
+      const date = { checkIn, checkOut, numberOfDays };
       const ifUser = this.form.value;
+
       const b = { ifUser, date };
       localStorage.setItem('first-step' + this.user?.id, JSON.stringify(b));
       this.moveToNextStep.emit();

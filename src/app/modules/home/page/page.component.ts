@@ -1,11 +1,14 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { DomSanitizer } from '@angular/platform-browser';
-import {
-  BOOKED_KEY,
-  DATEINPUT_KEY,
-} from 'src/app/data/constant/localstorage-key';
+import { Router } from '@angular/router';
+import { BOOKED_KEY } from 'src/app/data/constant/localstorage-key';
 import { Beach } from 'src/app/data/modal/beach';
-import { DateBooked, ProductBooked } from 'src/app/data/modal/booking';
+import {
+  DateBooked,
+  InputSearch,
+  ProductBooked,
+} from 'src/app/data/modal/booking';
 import { Category } from 'src/app/data/modal/category';
 import { LUser } from 'src/app/data/modal/user';
 import { AuthService } from 'src/app/data/service/auth.service';
@@ -25,6 +28,8 @@ export class PageComponent implements OnInit {
   category!: Category[];
   postSelected: Beach[] = [];
   postSearch: Beach[] = [];
+  dataInput!: FormGroup;
+  inputSearch!: InputSearch;
 
   private _productBooked: ProductBooked[] = [];
   private _date!: DateBooked;
@@ -34,18 +39,22 @@ export class PageComponent implements OnInit {
     private authService: AuthService,
     private categoryService: CategoryService,
     private sanitizer: DomSanitizer,
-    private localStorageService: LocalStorageService
+    private localStorageService: LocalStorageService,
+    private formBuilder: FormBuilder,
+    private router: Router
   ) {}
 
   ngOnInit() {
+    this.dataInput = this.formBuilder.group({
+      input: [''],
+      dateInput: [''],
+    });
     this.posts = this.postService.getAllPost();
     this.user = this.authService.userValue;
     this.category = this.categoryService.getCategoryinLocalstorage();
     this.productBooked = this.localStorageService.getItem(BOOKED_KEY) || [];
-    this.date =
-      this.localStorageService.getItem(DATEINPUT_KEY + this.user?.id) || '';
     this.getIcon();
-    this.onChangeTab(this.activeIndex);
+    this.onChangeTab(this.activeIndex, this.dataInput);
   }
 
   get productBooked(): ProductBooked[] {
@@ -70,14 +79,15 @@ export class PageComponent implements OnInit {
     });
   }
 
-  addItem(newItem: string = '') {
-    if (newItem !== '') {
-      this.postSearch = this.postService.searchPosts(newItem);
+  addItem(newItem: InputSearch) {
+    console.log('newItem', newItem);
+    if (newItem.input !== '') {
+      this.postSearch = this.postService.searchPosts(newItem.input);
       if (this.productBooked) {
         this.productBooked.forEach((product: any) => {
           if (
-            product.dateBooked.checkIn === this.date.checkIn &&
-            product.dateBooked.checkOut === this.date.checkOut
+            product.dateBooked.checkIn === newItem.dateInput.checkIn &&
+            product.dateBooked.checkOut === newItem.dateInput.checkOut
           ) {
             this.postSearch = this.postSearch.filter(
               (listProduct: { id: number }) =>
@@ -86,35 +96,44 @@ export class PageComponent implements OnInit {
           }
         });
       }
+      this.router.navigate(['/'], {
+        queryParams: {
+          checkIn: newItem.dateInput.checkIn,
+          checkOut: newItem.dateInput.checkOut,
+        },
+      });
     } else {
-      window.location.reload();
-    }
-  }
-
-  onChangeTab($event: number) {
-    const categorySelected = this.category[$event];
-
-    console.log('this.categorySelected', $event);
-    this.postSelected = this.posts.filter(
-      (i) => i.categories == categorySelected.name
-    );
-    if (this.productBooked) {
-      this.productBooked.forEach((product: any) => {
-        if (
-          product.dateBooked.checkIn === this.date.checkIn &&
-          product.dateBooked.checkOut === this.date.checkOut
-        ) {
-          this.postSelected = this.postSelected.filter(
-            (listProduct: { id: number }) =>
-              listProduct.id !== product.idProduct
-          );
-        }
+      this.router.navigate(['/'], {
+        queryParams: {
+          checkIn: newItem.dateInput.checkIn,
+          checkOut: newItem.dateInput.checkOut,
+        },
       });
     }
   }
-}
 
-// this.postSelected.map((post) => {
-//   console.log('post.categories', post.categories);
-//   this.postService.getProductsByCategory(post.categories);
-// });
+  onChangeTab($event: number, newItem: any) {
+    this.productBooked = this.localStorageService.getItem(BOOKED_KEY) || [];
+    if (newItem) {
+      const categorySelected = this.category[$event];
+
+      // console.log('in If onchange tab:--->', newItem);
+      this.postSelected = this.posts.filter(
+        (i) => i.categories == categorySelected.name
+      );
+      if (this.productBooked) {
+        this.productBooked.forEach((product: any) => {
+          if (
+            product.dateBooked.checkIn === newItem.dateInput.checkIn &&
+            product.dateBooked.checkOut === newItem.dateInput.checkOut
+          ) {
+            this.postSelected = this.postSelected.filter(
+              (listProduct: { id: number }) =>
+                listProduct.id !== product.idProduct
+            );
+          }
+        });
+      }
+    }
+  }
+}

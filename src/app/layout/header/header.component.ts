@@ -1,10 +1,10 @@
+import { isPlatformBrowser } from '@angular/common';
 import { Component, EventEmitter, Output } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { DATEINPUT_KEY } from 'src/app/data/constant/localstorage-key';
-import { DateBooked } from 'src/app/data/modal/booking';
+import { ActivatedRoute, Router } from '@angular/router';
+import { DateInput, InputSearch } from 'src/app/data/modal/booking';
 import { LUser } from 'src/app/data/modal/user';
 import { AuthService } from 'src/app/data/service/auth.service';
-import { LocalStorageService } from 'src/app/data/service/localstorage.service';
 
 @Component({
   selector: 'app-header',
@@ -12,16 +12,20 @@ import { LocalStorageService } from 'src/app/data/service/localstorage.service';
   styleUrls: ['./header.component.css'],
 })
 export class HeaderComponent {
-  @Output() newItemEvent = new EventEmitter<string>();
+  @Output() newItemEvent = new EventEmitter<any>();
   public linkAboutus = '/about-us';
   date!: FormGroup;
   user?: LUser | null;
-  dateStorage!: DateBooked | null;
+  dateInput!: DateInput;
+  valueInput!: InputSearch;
+  checkIn!: string;
+  checkOut!: string;
 
   constructor(
     private authService: AuthService,
     private form: FormBuilder,
-    private localStorageService: LocalStorageService
+    private route: ActivatedRoute,
+    private router: Router
   ) {
     this.authService.user.subscribe((x) => (this.user = x));
   }
@@ -31,40 +35,108 @@ export class HeaderComponent {
       checkIn: ['', Validators.required],
       checkOut: ['', Validators.required],
     });
-    this.getDateStorage();
-  }
-  addNewItem(value: string) {
-    console.log('input header--->', value);
-    this.newItemEvent.emit(value);
-  }
-
-  onSubmit(): void {
-    if (this.date.valid) {
-      const checkInDate = new Date(this.date.value.checkIn);
-      const checkOutDate = new Date(this.date.value.checkOut);
-
-      const checkIn = checkInDate.toISOString().slice(0, 10);
-      const checkOut = checkOutDate.toISOString().slice(0, 10);
-
-      if (!isNaN(checkInDate.getTime()) && !isNaN(checkOutDate.getTime())) {
-        const timeDiff = Math.abs(
-          checkOutDate.getTime() - checkInDate.getTime()
-        );
-        const numberOfDays = Math.ceil(timeDiff / (1000 * 3600 * 24));
-        const date = { numberOfDays, checkIn, checkOut };
-        this.localStorageService.saveItem(DATEINPUT_KEY + this.user?.id, date);
-      }
-    }
+    this.route.queryParams.subscribe((params) => {
+      this.checkIn = params['checkIn'];
+      this.checkOut = params['checkOut'];
+    });
   }
 
-  getDateStorage() {
-    const date = this.localStorageService.getItem(
-      DATEINPUT_KEY + this.user?.id
-    );
-    if (date) {
-      this.dateStorage = date;
+  getDateinFormat(date: Date) {
+    const year = date.getFullYear();
+    const months = date.getMonth() + 1;
+    const dt = date.getDate();
+    const formattedDay = dt < 10 ? '0' + dt : dt.toString();
+    const formattedmonth = months < 10 ? '0' + months : months.toString();
+    return year + '-' + formattedmonth + '-' + formattedDay;
+  }
+
+  emitNewItemEvent(input: string, dateInput: any) {
+    this.valueInput = { dateInput, input };
+    this.newItemEvent.emit(this.valueInput);
+  }
+
+  addNewItem(input: string) {
+    if (this.checkIn && this.checkOut) {
+      const checkIn = this.checkIn;
+      const checkOut = this.checkOut;
+      const dateInput = (this.dateInput = { checkIn, checkOut });
+      this.emitNewItemEvent(input, dateInput);
     } else {
-      this.dateStorage = null;
+      if (this.date.invalid) {
+        if (input !== '') {
+          if (
+            this.date.value.checkIn === '' &&
+            this.date.value.checkOut === ''
+          ) {
+            const checkIn = (this.checkIn = '');
+            const checkOut = (this.checkOut = '');
+            const dateInput = (this.dateInput = {
+              checkIn,
+              checkOut,
+            });
+            this.emitNewItemEvent(input, dateInput);
+          } else if (this.date.value.checkIn === '') {
+            const date = new Date(this.date.value.checkOut);
+            const checkOut = this.getDateinFormat(date);
+            date.setDate(date.getDate());
+            const checkIn = (this.checkIn = date.toISOString().slice(0, 10));
+            const dateInput = (this.dateInput = {
+              checkIn,
+              checkOut,
+            });
+            this.emitNewItemEvent(input, dateInput);
+          } else if (this.date.value.checkOut === '') {
+            const date = new Date(this.date.value.checkIn);
+            const checkIn = this.getDateinFormat(date);
+            date.setDate(date.getDate() + 2);
+            const checkOut = (this.checkOut = date.toISOString().slice(0, 10));
+            const dateInput = (this.dateInput = {
+              checkIn,
+              checkOut,
+            });
+            this.emitNewItemEvent(input, dateInput);
+          }
+        } else if (input === '') {
+          if (
+            this.date.value.checkIn === '' &&
+            this.date.value.checkOut === ''
+          ) {
+            this.router.navigateByUrl('/').then(() => {
+              window.location.reload();
+            });
+          } else if (this.date.value.checkIn === '') {
+            const date = new Date(this.date.value.checkOut);
+            const checkOut = this.getDateinFormat(date);
+            date.setDate(date.getDate());
+            const checkIn = (this.checkIn = date.toISOString().slice(0, 10));
+            const dateInput = (this.dateInput = {
+              checkIn,
+              checkOut,
+            });
+            this.emitNewItemEvent(input, dateInput);
+          } else if (this.date.value.checkOut === '') {
+            const date = new Date(this.date.value.checkIn);
+            const checkIn = this.getDateinFormat(date);
+            date.setDate(date.getDate() + 2);
+            const checkOut = (this.checkOut = date.toISOString().slice(0, 10));
+            const dateInput = (this.dateInput = {
+              checkIn,
+              checkOut,
+            });
+            this.emitNewItemEvent(input, dateInput);
+          }
+        }
+      } else {
+        const checkIn = this.getDateinFormat(new Date(this.date.value.checkIn));
+        const checkOut = this.getDateinFormat(
+          new Date(this.date.value.checkOut)
+        );
+        const dateInput = {
+          checkIn,
+          checkOut,
+        };
+        this.emitNewItemEvent(input, dateInput);
+      }
     }
   }
 
