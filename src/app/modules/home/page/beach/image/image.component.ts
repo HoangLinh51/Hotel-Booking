@@ -85,18 +85,22 @@ export class ImageHomeComponent implements OnInit {
     const index = favoritePosts.findIndex(
       (favoritePost: Beach) => favoritePost.id === beach.id
     );
-    if (index !== -1) {
-      favoritePosts.splice(index, 1);
-      this.toastrService.warning('Removed from favorites list', 'Success');
-    } else {
-      this.toastrService.success('Added to favorites list', 'Success');
-      favoritePosts.push(beach);
-    }
 
-    this.localStorageService.saveItem(
-      FAVORITE_KEY + this.user?.id,
-      favoritePosts
-    );
-    this.loadFavoriteStatus();
+    if (this.user?.id !== undefined) {
+      if (index !== -1) {
+        favoritePosts.splice(index, 1);
+        this.toastrService.warning('Removed from favorites list', 'Success');
+      } else {
+        this.toastrService.success('Added to favorites list', 'Success');
+        favoritePosts.push(beach);
+      }
+      this.localStorageService.saveItem(
+        FAVORITE_KEY + this.user?.id,
+        favoritePosts
+      );
+      this.loadFavoriteStatus();
+    } else {
+      this.toastrService.warning('You need to log in or register', 'Warning');
+    }
   }
 }
