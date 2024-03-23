@@ -1,0 +1,26 @@
+<div class="image" >
+  <div class="image-slider" (click)="navigate(true,beach.id)">
+    <img loading="lazy" [src]="getCurrentImageSource(currentImageIndex)" alt="Image">
+  </div>
+  <div class="favorite" (click)="addFavorite(beach)" [ngClass]="{'favorite-hover': beach.isFavorite}">
+    <i class="fas fa-heart"></i>
+  </div>
+  <div class="overlay"   >
+    <div class="next-prev">
+      <div class="prev" >
+        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none"
+        (click)="changeImage(false)" *ngIf="showPrevButton">
+          <circle cx="15" cy="15" r="15" transform="matrix(-1 0 0 1 30 0)" fill="white" fill-opacity="0.8" />
+          <path d="M18 19.59L13.6734 15L18 10.41L16.668 9L11 15L16.668 21L18 19.59Z" fill="#3E3E3E" />
+        </svg>
+      </div>
+      <div class="next" >
+        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none"
+        (click)="changeImage(true)" *ngIf="showNextButton ">
+          <circle cx="15" cy="15" r="15" fill="white" fill-opacity="0.8" />
+          <path d="M12 19.59L16.3266 15L12 10.41L13.332 9L19 15L13.332 21L12 19.59Z" fill="#3E3E3E" />
+        </svg>
+      </div>
+    </div>
+  </div>
+</div>

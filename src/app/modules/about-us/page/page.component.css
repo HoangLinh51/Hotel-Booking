@@ -3,7 +3,6 @@
   flex-direction: column;
   width: 1440px;
   height: auto;
-
 }
 
 .header img {
@@ -87,7 +86,8 @@
   height: 300px;
   border-radius: 15px;
 }
-.about .content2 .decription{
+
+.about .content2 .decription {
   display: flex;
   flex-direction: column;
   gap: 10px;

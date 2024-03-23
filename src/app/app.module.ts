@@ -10,10 +10,13 @@ import { fakeBackendProvider } from './data/helpers/fake-backend';
 import { LocalStorageService } from './data/service/localstorage.service';
 import { PostService } from './data/service/post.service';
 import { CategoryService } from './data/service/category.service';
+import { BrowserModule } from '@angular/platform-browser';
+import { NavigatePage } from './modules/common/navigate';
 
 @NgModule({
   declarations: [AppComponent],
   imports: [
+    BrowserModule,
     BrowserAnimationsModule,
     HttpClientModule,
     AppRoutingModule,
@@ -24,6 +27,7 @@ import { CategoryService } from './data/service/category.service';
     PostService,
     LocalStorageService,
     CategoryService,
+    NavigatePage,
   ],
   bootstrap: [AppComponent],
 })

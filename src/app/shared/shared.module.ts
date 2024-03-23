@@ -16,6 +16,7 @@ import { StepsModule } from 'primeng/steps';
 import { InputTextareaModule } from 'primeng/inputtextarea';
 import { DropdownModule } from 'primeng/dropdown';
 import { MessagesModule } from 'primeng/messages';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   imports: [
@@ -32,6 +33,11 @@ import { MessagesModule } from 'primeng/messages';
     InputTextareaModule,
     DropdownModule,
     MessagesModule,
+    ToastrModule.forRoot({
+      closeButton: true,
+      timeOut: 1500,
+      progressBar: true,
+    }),
   ],
   declarations: [HeaderComponent, FooterComponent, HeaderNonsearchComponent],
   exports: [
@@ -51,6 +57,7 @@ import { MessagesModule } from 'primeng/messages';
     InputTextareaModule,
     DropdownModule,
     MessagesModule,
+    ToastrModule,
   ],
 })
 export class SharedModule {}

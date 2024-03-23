@@ -3,7 +3,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { AuthService } from 'src/app/data/service/auth.service';
 import { first } from 'rxjs/operators';
 import { ActivatedRoute, Router } from '@angular/router';
-import { AlertService } from 'src/app/data/service/alert.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-register',
@@ -20,7 +20,7 @@ export class RegisterComponent implements OnInit {
     private route: ActivatedRoute,
     private router: Router,
     private AuthService: AuthService,
-    private alertService: AlertService
+    private toastrService: ToastrService
   ) {}
 
   ngOnInit() {
@@ -59,7 +59,6 @@ export class RegisterComponent implements OnInit {
 
   onSubmit() {
     this.submitted = true;
-    // reset alerts on submit
 
     if (this.form.valid) {
       this.loading = true;
@@ -67,14 +66,11 @@ export class RegisterComponent implements OnInit {
         .pipe(first())
         .subscribe({
           next: () => {
-            this.alertService.success('Registration successful', {
-              keepAfterRouteChange: true,
-            });
+            this.toastrService.success('Register Success!', 'Success!');
             this.router.navigate(['/login'], { relativeTo: this.route });
           },
           error: (error) => {
-            console.log('error', error);
-            this.alertService.error(error);
+            this.toastrService.error(error, 'Error!');
             this.loading = false;
           },
         });

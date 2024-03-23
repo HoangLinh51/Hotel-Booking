@@ -1,4 +1,3 @@
-import { isPlatformBrowser } from '@angular/common';
 import { Component, EventEmitter, Output } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -57,8 +56,8 @@ export class HeaderComponent {
 
   addNewItem(input: string) {
     if (this.checkIn && this.checkOut) {
-      const checkIn = this.checkIn;
-      const checkOut = this.checkOut;
+      const checkIn = this.getDateinFormat(this.date.value.checkIn);
+      const checkOut = this.getDateinFormat(this.date.value.checkOut);
       const dateInput = (this.dateInput = { checkIn, checkOut });
       this.emitNewItemEvent(input, dateInput);
     } else {

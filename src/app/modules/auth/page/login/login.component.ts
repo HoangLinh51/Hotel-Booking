@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { first } from 'rxjs';
 import { LUser } from 'src/app/data/modal/user';
-import { AlertService } from 'src/app/data/service/alert.service';
 import { AuthService } from 'src/app/data/service/auth.service';
 
 @Component({
@@ -21,7 +21,7 @@ export class LoginComponent {
     private route: ActivatedRoute,
     private router: Router,
     private authService: AuthService,
-    private alertService: AlertService
+    private toastrService: ToastrService
   ) {
     this.user = this.authService.userValue;
   }
@@ -44,13 +44,16 @@ export class LoginComponent {
         .pipe(first())
         .subscribe({
           next: () => {
+            this.toastrService.success(
+              'Welcome user ',
+              'Logged in successfully!'
+            );
             const returnUrl =
               this.route.snapshot.queryParams['returnUrl'] || '/';
             this.router.navigateByUrl(returnUrl);
           },
           error: (error) => {
-            console.log(error);
-            this.alertService.error(error);
+            this.toastrService.error(error, 'Error!');
             this.loading = false;
           },
         });

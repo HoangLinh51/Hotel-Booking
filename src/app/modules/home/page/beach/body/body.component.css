@@ -1,41 +1,5 @@
-.post {
-  display: flex;
-  flex-direction: row;
-  margin-top: 3px;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-}
 
-.post .beach {
-  width: 320px;
-  height: 443px;
-  flex-shrink: 0;
-  cursor: pointer;
-}
-
-
-
-.post .beach .btn {
-  padding: 10px 20px;
-  background-color: #3498db;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  margin-bottom: 10px;
-  cursor: pointer;
-}
-
-.post .beach .heart-btn {
-  font-size: 24px;
-  background: none;
-  border: none;
-  color: #e74c3c;
-  cursor: pointer;
-}
-
-
-
-.post .beach .title {
+.title {
   width: 313px;
   height: 95px;
   display: flex;
@@ -44,13 +8,13 @@
   margin: 15px 2px 13px 0px;
 }
 
-.post .beach .title .infor {
+.title .infor {
   width: 186px;
   height: 95px;
   flex-shrink: 0;
 }
 
-.post .beach .title .infor .location {
+.title .infor .location {
   color: #3E3E3E;
   font-family: Poppins;
   font-size: 14px;
@@ -60,7 +24,7 @@
   margin: 0px 0px 2px 0px;
 }
 
-.post .beach .title .infor .where,
+.title .infor .where,
 .date {
   color: #B8B8B8;
   font-family: Poppins;
@@ -71,13 +35,13 @@
   margin: 0px 0px 2px 0px;
 }
 
-.post .beach .title .infor div.price {
+.title .infor div.price {
   margin-top: 7px;
   display: flex;
   gap: 2px;
 }
 
-.post .beach .title .infor div.price label.price {
+.title .infor div.price label.price {
   color: #3E3E3E;
   font-family: Poppins;
   font-size: 14px;
@@ -86,7 +50,7 @@
   line-height: normal;
 }
 
-.post .beach .title .infor div.price .time {
+.title .infor div.price .time {
   color: #3E3E3E;
   font-family: Poppins;
   font-size: 14px;
@@ -95,13 +59,13 @@
   line-height: normal;
 }
 
-.post .beach .title .star {
+.title .star {
   display: inline-flex;
   align-items: center;
   gap: 5px;
 }
 
-.post .beach .title .star .point {
+.title .star .point {
   color: #3E3E3E;
   font-family: Poppins;
   font-size: 14px;

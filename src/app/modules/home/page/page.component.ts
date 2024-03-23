@@ -80,7 +80,6 @@ export class PageComponent implements OnInit {
   }
 
   addItem(newItem: InputSearch) {
-    console.log('newItem', newItem);
     if (newItem.input !== '') {
       this.postSearch = this.postService.searchPosts(newItem.input);
       if (this.productBooked) {
@@ -117,7 +116,6 @@ export class PageComponent implements OnInit {
     if (newItem) {
       const categorySelected = this.category[$event];
 
-      // console.log('in If onchange tab:--->', newItem);
       this.postSelected = this.posts.filter(
         (i) => i.categories == categorySelected.name
       );

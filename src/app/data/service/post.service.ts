@@ -3067,7 +3067,6 @@ export class PostService {
   searchPosts(keyword: string): any[] {
     this.dataPost = this.localStorageService.getItem(PRODUCTLIST_KEY);
     const result = typeof keyword === 'string' ? keyword.toLowerCase() : '';
-    // keyword = keyword.toLowerCase();
     return this.dataPost.filter((post) =>
       post.location.toLowerCase().includes(result)
     );

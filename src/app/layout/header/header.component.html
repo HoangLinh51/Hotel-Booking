@@ -45,7 +45,6 @@
     </div>
 
     <form [formGroup]="date">
-      <!-- (ngSubmit)="onSubmit()" -->
       <div class="date">
         <ng-container *ngIf="!checkIn else templateCheckIn">
           <p-calendar class="checkinout" formControlName="checkIn" [iconDisplay]="'input'" [showIcon]="true"
