@@ -26,6 +26,7 @@
         </ng-template>
       </p-tabPanel>
     </p-tabView>
+    <app-beach [postSelected]="postSearch"></app-beach>
   </ng-container>
 
   <ng-template #templateSearch>
@@ -41,9 +42,10 @@
         </ng-template>
       </p-tabPanel>
     </p-tabView>
+
+    <app-beach [postSelected]="postSelected"></app-beach>
   </ng-template>
 
-  <app-beach [postSelected]="postSearch.length !== 0 ? postSearch : postSelected"></app-beach>
 
   <app-showmap></app-showmap>
 

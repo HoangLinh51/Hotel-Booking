@@ -83,15 +83,20 @@ export class PageComponent implements OnInit {
     if (newItem.input !== '') {
       this.postSearch = this.postService.searchPosts(newItem.input);
       if (this.productBooked) {
-        this.productBooked.forEach((product: any) => {
+        let isBookedMatching = false;
+        this.productBooked.forEach((productBooked: any) => {
           if (
-            product.dateBooked.checkIn === newItem.dateInput.checkIn &&
-            product.dateBooked.checkOut === newItem.dateInput.checkOut
+            productBooked.dateBooked.checkIn === newItem.dateInput.checkIn &&
+            productBooked.dateBooked.checkOut === newItem.dateInput.checkOut
           ) {
             this.postSearch = this.postSearch.filter(
               (listProduct: { id: number }) =>
-                listProduct.id !== product.idProduct
+                listProduct.id !== productBooked.idProduct
             );
+            isBookedMatching = true;
+          }
+          if (!isBookedMatching) {
+            this.router.navigate(['/']);
           }
         });
       }
@@ -101,7 +106,27 @@ export class PageComponent implements OnInit {
           checkOut: newItem.dateInput.checkOut,
         },
       });
-    } else {
+    } else if (newItem.input === '') {
+      if (this.productBooked) {
+        let isBookedMatching = false;
+        this.productBooked.forEach((productBooked: any) => {
+          if (
+            productBooked.dateBooked.checkIn === newItem.dateInput.checkIn &&
+            productBooked.dateBooked.checkOut === newItem.dateInput.checkOut
+          ) {
+            this.postSelected = this.postSelected.filter(
+              (listProduct: { id: number }) =>
+                listProduct.id !== productBooked.idProduct
+            );
+            isBookedMatching = true;
+          }
+          if (!isBookedMatching) {
+            this.router.navigateByUrl('/').then(() => {
+              window.location.reload();
+            });
+          }
+        });
+      }
       this.router.navigate(['/'], {
         queryParams: {
           checkIn: newItem.dateInput.checkIn,
@@ -112,6 +137,7 @@ export class PageComponent implements OnInit {
   }
 
   onChangeTab($event: number, newItem: any) {
+    console.log('newItem', newItem);
     this.productBooked = this.localStorageService.getItem(BOOKED_KEY) || [];
     if (newItem) {
       const categorySelected = this.category[$event];
@@ -122,8 +148,8 @@ export class PageComponent implements OnInit {
       if (this.productBooked) {
         this.productBooked.forEach((product: any) => {
           if (
-            product.dateBooked.checkIn === newItem.dateInput.checkIn &&
-            product.dateBooked.checkOut === newItem.dateInput.checkOut
+            product.dateBooked.checkIn === newItem.value.dateInput.checkIn &&
+            product.dateBooked.checkOut === newItem.value.dateInput.checkOut
           ) {
             this.postSelected = this.postSelected.filter(
               (listProduct: { id: number }) =>

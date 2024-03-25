@@ -94,10 +94,6 @@
   text-decoration: none;
 }
 
-/* .nav:hover .overlay {
-  opacity: 1;
-} */
-
 .nav .overlay .label-hover {
   color: #3E3E3E;
   font-family: Poppins;

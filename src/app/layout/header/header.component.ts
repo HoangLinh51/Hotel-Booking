@@ -55,77 +55,28 @@ export class HeaderComponent {
   }
 
   addNewItem(input: string) {
-    if (this.checkIn && this.checkOut) {
-      const checkIn = this.getDateinFormat(this.date.value.checkIn);
-      const checkOut = this.getDateinFormat(this.date.value.checkOut);
-      const dateInput = (this.dateInput = { checkIn, checkOut });
-      this.emitNewItemEvent(input, dateInput);
-    } else {
-      if (this.date.invalid) {
-        if (input !== '') {
-          if (
-            this.date.value.checkIn === '' &&
-            this.date.value.checkOut === ''
-          ) {
-            const checkIn = (this.checkIn = '');
-            const checkOut = (this.checkOut = '');
-            const dateInput = (this.dateInput = {
-              checkIn,
-              checkOut,
-            });
-            this.emitNewItemEvent(input, dateInput);
-          } else if (this.date.value.checkIn === '') {
-            const date = new Date(this.date.value.checkOut);
-            const checkOut = this.getDateinFormat(date);
-            date.setDate(date.getDate());
-            const checkIn = (this.checkIn = date.toISOString().slice(0, 10));
-            const dateInput = (this.dateInput = {
-              checkIn,
-              checkOut,
-            });
-            this.emitNewItemEvent(input, dateInput);
-          } else if (this.date.value.checkOut === '') {
-            const date = new Date(this.date.value.checkIn);
-            const checkIn = this.getDateinFormat(date);
-            date.setDate(date.getDate() + 2);
-            const checkOut = (this.checkOut = date.toISOString().slice(0, 10));
-            const dateInput = (this.dateInput = {
-              checkIn,
-              checkOut,
-            });
-            this.emitNewItemEvent(input, dateInput);
-          }
-        } else if (input === '') {
-          if (
-            this.date.value.checkIn === '' &&
-            this.date.value.checkOut === ''
-          ) {
-            this.router.navigateByUrl('/').then(() => {
-              window.location.reload();
-            });
-          } else if (this.date.value.checkIn === '') {
-            const date = new Date(this.date.value.checkOut);
-            const checkOut = this.getDateinFormat(date);
-            date.setDate(date.getDate());
-            const checkIn = (this.checkIn = date.toISOString().slice(0, 10));
-            const dateInput = (this.dateInput = {
-              checkIn,
-              checkOut,
-            });
-            this.emitNewItemEvent(input, dateInput);
-          } else if (this.date.value.checkOut === '') {
-            const date = new Date(this.date.value.checkIn);
-            const checkIn = this.getDateinFormat(date);
-            date.setDate(date.getDate() + 2);
-            const checkOut = (this.checkOut = date.toISOString().slice(0, 10));
-            const dateInput = (this.dateInput = {
-              checkIn,
-              checkOut,
-            });
-            this.emitNewItemEvent(input, dateInput);
-          }
-        }
-      } else {
+    if (input === '') {
+      if (this.date.value.checkIn === '' && this.date.value.checkOut === '') {
+        this.router.navigateByUrl('/').then(() => {
+          window.location.reload();
+        });
+      } else if (
+        this.date.value.checkIn === '' &&
+        this.date.value.checkOut !== ''
+      ) {
+        const date = new Date(this.date.value.checkOut);
+        const checkOut = this.getDateinFormat(date);
+        date.setDate(date.getDate());
+        const checkIn = (this.checkIn = date.toISOString().slice(0, 10));
+        const dateInput = (this.dateInput = {
+          checkIn,
+          checkOut,
+        });
+        this.emitNewItemEvent(input, dateInput);
+      } else if (
+        this.date.value.checkIn !== '' &&
+        this.date.value.checkOut !== ''
+      ) {
         const checkIn = this.getDateinFormat(new Date(this.date.value.checkIn));
         const checkOut = this.getDateinFormat(
           new Date(this.date.value.checkOut)
@@ -134,6 +85,68 @@ export class HeaderComponent {
           checkIn,
           checkOut,
         };
+        this.emitNewItemEvent(input, dateInput);
+      } else if (
+        this.date.value.checkIn !== '' &&
+        this.date.value.checkOut === ''
+      ) {
+        const date = new Date(this.date.value.checkIn);
+        const checkIn = this.getDateinFormat(date);
+        date.setDate(date.getDate() + 2);
+        const checkOut = (this.checkOut = date.toISOString().slice(0, 10));
+        const dateInput = (this.dateInput = {
+          checkIn,
+          checkOut,
+        });
+        this.emitNewItemEvent(input, dateInput);
+      }
+    } else if (input !== '') {
+      if (this.date.value.checkIn === '' && this.date.value.checkOut === '') {
+        const checkIn = (this.checkIn = '');
+        const checkOut = (this.checkOut = '');
+        const dateInput = (this.dateInput = {
+          checkIn,
+          checkOut,
+        });
+        this.emitNewItemEvent(input, dateInput);
+      } else if (
+        this.date.value.checkIn === '' &&
+        this.date.value.checkOut !== ''
+      ) {
+        const date = new Date(this.date.value.checkOut);
+        const checkOut = this.getDateinFormat(date);
+        date.setDate(date.getDate());
+        const checkIn = (this.checkIn = date.toISOString().slice(0, 10));
+        const dateInput = (this.dateInput = {
+          checkIn,
+          checkOut,
+        });
+        this.emitNewItemEvent(input, dateInput);
+      } else if (
+        this.date.value.checkIn !== '' &&
+        this.date.value.checkOut !== ''
+      ) {
+        const checkIn = this.getDateinFormat(new Date(this.date.value.checkIn));
+        const checkOut = this.getDateinFormat(
+          new Date(this.date.value.checkOut)
+        );
+        const dateInput = {
+          checkIn,
+          checkOut,
+        };
+        this.emitNewItemEvent(input, dateInput);
+      } else if (
+        this.date.value.checkIn !== '' &&
+        this.date.value.checkOut === ''
+      ) {
+        const date = new Date(this.date.value.checkIn);
+        const checkIn = this.getDateinFormat(date);
+        date.setDate(date.getDate() + 2);
+        const checkOut = (this.checkOut = date.toISOString().slice(0, 10));
+        const dateInput = (this.dateInput = {
+          checkIn,
+          checkOut,
+        });
         this.emitNewItemEvent(input, dateInput);
       }
     }
