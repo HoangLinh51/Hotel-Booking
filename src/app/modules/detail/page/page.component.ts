@@ -39,7 +39,7 @@ export class PageComponent {
 
     const id = this.route.snapshot.paramMap.get('id');
     this.post = this.postService.getProductById(Number(id));
-    console.log('product-id', this.postService.getProductById(Number(id))?.id);
+    // console.log('product-id', this.postService.getProductById(Number(id))?.id);
     this.route.queryParams.subscribe((params) => {
       this.checkIn = params['checkIn'];
       this.checkOut = params['checkOut'];

@@ -54,7 +54,7 @@ export class HeaderComponent {
     this.newItemEvent.emit(this.valueInput);
   }
 
-  addNewItem(input: string) {
+  inputSearch(input: string) {
     if (input === '') {
       if (this.date.value.checkIn === '' && this.date.value.checkOut === '') {
         this.router.navigateByUrl('/').then(() => {
