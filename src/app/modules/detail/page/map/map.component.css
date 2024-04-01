@@ -1,8 +1,16 @@
-.map .title {
+.map{
+  margin: 15px 0px ;
+}
+
+.map .header{
+  display: flex;
+  justify-content: space-around;
+}
+.map .header .title {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  margin: 0px 1095px 45px 129px;
+  margin-left: -160px;
 }
 
 .map .title label {
@@ -16,11 +24,12 @@
 }
 
 .map .location {
-  width: 1184px;
-  height: 530px;
-  flex-shrink: 0;
-  border-radius: 5px;
-  background: url('/assets/image/detail/map.png'),no-repeat;
-  background-size: 1184px 530px;
-  margin: 0px 128px 60px 128px;
+  border-radius: 15px;
+  position: relative;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+}
+
+@media only screen and (max-width: 1128px) and (min-width: 950px) {
 }

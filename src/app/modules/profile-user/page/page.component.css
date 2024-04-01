@@ -4,7 +4,8 @@
   margin: 50px 70px;
 }
 
-.roadmap p, h4 {
+.roadmap p,
+h4 {
   color: #3E3E3E;
   font-family: Poppins;
   font-size: 18px;
@@ -16,18 +17,16 @@
 
 .body {
   display: flex;
-  gap: 100px;
+  gap: 10px;
   margin-bottom: 100px;
 }
 
 .body .directional {
   display: flex;
-  margin: 0px 50px 0px 100px;
-  width: 200px;
-  height: 200px;
-  flex-direction: row;
+  flex-direction: column;
   flex-wrap: wrap;
   gap: 15px;
+  margin: 0px 50px 0px 70px;
 }
 
 .body .directional .manage {
@@ -63,4 +62,22 @@
   display: flex;
   flex-direction: column;
   gap: 15px;
+}
+
+
+@media only screen and (min-width: 950px) and (max-width: 1128px) {
+  .body {
+    display: flex;
+    gap: 10px;
+  }
+
+  .body .directional {
+    margin: 0px 25px;
+  }
+
+  .outputdirectional .frame {
+    display: flex;
+    flex-direction: row;
+    gap: 25px;
+  }
 }

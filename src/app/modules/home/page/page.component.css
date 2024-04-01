@@ -1,16 +1,14 @@
 .main {
-  width: 1440px;
+  width: 100%;
   background: #FFF;
-  margin: 0px;
   padding: 0px;
 }
 
 .question-bar {
-  display: flex;
-  height: 50px;
-  padding: 10px;
-  align-items: center;
   background: #F7F7F7;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .question-bar label.question {
@@ -20,7 +18,7 @@
   font-style: normal;
   font-weight: 500;
   line-height: normal;
-  margin: 14px 0px 14px 602px;
+  margin: 0px;
 }
 
 .question-bar label {
@@ -36,65 +34,32 @@
   margin: 0px;
 }
 
-.nav {
-  width: 105px;
-  height: 100px;
-  flex-shrink: 0;
-  position: relative;
-  cursor: pointer;
-  border: none;
+.list_category {
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
-.nav .basic {
+
+.basic {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.nav .active {
+.active {
   color: #3E3E3E;
   font-family: Poppins;
   font-size: 12px;
-  font-style: normal;
   font-weight: 400;
   line-height: normal;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  flex-shrink: 0;
   margin: 0px;
 }
 
-.nav .basic label.label-nohover {
-  color: #B8B8B8;
-  font-family: Poppins;
-  font-size: 12px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-}
-
-.nav .overlay {
-  position: absolute;
-  opacity: 0;
-  transition: .3s ease;
-  width: 105px;
-  height: 100px;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-decoration: none;
-}
-
-.nav .overlay .label-hover {
-  color: #3E3E3E;
-  font-family: Poppins;
-  font-size: 12px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-  cursor: pointer;
+@media only screen and (min-width: 950px) and (max-width: 1128px) {
+  .list_category {
+    overflow-x: auto;
+    white-space: nowrap;
+    justify-content: flex-start;
+  }
 }

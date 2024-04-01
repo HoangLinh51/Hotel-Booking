@@ -16,6 +16,7 @@ label {
   display: flex;
   flex-direction: column;
   gap: 15px;
+  margin: 15px;
 }
 
 .box label.header {
@@ -27,21 +28,22 @@ label {
   line-height: normal;
 }
 
-.box .body {
+.box div.note .note {
   color: #3E3E3E;
   font-family: Poppins;
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+  width: 100%;
 }
 
 .box .header {
   display: flex;
-  gap: 5%;
+  justify-content: space-between;
 }
 
-.box .header input{
+.box .header input {
   height: 30px;
   color: #3E3E3E;
   border: 1px solid #aeaeae;
@@ -53,18 +55,20 @@ label {
   line-height: normal;
   margin: 0px;
 }
-.box .header .decrip{
+
+.box .header .decrip {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
+
 .button {
   display: flex;
   justify-content: flex-end;
 }
 
 .button button {
-  padding: 8px 15px;
+  padding: 10px 15px;
   border: none;
   border-radius: 10px;
   background: #FF385C;
@@ -77,9 +81,20 @@ label {
   margin: 0px;
 }
 
-.invalid-message{
+.invalid-message {
   color: red;
 }
+
 form .ng-invalid.ng-touched {
   border-color: #e66262;
+}
+
+@media only screen and (min-width: 950px) and (max-width: 1029px) {
+  .box .header {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    flex-wrap: wrap;
+  }
 }

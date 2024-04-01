@@ -1,6 +1,8 @@
+label {
+  margin: 0px;
+}
+
 .footer {
-  width: 1440px;
-  flex-shrink: 0;
   border: 1px solid #E6E6E6;
   background: #F7F7F7;
 }
@@ -8,16 +10,14 @@
 .footer .footer1 {
   display: flex;
   margin: 23px 125px 60px 100px;
+  justify-content: center;
 }
 
 .footer .footer1 .group {
-  width: 25%;
-  height: 201px;
-  flex-shrink: 0;
+  width: 23%;
   display: flex;
   flex-direction: column;
   gap: 15px;
-  /* margin: 0px 62px 0px 127px; */
 }
 
 .footer .footer1 label {
@@ -30,29 +30,26 @@
 }
 
 .footer .line {
-  width: 1183px;
+  width: 100%;
   height: 1px;
-  flex-shrink: 0;
   background: #E6E6E6;
-  margin: 0px 128px;
 }
 
-.footer2 {
-  width: 1439px;
-  padding: 14px 45px 15px 45px;
+.footer .footer2 {
+  padding: 15px 45px;
   display: flex;
   justify-content: space-between;
   background: #FFF;
   box-shadow: 0px 0px 2px 0px rgba(34, 34, 34, 0.25);
 }
 
-.footer2 .left-footer {
+.footer .footer2 .left-footer {
   display: flex;
   align-items: center;
   gap: 10px;
 }
 
-.footer2 .left-footer label {
+.footer .footer2 .left-footer label {
   color: #3E3E3E;
   font-family: Poppins;
   font-size: 14px;
@@ -61,13 +58,13 @@
   line-height: normal;
 }
 
-.footer2 .right-footer {
+.footer .footer2 .right-footer {
   display: flex;
   align-items: center;
   gap: 32px;
 }
 
-.footer2 .right-footer label {
+.footer .footer2 .right-footer label {
   color: #3E3E3E;
   font-family: Poppins;
   font-size: 14px;
@@ -77,41 +74,14 @@
 }
 
 @media (min-width: 950px) and (max-width: 1128px) {
-  .footer {
-    width: 85%;
-  }
 
   .footer .footer1 {
-    width: 85%;
-    margin: 23px 0px 60px 0px;
+    margin: auto;
   }
 
-  .footer .footer1 .group {
-    width: 25%;
-    gap: 10px;
-  }
-
-  .footer .line {
-    width: 100%;
-    margin: 0px 128px
-  }
-
-  .footer2 {
-    width: 85%;
-  }
-  .footer2 .left-footer {
-    gap: 6px;
-  }
-
-  .footer2 .left-footer label {
-    font-size: 12px;
-  }
-
-  .footer2 .right-footer {
-    gap: 18px;
-  }
-
-  .footer2 .right-footer label {
-    font-size: 12px;
+  .footer .footer2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 }

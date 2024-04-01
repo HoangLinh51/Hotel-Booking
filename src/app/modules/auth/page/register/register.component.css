@@ -1,15 +1,19 @@
-img {
-  width: 800px;
+.image {
+  width: 650px;
   height: 500px;
-  border-radius: 0px 20px 20px 0px;
+}
+
+.image img{
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
 }
 
 .body {
   display: flex;
-  flex-direction: row;
   align-items: center;
-  gap: 60px;
-  justify-content: flex-start;
+  gap: 30px;
+  justify-content: center;
   margin: 80px 0px;
 }
 
@@ -18,7 +22,6 @@ img {
   flex-direction: column;
   align-items: center;
   gap: 20px;
-  width: 360px;
 }
 
 .body .input .forminput{
@@ -47,8 +50,7 @@ img {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 40px;
-  width: 100%;
+  gap: 30px;
 }
 
 .body .input .form input {
@@ -61,17 +63,12 @@ img {
   border: none;
   border-bottom: 1px solid #E6E6E6;
   outline: none;
-  width: 100%;
 }
 
 .body .create-acc button {
-  display: flex;
-  padding: 16px 48px;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
+  padding: 15px 40px;
   border-radius: 15px;
-  border: 1px solid white;
+  border: none;
   background:  #FF385C;
   color: #fff;
   font-family: Poppins;
@@ -80,14 +77,11 @@ img {
   font-weight: 300;
   line-height: normal;
   margin: 0px;
-  width: 360px;
+  width: 100%;
 }
+
 .body .login-gmail button{
-  display: flex;
-  padding: 16px 48px;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
+  padding: 15px 40px;
   border-radius: 15px;
   border: 1px solid #979797;
   background-color: #fff;
@@ -97,7 +91,9 @@ img {
   font-weight: 300;
   line-height: normal;
   margin: 0px;
-  width: 360px;
+  width: 100%;
+  display: flex;
+  justify-items: center;
 }
 .body .login label{
   color: #3E3E3E;

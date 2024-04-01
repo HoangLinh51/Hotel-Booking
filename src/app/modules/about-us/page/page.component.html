@@ -1,4 +1,4 @@
-<app-header-nonsearch></app-header-nonsearch>
+<app-header-nonsearch class="app_header"></app-header-nonsearch>
 <div class="header">
   <img src="/assets/image/aboutUs/thumbnail.jpg" alt="">
   <div class="text">
@@ -9,12 +9,12 @@
 <div class="about">
   <div class="content">
     <p-tabView>
-      <p-tabPanel>
+      <p-tabPanel class="nav">
         <ng-template pTemplate="header">
           <label class="title">Who We Are</label>
         </ng-template>
         <div class="decription">
-          <label class="text">We are travelers and technologists. We work across time zones, hemispheres, cultures and
+          <label class="body">We are travelers and technologists. We work across time zones, hemispheres, cultures and
             languages. We’re used to breaking things down and building them back up again, until they’re even better. We
             know travel can be hard, but we also know that it’s worth it, every time. And because we believe travel is a
             force for good, we take our roles seriously. We’re here to build great products, and facilitate connections
@@ -22,12 +22,12 @@
           <img src="/assets/image/aboutUs/about1.jpg" alt="">
         </div>
       </p-tabPanel>
-      <p-tabPanel class="decription">
+      <p-tabPanel class="nav">
         <ng-template pTemplate="header">
           <label class="title">What We Do</label>
         </ng-template>
         <div class="decription">
-          <label class="text">We build connections. We leverage our platform and technology capabilities across an
+          <label class="body">We build connections. We leverage our platform and technology capabilities across an
             extensive portfolio of businesses and brands to orchestrate the movement of people and the delivery of
             travel experiences on both a local and global basis. We help our travelers and our partners find the right
             pathways  through millions of possibilities to reach the best possible outcome.</label>
@@ -39,7 +39,7 @@
           <label class="title">How We Do It</label>
         </ng-template>
         <div class="decription">
-          <label class="text">Powered by more than 70+ petabytes of data and 20+ years of tech innovation, Expedia Group
+          <label class="body">Powered by more than 70+ petabytes of data and 20+ years of tech innovation, Expedia Group
             is one of the world’s largest travel platforms. With unrivaled knowledge of the industry and advanced tech
             innovation, we built a two sided marketplace that allows us to filter through millions of different
             possibilities, for travelers and partners worldwide.</label>
@@ -61,4 +61,4 @@
     </div>
   </div>
 </div>
-<app-footer></app-footer>
+<app-footer class="app_footer"></app-footer>

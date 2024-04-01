@@ -1,27 +1,27 @@
 <form [formGroup]="form">
 <div class="outputdirectional">
   <label class="title">Edit Your Profile</label>
-  <div class="frame1">
-    <div class="first">
+  <div class="frame">
+    <div class="group">
       <label class="header">First Name</label>
       <input [placeholder]="user?.firstName" formControlName="firstName">
     </div>
-    <div class="last">
+    <div class="group">
       <label class="header">Last Name</label>
       <input [placeholder]="user?.lastName" formControlName="lastName">
     </div>
   </div>
-  <div class="frame2">
-    <div class="email">
+  <div class="frame">
+    <div class="group">
       <label class="header">Email</label>
       <input [placeholder]="user?.email" formControlName="email">
     </div>
-    <div class="phone">
+    <div class="group">
       <label class="header">Phone</label>
       <input [placeholder]="user?.phoneNumber" formControlName="phoneNumber">
     </div>
   </div>
-  <div class="frame3">
+  <div class="frame2">
     <button class="cancel">Cancel</button>
     <button class="save" type="submit">Save Change</button>
   </div>

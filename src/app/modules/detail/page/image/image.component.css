@@ -1,18 +1,14 @@
 .image {
-  height: 450px;
   display: flex;
   justify-content: center;
-  align-items: center;
-  margin: 0px 129px 71px 130px;
 }
 .image img{
-  width: 90%;
-  height: 90%;
-  position: relative;
+  width: 55vw;
+  height: 45vh;
   border-radius: 15px;
 }
 
-.image label {
+/* .image label {
   color: #3E3E3E;
   font-family: Poppins;
   font-size: 14px;
@@ -20,4 +16,4 @@
   font-weight: 600;
   line-height: normal;
   margin: 0px;
-}
+} */

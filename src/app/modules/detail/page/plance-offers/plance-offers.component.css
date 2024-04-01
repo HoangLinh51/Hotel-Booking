@@ -3,28 +3,44 @@ label{
 }
 
 .plance-offers {
-  margin: 0px 129px 53px 129px;
+  margin: 15px 0px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
-.plance-offers .title {
+.plance-offers div.title{
+  display: flex;
+  justify-content: space-around;
+}
+
+.plance-offers div.title label {
   color: #3E3E3E;
   font-family: Poppins;
   font-size: 28px;
   font-style: normal;
   font-weight: 1000;
   line-height: normal;
-  margin-bottom: 27px;
-  display: flex;
+  margin-left: -125px ;
 }
 
 .plance-offers .navigate {
   display: flex;
+  justify-content: space-evenly;
 }
 
 .plance-offers .left {
-  width: 838px;
+  display: flex;
+  flex-direction: column;
 }
 
+.plance-offers .left .top {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 10px;
+  gap: 60px;
+}
 .plance-offers .left label {
   color: #3E3E3E;
   font-family: Poppins;
@@ -34,58 +50,20 @@ label{
   line-height: normal;
 }
 
-.plance-offers .left .beach {
-  display: inline-flex;
+.plance-offers .left .group {
+  display: flex;
   align-items: center;
-  gap: 17px;
-  margin: 0px 184px 27px 0px;
-}
-
-.plance-offers .left .tv {
-  display: inline-flex;
-  align-items: center;
-  gap: 17px;
-  margin: 0px 197px 26px 0px;
-}
-
-.plance-offers .left .pool {
-  display: inline-flex;
-  align-items: center;
-  gap: 17px;
-  margin: 0px 26px 31px 0px;
-}
-
-.plance-offers .left .parking {
-  display: inline-flex;
-  align-items: center;
-  gap: 16px;
-  margin: 4px 197px 0px 0px;
-}
-
-.plance-offers .left .wifi {
-  display: inline-flex;
-  align-items: center;
-  gap: 17px;
-  margin: 0px 190px 0px 5px;
-}
-
-.plance-offers .left .air {
-  display: inline-flex;
-  align-items: center;
-  gap: 17px;
+  gap: 15px;
 }
 
 .plance-offers .right {
-  width: 230px;
-  height: 50px;
-  margin: 19px 0px 6px 92px;
   display: flex;
   padding: 10px;
   justify-content: center;
   align-items: center;
   gap: 10px;
   flex-shrink: 0;
-  border-radius: 12px;
+  border-radius: 15px;
   border: 1px solid #3E3E3E;
 }
 

@@ -68,9 +68,6 @@
 .outputdirectional .frame1 .paymentTemplate .background {
   width: 280px;
   height: 150px;
-  /* display: flex;
-  justify-content: space-around;
-  flex-direction: column; */
   background: url(/assets/image/card.png), 50% / cover no-repeat;
   background-size: 300px 170px;
 }
@@ -85,10 +82,11 @@
   justify-content: space-between;
 }
 
-.outputdirectional .frame1 .paymentTemplate .component .validUntil{
-display: flex;
-flex-direction: column;
+.outputdirectional .frame1 .paymentTemplate .component .validUntil {
+  display: flex;
+  flex-direction: column;
 }
+
 .outputdirectional .frame1 .paymentTemplate .component .header {
   color: #d7d1d1;
   font-family: Poppins;
@@ -134,7 +132,6 @@ flex-direction: column;
   line-height: normal;
   margin: 0px;
 }
-
 
 .title {
   color: #3E3E3E;

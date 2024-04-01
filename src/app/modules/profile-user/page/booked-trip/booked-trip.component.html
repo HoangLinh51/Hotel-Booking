@@ -1,32 +1,24 @@
-<div class="outputdirectional">
-  <label class="title">Booking History</label>
-
-  <div class="header">
-    <div class="name">
-      <label>Id</label>
-    </div>
-    <div class="name" style="width: 178px;">
-      <label>Location</label>
-    </div>
-    <div class="name" style="border: none; width: 140px;">
-      <label>Total</label>
-    </div>
-    <div class="name">
-      <label>Payment</label>
-    </div>
-    <div class="name" style="border: none;">
-      <label>Status</label>
-    </div>
-    <div class="name"></div>
-  </div>
-  <div class="body">
-    <div class="product" *ngFor="let item of post">
-      <label class="id">{{item.orderInfo.ifUser.post.location}}</label>
-      <label class="location">{{item.orderInfo.ifUser.post.location}}</label>
-      <label class="total">${{item.payment.total}}</label>
-      <label class="payment">{{item.payment.payment}}</label>
-      <label class="status">complete</label>
-      <a class="view" routerLink='/booked-trip/history-booking' (click)="passDataToService(item)" >View Detail</a>
-    </div>
-  </div>
-</div>
+<label class="title">Booking History</label>
+<table class='table table-bordered table-sm '>
+  <thead class="thead-dark">
+    <tr>
+      <th><label class="name">Name</label></th>
+      <th><label class="name">Location</label></th>
+      <th><label class="name">Total</label></th>
+      <th><label class="name">Payment Method</label></th>
+      <th><label class="name">Status</label></th>
+      <th><label class="name"></label></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of post">
+      <td><label class="id">{{item.orderInfo.ifUser.name}}</label></td>
+      <td><label class="location">{{item.orderInfo.ifUser.post.location}}</label></td>
+      <td><label class="total">${{item.payment.total}}</label></td>
+      <td><label class="payment">{{item.payment.payment}}</label></td>
+      <td><label class="status">Complete</label></td>
+      <td><a class="view" routerLink='/booked-trip/history-booking' (click)="passDataToService(item)">View Detail</a>
+      </td>
+    </tr>
+  </tbody>
+</table>

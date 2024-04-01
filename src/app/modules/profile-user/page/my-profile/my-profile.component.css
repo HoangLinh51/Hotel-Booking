@@ -1,4 +1,3 @@
-
 .outputdirectional {
   display: flex;
   border-radius: 15px;
@@ -17,49 +16,16 @@
   margin: 0px;
 }
 
-.outputdirectional .frame1 {
+.outputdirectional .frame {
   display: flex;
   flex-direction: row;
   gap: 50px;
 }
 
-.outputdirectional .frame1 .first {
+.outputdirectional .frame .group {
   display: flex;
   flex-direction: column;
-  width: 350px;
-  gap: 10px;
-}
-
-.outputdirectional .frame1 .last {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  width: 350px;
-}
-
-.outputdirectional .frame2 {
-  display: flex;
-  flex-direction: row;
-  gap: 50px;
-}
-
-.outputdirectional .frame2 .email {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  width: 350px;
-}
-
-.outputdirectional .frame2 .phone {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  width: 350px;
-}
-
-.outputdirectional .password {
-  display: flex;
-  flex-direction: column;
+  width: 100%;
   gap: 10px;
 }
 
@@ -86,29 +52,29 @@
   outline: none;
 }
 
-.outputdirectional .frame3{
- display: flex;
- justify-content: flex-end;
-}
-.outputdirectional .frame3 .cancel {
+.outputdirectional .frame2 {
   display: flex;
-  padding: 16px 48px;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  border-radius: 15px;
-  border: 1px solid white;
-  background: white ;
+  justify-content: flex-end;
 }
-.outputdirectional .frame3 .save {
-  display: flex;
-  padding: 16px 48px;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
+
+.outputdirectional .frame2 .cancel {
+  padding: 15px 45px;
   border-radius: 15px;
-  border: 1px solid white;
-  background: var(--Button2, #FF385C);
+  border: none;
+  background: white;
+  font-family: Poppins;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  margin: 0px;
+}
+
+.outputdirectional .frame2 .save {
+  padding: 15px 45px;
+  border-radius: 15px;
+  border: none;
+  background: #FF385C;
   color: #fff;
   font-family: Poppins;
   font-size: 14px;
@@ -116,5 +82,11 @@
   font-weight: 300;
   line-height: normal;
   margin: 0px;
-
+}
+@media only screen and (min-width: 950px) and (max-width: 1128px) {
+  .outputdirectional .frame {
+    display: flex;
+    flex-direction: row;
+    gap: 25px;
+  }
 }

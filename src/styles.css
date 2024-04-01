@@ -5,21 +5,10 @@
 
 @import 'ngx-toastr/toastr';
 
-html {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  background-color: black;
-}
+
 
 body {
-  margin: 0px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   background: #FFF;
-  width: 1440px;
 }
 
 a:focus {

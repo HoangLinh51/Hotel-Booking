@@ -15,15 +15,7 @@ label {
   display: flex;
   flex-direction: column;
   gap: 10px;
-}
-
-.box label.header {
-  color: #3E3E3E;
-  font-family: Poppins;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: normal;
+  margin: 15px;
 }
 
 .box .body {
@@ -54,20 +46,23 @@ label {
   gap: 10px;
   flex-direction: column;
 }
-.box .paymentmethod .method .input{
+
+.box .paymentmethod .method .input {
   display: flex;
   gap: 10px;
 }
-.box .paymentmethod .method .input input{
-margin: 0px
+
+.box .paymentmethod .method .input input {
+  margin: 0px
 }
+
 .button {
   display: flex;
   justify-content: flex-end;
 }
 
 .button button {
-  padding: 8px 15px;
+  padding: 10px 15px;
   border: none;
   border-radius: 10px;
   background: #FF385C;
@@ -80,9 +75,10 @@ margin: 0px
   margin: 0px;
 }
 
-.invalid-message{
+.invalid-message {
   color: red;
 }
+
 form .ng-invalid.ng-touched {
   border-color: #e66262;
 }

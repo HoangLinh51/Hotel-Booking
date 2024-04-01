@@ -24,7 +24,8 @@
         </div>
 
         <ng-container *ngIf="f['payment'].invalid && f['payment'].touched">
-          <div class="invalid-message" *ngIf="f['payment'].errors?.['required']">This payment cannot be left blank.</div>
+          <div class="invalid-message" *ngIf="f['payment'].errors?.['required']">This payment cannot be left blank.
+          </div>
         </ng-container>
       </div>
     </div>

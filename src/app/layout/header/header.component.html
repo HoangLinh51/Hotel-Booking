@@ -101,8 +101,9 @@
     <div class="profile">
       <div class="dropdown" *ngIf="user === null else template">
         <button type="button" data-toggle="dropdown">
-          <i class="fa-solid fa-ellipsis"></i></button>
-        <ul class="dropdown-menu">
+          <i class="fa-solid fa-ellipsis"></i>
+        </button>
+        <ul class="dropdown-menu" style="left: -140px;">
           <li><a routerLink="/login">Login</a></li>
           <li><a href="/register">Register</a></li>
         </ul>
@@ -111,7 +112,7 @@
         <div class="dropdown">
           <button type="button" data-toggle="dropdown">
             <i class="fa-solid fa-ellipsis"></i></button>
-          <ul class="dropdown-menu">
+          <ul class="dropdown-menu" style="left: -140px;">
             <li><a (click)="logout()">Logout</a></li>
           </ul>
         </div>

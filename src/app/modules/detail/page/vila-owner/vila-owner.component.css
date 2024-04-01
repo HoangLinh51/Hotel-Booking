@@ -4,28 +4,27 @@ label {
 
 .vila-owner {
   display: flex;
-  margin: 0px 129px 61px 129px;
-  gap: 53px;
+  justify-content: space-evenly;
+  margin: 15px 0px;
 }
 
 .vila-owner .left {
-  height: 525px;
-  width: 742px;
+  width: 40vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.vila-owner .left .owner {
+  display: flex;
+  justify-content: space-between;
 }
 
 .vila-owner .left .owner .text {
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  width: 501px;
-  margin-right: 127px;
-}
-
-.vila-owner .left .owner {
-  display: flex;
-  width: 707px;
-  height: 80px;
-  margin-bottom: 26px;
+  justify-content: space-between;
 }
 
 .vila-owner .left .owner .text label.title {
@@ -37,16 +36,13 @@ label {
   line-height: normal;
 }
 
-.vila-owner .left .owner .text .group10 {
-  width: 253px;
-  height: 21px;
-  flex-shrink: 0;
-  gap: 6px;
+.vila-owner .left .owner .text .group {
   display: flex;
   align-items: center;
+  gap: 6px;
 }
 
-.vila-owner .left .owner .text .group10 label {
+.vila-owner .left .owner .text .group label {
   color: #3E3E3E;
   font-family: Poppins;
   font-size: 14px;
@@ -56,75 +52,30 @@ label {
 }
 
 .vila-owner .left .line {
-  width: 727px;
+  width: 100%;
   height: 1px;
-  flex-shrink: 0;
   background: #E6E6E6;
-  margin: 0px;
 }
 
 .vila-owner .left .describe {
-  margin: 40px 0px 50px 0px;
-  gap: 30px;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
 }
 
-.vila-owner .left .describe .frame1 {
+.vila-owner .left .describe .frame {
   display: inline-flex;
   align-items: flex-start;
-  gap: 19px;
+  gap: 15px;
+  margin: 10px;
 }
 
-.vila-owner .left .describe .frame1 .text {
+.vila-owner .left .describe .text {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  gap: 5px;
 }
 
-.vila-owner .left .describe .frame1 .text .header {
-  color: #3E3E3E;
-  font-family: Poppins;
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: normal;
-}
-
-.vila-owner .left .describe .frame1 .text .body {
-  color: #3E3E3E;
-  font-family: Poppins;
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-  width: 703px;
-}
-
-.vila-owner .left .describe .frame2 {
-  display: inline-flex;
-  align-items: flex-start;
-  gap: 20px;
-}
-
-.vila-owner .left .describe .frame2 .text {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 5px;
-}
-
-.vila-owner .left .describe .frame2 .text .header {
-  color: #3E3E3E;
-  font-family: Poppins;
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: normal;
-}
-
-.vila-owner .left .describe .frame2 .text .body {
+.vila-owner .left .describe .text label {
   color: #3E3E3E;
   font-family: Poppins;
   font-size: 14px;
@@ -132,70 +83,29 @@ label {
   font-weight: 400;
   line-height: normal;
 }
-
-.vila-owner .left .describe .frame3 {
-  display: inline-flex;
-  align-items: flex-start;
-  gap: 17px;
-}
-
-.vila-owner .left .describe .frame3 .text {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 5px;
-}
-
-.vila-owner .left .describe .frame3 .text .header {
-  color: #3E3E3E;
-  font-family: Poppins;
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: normal;
-}
-
-.vila-owner .left .describe .frame3 .text .body {
-  color: #3E3E3E;
-  font-family: Poppins;
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-}
-
 
 .vila-owner .left div.attention {
-  width: 727px;
-  height: 75px;
   flex-shrink: 0;
   border-radius: 10px;
   background: #FFF;
   box-shadow: 0px 0px 2px 0px rgba(43, 43, 43, 0.35);
-  margin-top: 35px;
 }
 
 .vila-owner .left div.attention .infor-attention {
-  margin: 17px 44px 20px 30px;
+  width: 100%;
+  padding: 17px 35px;
   display: inline-flex;
   align-items: center;
-  gap: 43px;
+  justify-content: space-between;
 }
 
 .vila-owner .left div.attention .infor-attention .text {
-  width: 580px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
-.vila-owner .left div.attention .infor-attention .text label.attention {
-  color: #3E3E3E;
-  font-family: Poppins;
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 1000;
-  line-height: normal;
-}
-
-.vila-owner .left div.attention .infor-attention .text label.text {
+.vila-owner .left div.attention .infor-attention label {
   color: #3E3E3E;
   font-family: Poppins;
   font-size: 14px;
@@ -205,56 +115,40 @@ label {
 }
 
 .vila-owner .right {
-  height: 215px;
-  flex-shrink: 0;
+  height: 100%;
+  gap: 10px;
+  display: flex;
+  padding: 20px;
   border-radius: 15px;
   border: 2px solid #E6E6E6;
   box-shadow: 0px 0px 35px 0px rgba(155, 155, 155, 0.15);
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-.vila-owner .right .header {
-  display: flex;
-  margin: 0px;
-}
-
-.vila-owner .right .cost {
-  height: 42px;
-  margin: 25px;
-}
-
-.vila-owner .right .cost .price {
+.vila-owner .right .price {
   color: #3E3E3E;
   font-family: Poppins;
-  font-size: 28px;
+  font-size: 25px;
   font-style: normal;
-  font-weight: 1000;
+  font-weight: 400;
   line-height: normal;
-}
-
-.vila-owner .right .cost .day {
-  color: #3E3E3E;
-  font-family: Poppins;
-  font-size: 20px;
-  font-style: normal;
-  font-weight: 300;
-  line-height: normal;
+  margin: 10px 0px;
 }
 
 .vila-owner .right .rating {
   display: flex;
   gap: 10px;
-  margin: 25px;
+  margin: 10px 0px;
 }
 
 .vila-owner .right .rating .star {
-  width: 49px;
-  height: 21px;
   display: inline-flex;
   align-items: center;
   gap: 5px;
 }
 
-.vila-owner .right .rating .star label {
+.vila-owner .right label {
   color: #3E3E3E;
   font-family: Poppins;
   font-size: 14px;
@@ -264,34 +158,19 @@ label {
 }
 
 .vila-owner .right .rating .review {
-  color: #3E3E3E;
-  font-family: Poppins;
-  font-size: 14px;
-  font-style: normal;
   font-weight: 1000;
-  line-height: normal;
   text-decoration-line: underline;
 }
 
-.vila-owner .right .body {
-  margin: -1px 0px 0px -2px;
-}
-
-.vila-owner .right .body .button {
+.vila-owner .right .button {
   display: flex;
-  width: 317px;
-  height: 50px;
   padding: 10px;
   justify-content: center;
-  align-items: center;
-  gap: 10px;
-  flex-shrink: 0;
   border-radius: 8px;
   background: #FF385C;
-  margin: 25px;
 }
 
-.vila-owner .right .body .button label {
+.vila-owner .right .button label {
   color: #FFF;
   font-family: Poppins;
   font-size: 14px;
@@ -300,106 +179,29 @@ label {
   line-height: normal;
 }
 
-
-.total div.amount {
-  display: flex;
-  margin: 0px 15px 25px 24px;
-  gap: 205px;
-}
-
-.total .amount label.amount {
-  color: #3E3E3E;
-  font-family: Poppins;
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-}
-
-.total .amount label.price {
-  color: #3E3E3E;
-  text-align: right;
-  font-family: Poppins;
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-}
-
-.total .line {
-  width: 337px;
-  height: 1px;
-  flex-shrink: 0;
-  background: #E6E6E6;
-  margin: 0px 25px 25px 25px;
-}
-
-.total div.total-before {
-  display: flex;
-  margin: 0px 14px 30px 25px;
-  gap: 177px
-}
-
-.total .total-before label.total-before {
-  color: #3E3E3E;
-  font-family: Poppins;
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: normal;
-}
-
-.total .total-before label.price {
-  color: #3E3E3E;
-  text-align: right;
-  font-family: Poppins;
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: normal;
-}
-
-.container1 {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  margin-bottom: 20px;
-}
-
-.title {
-  color: #FF385C;
-  font-family: Poppins;
-  font-size: 20px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
-
-}
-
 .main {
+  display: flex;
+  height: 48vh;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.main .checklogo {
   display: flex;
   flex-direction: column;
   align-items: center;
+  height: 17vh;
+  justify-content: space-between;
 }
 
-.main .title {
+.main label {
   color: #3E3E3E;
   font-family: Poppins;
   font-size: 25px;
   font-style: normal;
-  font-weight: 600;
+  font-weight: 400;
   line-height: normal;
-  margin: 15px 0px;
-}
-
-.main .body {
-  color: #3E3E3E;
-  font-family: Poppins;
-  font-size: 20px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: normal;
-  margin: 15px 0px;
 }
 
 .main button {
@@ -408,9 +210,10 @@ label {
   border: none;
   background: #FF385C;
   color: #fff;
-  font-family: Poppins;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: normal;
+}
+
+@media only screen and (min-width: 950px) and (max-width: 1128px) {
+  .vila-owner .left {
+    width: 50vw;
+  }
 }

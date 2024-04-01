@@ -1,13 +1,13 @@
 .header {
   display: flex;
   flex-direction: column;
-  width: 1440px;
+  width: 100%;
   height: auto;
 }
 
 .header img {
-  width: 1440px;
-  height: 440px;
+  width: 100%;
+  height: auto;
 }
 
 .header .text {
@@ -24,7 +24,6 @@
   font-style: normal;
   font-weight: 700;
   line-height: normal;
-  width: 115px;
 }
 
 .header label.body {
@@ -34,79 +33,70 @@
   font-style: normal;
   font-weight: 500;
   line-height: normal;
-  width: 171px;
 }
 
 .about {
-  margin: 0px 80px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
-.about .content label.title {
+.about label.title {
   color: #3E3E3E;
   font-family: Poppins;
   font-size: 24px;
   font-style: normal;
   font-weight: 500;
   line-height: normal;
-  margin-right: 20px;
 }
 
-.about .content .decription {
-  display: flex;
-  margin-top: 10px;
-  gap: 140px;
-}
-
-.about .content .decription img {
-  width: 500px;
-  height: 300px;
-  margin-top: -48px;
-  border-radius: 15px;
-}
-
-.about .content .decription .text {
+.about label.body {
   color: #3E3E3E;
   font-family: Poppins;
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
   line-height: 30px;
-  width: 600px;
+}
+
+.about .content,
+.content2 {
+  width: 85%;
+}
+
+.about .content .decription {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.about .content .decription .body {
+  width: 45%;
+}
+
+.about img {
+  width: 40%;
+  height: auto;
+  border-radius: 15px;
 }
 
 .about .content2 {
   display: flex;
-  gap: 140px;
+  justify-content: space-between;
   margin: 20px 0px;
   background-color: #ffe9e9;
-}
-
-.about .content2 img {
-  width: 500px;
-  height: 300px;
-  border-radius: 15px;
 }
 
 .about .content2 .decription {
   display: flex;
   flex-direction: column;
+  width: 45%;
   gap: 10px;
 }
 
-.about .content2 .decription .title {
-  color: #3E3E3E;
-  font-family: Poppins;
-  font-size: 24px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: normal;
+.app_header,
+.app_footer {
+  width: 100%;
 }
 
-.about .content2 .decription .body {
-  color: #3E3E3E;
-  font-family: Poppins;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 30px;
-}
+@media only screen and (min-width: 950px) and (max-width: 1128px) {}

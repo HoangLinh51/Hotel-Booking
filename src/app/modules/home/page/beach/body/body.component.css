@@ -1,75 +1,29 @@
-
 .title {
-  width: 313px;
-  height: 95px;
+  width: 100%;
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  margin: 15px 2px 13px 0px;
+  margin: 13px 0px ;
 }
 
 .title .infor {
-  width: 186px;
-  height: 95px;
-  flex-shrink: 0;
-}
-
-.title .infor .location {
-  color: #3E3E3E;
-  font-family: Poppins;
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 1000;
-  line-height: normal;
-  margin: 0px 0px 2px 0px;
-}
-
-.title .infor .where,
-.date {
-  color: #B8B8B8;
-  font-family: Poppins;
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 300;
-  line-height: normal;
-  margin: 0px 0px 2px 0px;
-}
-
-.title .infor div.price {
-  margin-top: 7px;
+  width: 70%;
   display: flex;
-  gap: 2px;
+  flex-direction: column;
 }
 
-.title .infor div.price label.price {
+label{
   color: #3E3E3E;
   font-family: Poppins;
   font-size: 14px;
   font-style: normal;
-  font-weight: 1000;
+  font-weight: 500;
   line-height: normal;
-}
-
-.title .infor div.price .time {
-  color: #3E3E3E;
-  font-family: Poppins;
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 300;
-  line-height: normal;
+  margin: 3px 0px;
 }
 
 .title .star {
   display: inline-flex;
   align-items: center;
   gap: 5px;
-}
-
-.title .star .point {
-  color: #3E3E3E;
-  font-family: Poppins;
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 300;
-  line-height: normal;
 }

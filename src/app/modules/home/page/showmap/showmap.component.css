@@ -1,14 +1,11 @@
 .showmap {
   width: 144px;
-  height: 50px;
-  flex-shrink: 0;
   border-radius: 25px;
   background: #1E1E1E;
   display: flex;
   align-items: center;
-  justify-content: center;
-  margin: 6px 648px 30px 648px;
   cursor: pointer;
+  margin: 15px;
 }
 
 .showmap label {

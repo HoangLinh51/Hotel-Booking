@@ -1,11 +1,10 @@
 .top-bar {
-  width: 1440px;
-  height: 92px;
-  flex-shrink: 0;
+  width: 100%;
+  height: auto;
   background: #FFF;
   box-shadow: 0px 0px 2px 0px rgba(34, 34, 34, 0.25);
   display: flex;
-  justify-content:  space-between;
+  justify-content: space-between;
 }
 
 .top-bar .logo {
@@ -20,24 +19,16 @@
 }
 
 .top-bar .user {
-  width: 288px;
-  height: 55px;
-  flex-shrink: 0;
-  margin: 23px 45px 13px 0px;
   display: flex;
-  justify-content: flex-end;
+  flex-wrap: wrap;
+  align-content: center;
+  margin: 23px 40px 13px 0px;
 }
 
 .top-bar .user .site {
-  display: flex;
-  width: 103px;
-  height: 45px;
   padding: 10px;
-  justify-content: center;
+  display: flex;
   align-items: center;
-  gap: 10px;
-  flex-shrink: 0;
-  border-radius: 30px;
 }
 
 .top-bar .user .site label {
@@ -53,39 +44,37 @@
 
 .top-bar .user .language {
   display: flex;
-  width: 45px;
-  height: 45px;
-  padding: 10px;
   justify-content: center;
   align-items: center;
-  gap: 10px;
-  flex-shrink: 0;
+  margin: 0px 20px;
   cursor: pointer;
-  margin: 0px 10px ;
 }
 
 .top-bar .user .profile {
-  display: inline-flex;
-  width: 100px;
-  height: 50px;
-  justify-content: center;
+  display: flex;
   align-items: center;
+  padding: 10px;
   gap: 13px;
-  flex-shrink: 0;
   border-radius: 30px;
   background: #FFF;
   box-shadow: 0px 0px 2px 0px rgba(34, 34, 34, 0.25);
   cursor: pointer;
 }
-.top-bar .user .profile button{
+
+.top-bar .user .profile button {
   border: none;
   background: #fff;
 }
-.top-bar .user .profile a{
+
+.top-bar .user .profile a {
   color: #3E3E3E;
   font-family: Poppins;
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
   line-height: 30px;
+}
+
+@media only screen and (min-width: 950px) and (max-width: 1128px) {
+
 }
