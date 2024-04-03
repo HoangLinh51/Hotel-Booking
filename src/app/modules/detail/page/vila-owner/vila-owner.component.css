@@ -217,3 +217,9 @@ label {
     width: 50vw;
   }
 }
+
+@media only screen and (min-width: 744px) and (max-width: 949px) {
+  .vila-owner .left {
+    width: 50vw;
+  }
+}

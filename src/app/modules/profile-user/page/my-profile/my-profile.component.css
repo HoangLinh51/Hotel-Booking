@@ -2,7 +2,7 @@
   display: flex;
   border-radius: 15px;
   flex-direction: column;
-  width: 750px;
+  width: 900px;
   gap: 20px;
 }
 
@@ -83,10 +83,27 @@
   line-height: normal;
   margin: 0px;
 }
-@media only screen and (min-width: 950px) and (max-width: 1128px) {
+
+@media only screen and (max-width: 1128px) and (min-width: 950px) {
+  .outputdirectional {
+    width: 750px;
+  }
+
   .outputdirectional .frame {
     display: flex;
     flex-direction: row;
     gap: 25px;
+  }
+}
+
+@media only screen and (max-width: 949px) and (min-width: 744px) {
+  .outputdirectional {
+    width: 530px;
+  }
+
+  .outputdirectional .frame {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
   }
 }

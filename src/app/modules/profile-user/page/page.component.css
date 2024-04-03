@@ -17,7 +17,7 @@ h4 {
 
 .body {
   display: flex;
-  gap: 10px;
+  gap: 20px;
   margin-bottom: 100px;
 }
 
@@ -26,7 +26,7 @@ h4 {
   flex-direction: column;
   flex-wrap: wrap;
   gap: 15px;
-  margin: 0px 50px 0px 70px;
+  margin-left:45px;
 }
 
 .body .directional .manage {
@@ -64,7 +64,6 @@ h4 {
   gap: 15px;
 }
 
-
 @media only screen and (min-width: 950px) and (max-width: 1128px) {
   .body {
     display: flex;
@@ -79,5 +78,21 @@ h4 {
     display: flex;
     flex-direction: row;
     gap: 25px;
+  }
+}
+
+
+@media only screen and (min-width: 744px) and (max-width: 949px) {
+  .body {
+    display: flex;
+    gap: 10px;
+  }
+
+  .body .directional {
+    margin: 0px 10px 0px 15px;
+  }
+
+  .body .directional .body {
+    margin-left: 10px;
   }
 }

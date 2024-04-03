@@ -38,6 +38,8 @@
   width: 100%;
   display: flex;
   justify-content: center;
+  overflow-x: auto;
+  white-space: nowrap;
 }
 
 
@@ -56,10 +58,9 @@
   margin: 0px;
 }
 
-@media only screen and (min-width: 950px) and (max-width: 1128px) {
-  .list_category {
-    overflow-x: auto;
-    white-space: nowrap;
-    justify-content: flex-start;
-  }
+
+@media only screen and (min-width: 744px) and (max-width: 949px) {
+ .list_category{
+  justify-content: flex-start;
+ }
 }

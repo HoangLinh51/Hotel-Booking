@@ -91,3 +91,9 @@ label {
     width: 400px;
   }
 }
+
+@media only screen and (min-width: 744px) and (max-width: 949px) {
+  .review .evaluate .group {
+    width: 400px;
+  }
+}

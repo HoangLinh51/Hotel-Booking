@@ -3,7 +3,7 @@
   height: 500px;
 }
 
-.image img{
+.image img {
   width: 100%;
   height: 100%;
   border-radius: 15px;
@@ -24,11 +24,12 @@
   gap: 20px;
 }
 
-.body .input .forminput{
+.body .input .forminput {
   display: flex;
-  flex-direction:  column;
+  flex-direction: column;
   gap: 30px
 }
+
 .body .input .title {
   display: flex;
   flex-direction: column;
@@ -69,7 +70,7 @@
   padding: 15px 40px;
   border-radius: 15px;
   border: none;
-  background:  #FF385C;
+  background: #FF385C;
   color: #fff;
   font-family: Poppins;
   font-size: 14px;
@@ -80,7 +81,11 @@
   width: 100%;
 }
 
-.body .login-gmail button{
+.body .login-gmail button {
+  width: 100%;
+  display: flex;
+  justify-items: center;
+  gap: 20px;
   padding: 15px 40px;
   border-radius: 15px;
   border: 1px solid #979797;
@@ -90,12 +95,9 @@
   font-style: normal;
   font-weight: 300;
   line-height: normal;
-  margin: 0px;
-  width: 100%;
-  display: flex;
-  justify-items: center;
 }
-.body .login label{
+
+.body .login label {
   color: #3E3E3E;
   font-family: Poppins;
   font-size: 14px;
@@ -104,6 +106,7 @@
   line-height: 30px;
   margin: 0px;
 }
+
 .body .input a {
   color: #FF385C;
   font-family: Poppins;
@@ -113,9 +116,22 @@
   line-height: 30px;
   text-decoration: none;
 }
-.invalid-message{
+
+.invalid-message {
   color: red;
 }
+
 form .ng-invalid.ng-touched {
   border-color: #e66262;
+}
+
+
+@media only screen and (min-width: 744px) and (max-width: 949px) {
+  .image {
+    display: none;
+  }
+
+  .body .input .form input {
+    width: 300px;
+  }
 }

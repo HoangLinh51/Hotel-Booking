@@ -1,23 +1,23 @@
 <label class="title">Booking History</label>
-<table class='table table-bordered table-sm '>
+<table class='table table-bordered table-sm outputdirectional'>
   <thead class="thead-dark">
     <tr>
-      <th><label class="name">Name</label></th>
-      <th><label class="name">Location</label></th>
-      <th><label class="name">Total</label></th>
-      <th><label class="name">Payment Method</label></th>
-      <th><label class="name">Status</label></th>
-      <th><label class="name"></label></th>
+      <th class="id"><label ><strong>Name</strong></label></th>
+      <th class="location"><label><strong>Location</strong></label></th>
+      <th class="total"><label><strong>Total</strong></label></th>
+      <th class="payment"><label><strong>Payment Method</strong></label></th>
+      <th class="status"><label ><strong>Status</strong></label></th>
+      <th class="view"></th>
     </tr>
   </thead>
   <tbody>
     <tr *ngFor="let item of post">
-      <td><label class="id">{{item.orderInfo.ifUser.name}}</label></td>
-      <td><label class="location">{{item.orderInfo.ifUser.post.location}}</label></td>
-      <td><label class="total">${{item.payment.total}}</label></td>
-      <td><label class="payment">{{item.payment.payment}}</label></td>
-      <td><label class="status">Complete</label></td>
-      <td><a class="view" routerLink='/booked-trip/history-booking' (click)="passDataToService(item)">View Detail</a>
+      <td class="id"><label>{{item.orderInfo.ifUser.name}}</label></td>
+      <td class="location"><label>{{item.orderInfo.ifUser.post.location}}</label></td>
+      <td class="total"><label>${{item.payment.total}}</label></td>
+      <td class="payment"><label>{{item.payment.payment}}</label></td>
+      <td class="status"><label>Complete</label></td>
+      <td class="view"><a routerLink='/booked-trip/history-booking' (click)="passDataToService(item)">View Detail</a>
       </td>
     </tr>
   </tbody>

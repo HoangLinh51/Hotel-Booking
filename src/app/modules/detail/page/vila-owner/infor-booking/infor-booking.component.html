@@ -45,7 +45,7 @@
         <div class="infor">
           <label class="header">Guest</label>
           <p-dropdown [options]="guest" optionLabel="name" [showClear]="true" placeholder="How many Guest?"
-            tooltipPosition="bottom" formControlName="guest"></p-dropdown>
+            tooltipPosition="bottom" formControlName="guest" [style]="{'display': 'flex'}"></p-dropdown>
           <ng-container *ngIf="f['guest'].invalid && f['guest'].touched">
             <div class="invalid-message" *ngIf="f['guest'].errors?.['required']">This guest cannot be left blank.</div>
           </ng-container>

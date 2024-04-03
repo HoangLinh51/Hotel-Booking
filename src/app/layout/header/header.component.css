@@ -19,26 +19,25 @@
   margin: 27px 0px 27px 45px;
 }
 
-.top-bar .search {
-  display: inline-flex;
-  height: auto;
+.search {
+  display: flex;
   margin: 27px 0px;
   padding: 5px 10px;
   border-radius: 30px;
   box-shadow: 0px 0px 15px 0px rgba(34, 34, 34, 0.10), 0px 0px 2px 0px rgba(34, 34, 34, 0.25);
 }
 
-.top-bar .search .filter {
+.search .filter {
   display: flex;
   align-items: center;
   gap: 10px;
 }
 
-.top-bar .search .filter .input {
+.search .filter .input {
   display: flex;
 }
 
-.top-bar .search .filter .input label.text {
+.search .filter .input label.text {
   color: #BBB;
   font-family: Poppins;
   font-size: 14px;
@@ -52,22 +51,22 @@
   justify-content: center;
 }
 
-.top-bar .search .filter .input input {
+.search .filter .input input {
   width: 85px;
   border: none;
 }
 
-.top-bar .search .filter .input input:focus {
+.search .filter .input input:focus {
   outline: none;
 }
 
-.top-bar .search .filter .input .flip {
+.search .filter .input .flip {
   height: 20px;
   overflow: hidden;
   width: 95px;
 }
 
-.top-bar .search .filter .input .flip>div>div {
+.search .filter .input .flip>div>div {
   padding: 0px 4px;
   height: 20px;
   margin-bottom: 5px;
@@ -80,7 +79,7 @@
   line-height: normal;
 }
 
-.top-bar .search .filter .input .flip div:first-child {
+.search .filter .input .flip div:first-child {
   animation: show 3s linear infinite;
 }
 
@@ -120,7 +119,7 @@
   }
 }
 
-.top-bar .search .button {
+.search .button {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -128,7 +127,7 @@
   cursor: pointer;
 }
 
-.top-bar .search .button i {
+.search .button i {
   color: #fff;
   padding: 10px;
   border-radius: 100px;
@@ -216,16 +215,98 @@
   line-height: normal;
 }
 
-@media (min-width: 950px) and (max-width: 1128px) {
+.nav2 {
+  display: none;
+}
 
-  .top-bar .logo{
+@keyframes showSmall {
+
+  0%,
+  100% {
+    margin-top: 0px;
+  }
+
+  12.5% {
+    margin-top: 0px;
+  }
+
+  25% {
+    margin-top: -19px;
+  }
+
+  37.5% {
+    margin-top: -19px;
+  }
+
+  50% {
+    margin-top: -41px;
+  }
+
+  62.5% {
+    margin-top: -41px;
+  }
+
+  75% {
+    margin-top: -64px;
+  }
+
+  87.5% {
+    margin-top: -64px;
+  }
+}
+
+
+@media only screen and (min-width: 950px) and (max-width: 1128px) {
+
+  .top-bar .logo {
     margin: auto;
   }
+
   .top-bar .user {
     margin: auto;
   }
 
   .top-bar .user .language {
     margin: 0px 10px;
+  }
+}
+
+@media only screen and (min-width: 744px) and (max-width: 949px) {
+  .nav1 {
+    display: none;
+  }
+
+  .nav2 {
+    display: flex;
+  }
+
+  .nav2 .small {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .search {
+    margin: 30px;
+    padding: 10px 20px;
+    justify-content: space-between;
+  }
+
+  .search .filter .input input {
+    width: 125px;
+    font-size: 16px;
+  }
+
+  .search .filter .input .flip div:first-child {
+    animation: showSmall 3s linear infinite;
+  }
+
+  .date .checkinout {
+    font-size: 14px;
+    color: #3E3E3E;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
   }
 }

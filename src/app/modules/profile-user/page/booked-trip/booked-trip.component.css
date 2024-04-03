@@ -1,3 +1,7 @@
+.outputdirectional {
+  width: 900px;
+}
+
 label {
   color: #3E3E3E;
   font-family: Poppins;
@@ -8,7 +12,7 @@ label {
   margin: 0px;
 }
 
-label.name {
+.outputdirectional label.name {
   font-weight: 600;
 }
 
@@ -33,22 +37,51 @@ a {
   line-height: normal;
 }
 
-.id {
+.outputdirectional .id {
   width: 80px;
 }
 
-.location {
+.outputdirectional .location {
   width: 168px;
 }
 
-.total {
+.outputdirectional .total {
   width: 100px;
 }
 
-.payment {
+.outputdirectional .payment {
   width: 80px;
 }
 
-.status {
+.outputdirectional .status {
   width: 98px;
+}
+
+.outputdirectional .view {
+  width: 98px;
+}
+
+
+@media only screen and (max-width: 1128px) and (min-width: 950px) {
+  .outputdirectional {
+    width: 750px;
+  }
+}
+
+@media only screen and (max-width: 949px) and (min-width: 744px) {
+  .outputdirectional {
+    width: 530px;
+  }
+
+  .outputdirectional .location {
+    width: 230px;
+  }
+
+  .outputdirectional .payment {
+    display: none;
+  }
+
+  .outputdirectional .status {
+    display: none;
+  }
 }

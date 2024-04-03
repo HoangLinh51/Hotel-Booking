@@ -50,3 +50,10 @@
   border-radius: 12px;
   border: 1px solid #3E3E3E;
 }
+
+@media only screen and (min-width: 744px) and (max-width: 949px) {
+
+  .comments .show-all {
+    width: 60%;
+  }
+}

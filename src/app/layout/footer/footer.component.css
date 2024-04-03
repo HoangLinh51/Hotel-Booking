@@ -73,10 +73,27 @@ label {
   line-height: normal;
 }
 
-@media (min-width: 950px) and (max-width: 1128px) {
-
+@media only screen and (min-width: 950px) and (max-width: 1128px) {
   .footer .footer1 {
     margin: auto;
+  }
+
+  .footer .footer2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+
+@media only screen and (min-width: 744px) and (max-width: 949px) {
+  .footer .footer1 {
+
+    margin: 23px 55px 60px 55px;
+  }
+
+  .footer .footer1 .group {
+    width: 25%;
   }
 
   .footer .footer2 {
