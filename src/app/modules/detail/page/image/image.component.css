@@ -9,3 +9,10 @@
   height: 45vh;
   border-radius: 15px;
 }
+
+@media only screen and (min-width: 550px) and (max-width: 743px) {
+  .image img {
+    width: 70vw;
+    height: 30vh;
+  }
+}

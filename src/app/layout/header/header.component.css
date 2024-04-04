@@ -199,6 +199,12 @@
 }
 
 .date .checkinout {
+  font-size: 14px;
+  color: #3E3E3E;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
   width: 150px;
 }
 
@@ -216,6 +222,10 @@
 }
 
 .nav2 {
+  display: none;
+}
+
+.search_small {
   display: none;
 }
 
@@ -257,7 +267,6 @@
 
 
 @media only screen and (min-width: 950px) and (max-width: 1128px) {
-
   .top-bar .logo {
     margin: auto;
   }
@@ -308,5 +317,41 @@
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+  }
+}
+
+
+@media only screen and (min-width: 550px) and (max-width: 743px) {
+  .nav1 {
+    display: none;
+  }
+
+  .nav2 {
+    display: flex;
+  }
+
+  .search_normal {
+    display: none;
+  }
+
+  .search_small {
+    display: flex;
+    justify-content: center;
+  }
+
+  .nav2 .small {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .search {
+    margin: 30px;
+    justify-content: space-between;
+  }
+
+  .search .filter .input input {
+    width: 125px;
+    font-size: 16px;
   }
 }

@@ -37,7 +37,7 @@ a {
   line-height: normal;
 }
 
-.outputdirectional .id {
+.outputdirectional .name {
   width: 80px;
 }
 
@@ -82,6 +82,31 @@ a {
   }
 
   .outputdirectional .status {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 550px) and (max-width: 743px) {
+  .outputdirectional {
+    width: 330px;
+  }
+  .outputdirectional .location {
+    width: 190px;
+  }
+
+  .outputdirectional .payment {
+    display: none;
+  }
+
+  .outputdirectional .status {
+    display: none;
+  }
+
+  .outputdirectional .name {
+    display: none;
+  }
+
+  .outputdirectional .total {
     display: none;
   }
 }

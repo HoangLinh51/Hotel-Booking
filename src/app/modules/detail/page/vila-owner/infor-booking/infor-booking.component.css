@@ -107,3 +107,12 @@ form .ng-invalid.ng-touched {
     flex-wrap: wrap;
   }
 }
+
+@media only screen and (min-width: 550px) and (max-width: 743px) {
+  .box .header {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    flex-wrap: wrap;
+  }
+}

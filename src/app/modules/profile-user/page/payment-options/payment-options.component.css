@@ -241,3 +241,9 @@ label.header {
     width: 530px;
   }
 }
+
+@media only screen and (min-width: 550px) and (max-width: 743px) {
+  .outputdirectional {
+    width: 330px;
+  }
+}

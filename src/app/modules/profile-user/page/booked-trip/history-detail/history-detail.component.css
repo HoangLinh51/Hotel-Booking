@@ -89,11 +89,13 @@
   flex-direction: column;
   gap: 7px;
 }
-.outputdirectional .button{
+
+.outputdirectional .button {
   display: flex;
   justify-content: flex-end;
 }
-.outputdirectional .button button{
+
+.outputdirectional .button button {
   border: none;
   border-radius: 15px;
   padding: 10px;
@@ -112,6 +114,21 @@
     width: 750px;
   }
 }
+
 @media only screen and (max-width: 949px) and (min-width: 744px) {
-  .outputdirectional {width: 600px;}
+  .outputdirectional {
+    width: 600px;
+  }
+}
+
+@media only screen and (min-width: 550px) and (max-width: 743px) {
+  .outputdirectional .detail {
+    display: flex;
+    flex-direction: column;
+  }
+
+.outputdirectional .detail .date,
+.total,
+.infor {
+  width: 285px;}
 }

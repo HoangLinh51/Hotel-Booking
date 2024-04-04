@@ -2,7 +2,7 @@
 <table class='table table-bordered table-sm outputdirectional'>
   <thead class="thead-dark">
     <tr>
-      <th class="id"><label ><strong>Name</strong></label></th>
+      <th class="name"><label ><strong>Name</strong></label></th>
       <th class="location"><label><strong>Location</strong></label></th>
       <th class="total"><label><strong>Total</strong></label></th>
       <th class="payment"><label><strong>Payment Method</strong></label></th>
@@ -12,7 +12,7 @@
   </thead>
   <tbody>
     <tr *ngFor="let item of post">
-      <td class="id"><label>{{item.orderInfo.ifUser.name}}</label></td>
+      <td class="name"><label>{{item.orderInfo.ifUser.name}}</label></td>
       <td class="location"><label>{{item.orderInfo.ifUser.post.location}}</label></td>
       <td class="total"><label>${{item.payment.total}}</label></td>
       <td class="payment"><label>{{item.payment.payment}}</label></td>

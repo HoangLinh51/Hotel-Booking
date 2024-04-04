@@ -107,3 +107,15 @@
     gap: 20px;
   }
 }
+
+@media only screen and (min-width: 550px) and (max-width: 743px) {
+  .outputdirectional {
+    width: 330px;
+  }
+
+  .outputdirectional .frame {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+}

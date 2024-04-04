@@ -1,4 +1,4 @@
-label{
+label {
   margin: 0px;
 }
 
@@ -9,7 +9,7 @@ label{
   gap: 20px;
 }
 
-.plance-offers div.title{
+.plance-offers div.title {
   display: flex;
   justify-content: space-around;
 }
@@ -21,7 +21,7 @@ label{
   font-style: normal;
   font-weight: 1000;
   line-height: normal;
-  margin-left: -125px ;
+  margin-left: -125px;
 }
 
 .plance-offers .navigate {
@@ -41,6 +41,7 @@ label{
   margin: 10px;
   gap: 60px;
 }
+
 .plance-offers .left label {
   color: #3E3E3E;
   font-family: Poppins;
@@ -74,4 +75,20 @@ label{
   font-style: normal;
   font-weight: 600;
   line-height: normal;
+}
+
+
+@media only screen and (min-width: 550px) and (max-width: 743px) {
+  .plance-offers .left .top {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .plance-offers div.title label {
+    margin-left: -75px;
+  }
+
+  .plance-offers .right {
+    height: 70px;
+  }
 }

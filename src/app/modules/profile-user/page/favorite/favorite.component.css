@@ -120,3 +120,22 @@
     width: 180px;
   }
 }
+
+
+@media only screen and (min-width: 550px) and (max-width: 743px) {
+  .outputdirectional {
+    width: 330px;
+  }
+
+  .outputdirectional .body img {
+    display: none;
+  }
+
+  .outputdirectional .body .categories {
+    display: none;
+  }
+
+  .outputdirectional .body .location {
+    width: 240px;
+  }
+}

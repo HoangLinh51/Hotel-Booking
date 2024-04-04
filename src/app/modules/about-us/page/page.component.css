@@ -100,3 +100,18 @@
 }
 
 @media only screen and (min-width: 950px) and (max-width: 1128px) {}
+
+
+@media only screen and (min-width: 550px) and (max-width: 743px) {
+  img {
+    display: none;
+  }
+
+  .about .content .decription .body {
+    width: 100%;
+  }
+
+  .about .content2 .decription {
+    width: 100%
+  };
+}

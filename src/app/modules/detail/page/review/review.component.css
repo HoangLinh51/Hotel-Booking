@@ -97,3 +97,13 @@ label {
     width: 400px;
   }
 }
+
+@media only screen and (min-width: 550px) and (max-width: 743px) {
+  .review .title {
+    margin-left: -75px;
+  }
+
+.review .evaluate .group {
+  width: 400px;
+}
+}
