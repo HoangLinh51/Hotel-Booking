@@ -127,8 +127,22 @@
     flex-direction: column;
   }
 
-.outputdirectional .detail .date,
-.total,
-.infor {
-  width: 285px;}
+  .outputdirectional .detail .date,
+  .total,
+  .infor {
+    width: 285px;
+  }
+}
+
+@media only screen and (min-width: 320px) and (max-width: 549px) {
+  .outputdirectional .detail {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .outputdirectional .detail .date,
+  .total,
+  .infor {
+    width: 285px;
+  }
 }

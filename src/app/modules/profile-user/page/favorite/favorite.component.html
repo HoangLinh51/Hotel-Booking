@@ -1,6 +1,6 @@
 <div class="outputdirectional">
   <label class="title">List Favorite</label>
-  <p-dataView #dv [value]="listFavorite" [rows]="5" [paginator]="true">
+  <p-dataView [value]="listFavorite" [rows]="5" [paginator]="true">
     <ng-template let-listFavorite pTemplate="list">
       <div class="body">
         <div class="post" *ngFor="let favorite of listFavorite; let first = first"

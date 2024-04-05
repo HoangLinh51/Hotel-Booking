@@ -239,3 +239,31 @@ label {
     margin-left: 10px;
   }
 }
+
+@media only screen and (min-width: 320px) and (max-width: 549px) {
+  .vila-owner {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .vila-owner .left {
+    width: 100%;
+    margin: 20px;
+  }
+
+  .vila-owner .left .owner .text {
+    margin-left: 10px;
+  }
+
+  .vila-owner .left .owner .text .group {
+    flex-wrap: wrap;
+  }
+
+  .vila-owner .left .describe .frame {
+    gap: 5px;
+  }
+
+  .vila-owner .left div.attention .infor-attention {
+    padding: 15px 20px;
+  }
+}

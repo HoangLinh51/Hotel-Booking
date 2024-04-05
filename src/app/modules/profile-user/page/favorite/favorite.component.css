@@ -63,6 +63,9 @@
   font-weight: 500;
   line-height: normal;
   padding: 0px 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .outputdirectional .body .view {
@@ -137,5 +140,23 @@
 
   .outputdirectional .body .location {
     width: 240px;
+  }
+}
+
+@media only screen and (min-width: 320px) and (max-width: 549px) {
+  .outputdirectional {
+    width: 275px;
+  }
+
+  .outputdirectional .body img {
+    display: none;
+  }
+
+  .outputdirectional .body .categories {
+    display: none;
+  }
+
+  .outputdirectional .body .location {
+    width: 175px;
   }
 }

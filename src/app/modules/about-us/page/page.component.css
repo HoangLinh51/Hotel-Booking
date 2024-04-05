@@ -113,5 +113,19 @@
 
   .about .content2 .decription {
     width: 100%
-  };
+  }
+}
+
+@media only screen and (min-width: 320px) and (max-width: 549px) {
+  img {
+    display: none;
+  }
+
+  .about .content .decription .body {
+    width: 100%;
+  }
+
+  .about .content2 .decription {
+    width: 100%
+  }
 }

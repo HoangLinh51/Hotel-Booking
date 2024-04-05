@@ -19,6 +19,7 @@ export class HeaderComponent {
   valueInput!: InputSearch;
   checkIn!: string;
   checkOut!: string;
+  visible: boolean = false;
 
   constructor(
     private authService: AuthService,
@@ -154,5 +155,9 @@ export class HeaderComponent {
 
   logout() {
     this.authService.logout();
+  }
+
+  showdialogSearch(val: boolean) {
+    this.visible = val;
   }
 }

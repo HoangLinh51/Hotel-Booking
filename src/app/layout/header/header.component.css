@@ -229,6 +229,10 @@
   display: none;
 }
 
+.dialog_search {
+  display: none;
+}
+
 @keyframes showSmall {
 
   0%,
@@ -265,6 +269,41 @@
   }
 }
 
+@keyframes dialogSearch {
+
+  0%,
+  100% {
+    margin-top: 0px;
+  }
+
+  12.5% {
+    margin-top: 0px;
+  }
+
+  25% {
+    margin-top: -15px;
+  }
+
+  37.5% {
+    margin-top: -15px;
+  }
+
+  50% {
+    margin-top: -35px;
+  }
+
+  62.5% {
+    margin-top: -35px;
+  }
+
+  75% {
+    margin-top: -56px;
+  }
+
+  87.5% {
+    margin-top: -56px;
+  }
+}
 
 @media only screen and (min-width: 950px) and (max-width: 1128px) {
   .top-bar .logo {
@@ -320,7 +359,6 @@
   }
 }
 
-
 @media only screen and (min-width: 550px) and (max-width: 743px) {
   .nav1 {
     display: none;
@@ -353,5 +391,87 @@
   .search .filter .input input {
     width: 125px;
     font-size: 16px;
+  }
+}
+
+@media only screen and (min-width: 320px) and (max-width: 549px) {
+  .show_search {
+    padding: 10px;
+    border-radius: 15px;
+    background: #fff;
+    font-size: 12px;
+    color: #3E3E3E;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+
+  .top-bar .logo {
+    margin: 27px 0px 27px 10px;
+  }
+
+  .top-bar .user {
+    margin: 23px 10px 23px 0px;
+  }
+
+  .top-bar .user .profile {
+    padding: 8px;
+    gap: 5px;
+  }
+
+  .top-bar .user .site {
+    padding: 5px;
+  }
+
+  .top-bar .user .language {
+    margin: 0px 5px;
+  }
+
+  .nav1 {
+    display: none;
+  }
+
+  .nav2 {
+    display: flex;
+  }
+
+  .search_normal {
+    display: none;
+  }
+
+  .search_small {
+    display: none;
+  }
+
+  .dialog_search {
+    display: flex;
+    justify-content: center;
+  }
+
+  .search {
+    margin: 0px;
+    border: none;
+    box-shadow: none;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .date {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .search .filter .input input {
+    width: 125px;
+    font-size: 16px;
+  }
+
+  .date .checkinout {
+    width: 100%;
+  }
+
+  .search .filter .input .flip div:first-child {
+    animation: dialogSearch 3s linear infinite;
   }
 }

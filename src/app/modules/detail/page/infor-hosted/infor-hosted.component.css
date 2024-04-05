@@ -194,3 +194,26 @@ label {
     margin-left: 10px;
   }
 }
+
+
+@media only screen and (min-width: 320px) and (max-width: 549px) {
+  .infor-hosted .header .title {
+    gap: 5px;
+    margin-left: 5px;
+  }
+
+  .infor-hosted .body {
+    flex-direction: column;
+    align-items: center;
+    margin: 5px;
+  }
+
+  .infor-hosted .body .group {
+    width: 100%;
+  }
+
+  .infor-hosted .last .item {
+    flex-direction: column;
+    margin-left: 10px;
+  }
+}

@@ -75,6 +75,27 @@
   line-height: 30px;
 }
 
-@media only screen and (min-width: 950px) and (max-width: 1128px) {
+@media only screen and (min-width: 950px) and (max-width: 1128px) {}
 
+@media only screen and (min-width: 320px) and (max-width: 549px) {
+  .top-bar .logo {
+    margin: 27px 0px 27px 10px;
+  }
+
+  .top-bar .user {
+    margin: 23px 10px 23px 0px;
+  }
+
+  .top-bar .user .site {
+    padding: 5px;
+  }
+
+  .top-bar .user .language {
+    margin: 0px 5px;
+  }
+
+  .top-bar .user .profile {
+    padding: 8px;
+    gap: 5px;
+  }
 }

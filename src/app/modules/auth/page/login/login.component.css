@@ -127,3 +127,9 @@ form .ng-invalid.ng-touched {
     display: none;
   }
 }
+
+@media only screen and (min-width: 320px) and (max-width: 549px) {
+  .image{
+    display: none;
+  }
+}

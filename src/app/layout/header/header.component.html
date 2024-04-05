@@ -337,6 +337,94 @@
         </form>
       </div>
     </div>
+    <div class="dialog_search">
+      <button (click)="showdialogSearch(!visible)" class="show_search"><i class="pi pi-search"></i>
+        <label>Search</label></button>
+      <p-dialog [(visible)]="visible" [modal]="true" [style]="{ width: '100vw' }" [draggable]="false"
+        [resizable]="false">
+        <div class="search">
+          <div class="filter">
+            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="13" viewBox="0 0 15 13" fill="none">
+              <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M4.53488 9.99244C4.53488 9.70788 4.30061 9.47717 4.01163 9.47717H0.523256C0.234272 9.47717 0 9.70788 0 9.99244C0 10.277 0.234272 10.5077 0.523256 10.5077H4.01163C4.30061 10.5077 4.53488 10.277 4.53488 9.99244Z"
+                fill="#3E3E3E" />
+              <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M10.4651 3.14509C10.4651 2.86052 10.6994 2.62982 10.9884 2.62982H14.4767C14.7657 2.62982 15 2.86052 15 3.14509C15 3.42966 14.7657 3.66036 14.4767 3.66036H10.9884C10.6994 3.66036 10.4651 3.42966 10.4651 3.14509Z"
+                fill="#3E3E3E" />
+              <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M15 9.99244C15 9.70788 14.7657 9.47717 14.4767 9.47717H8.19766C7.90869 9.47717 7.67441 9.70788 7.67441 9.99244C7.67441 10.277 7.90869 10.5077 8.19766 10.5077H14.4767C14.7657 10.5077 15 10.277 15 9.99244Z"
+                fill="#3E3E3E" />
+              <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M0 3.14509C0 2.86052 0.234272 2.62982 0.523256 2.62982H6.80232C7.0913 2.62982 7.32558 2.86052 7.32558 3.14509C7.32558 3.42966 7.0913 3.66036 6.80232 3.66036H0.523256C0.234272 3.66036 0 3.42966 0 3.14509Z"
+                fill="#3E3E3E" />
+              <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M6.10465 8.37785C6.97158 8.37785 7.67442 9.06996 7.67442 9.92366C7.67442 10.7774 6.97158 11.4695 6.10465 11.4695C5.23769 11.4695 4.53488 10.7774 4.53488 9.92366C4.53488 9.06996 5.23769 8.37785 6.10465 8.37785ZM8.72093 9.92366C8.72093 8.50076 7.5496 7.34732 6.10465 7.34732C4.65972 7.34732 3.48837 8.50076 3.48837 9.92366C3.48837 11.3465 4.65972 12.5 6.10465 12.5C7.5496 12.5 8.72093 11.3465 8.72093 9.92366Z"
+                fill="#3E3E3E" />
+              <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M8.89536 1.53053C8.02843 1.53053 7.32559 2.22261 7.32559 3.07633C7.32559 3.93006 8.02843 4.62214 8.89536 4.62214C9.76229 4.62214 10.4651 3.93006 10.4651 3.07633C10.4651 2.22261 9.76229 1.53053 8.89536 1.53053ZM6.27908 3.07633C6.27908 1.65346 7.45041 0.5 8.89536 0.5C10.3403 0.5 11.5116 1.65346 11.5116 3.07633C11.5116 4.49921 10.3403 5.65267 8.89536 5.65267C7.45041 5.65267 6.27908 4.49921 6.27908 3.07633Z"
+                fill="#3E3E3E" />
+            </svg>
+            <div class="input">
+              <input class="text" placeholder="Staycation to" #newItem>
+              <div class="flip">
+                <div>
+                  <div>Bali</div>
+                </div>
+                <div>
+                  <div>Lombok</div>
+                </div>
+                <div>
+                  <div>Labuan Bajo</div>
+                </div>
+                <div>
+                  <div>Yogyakarta</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <form [formGroup]="date">
+            <div class="date">
+              <ng-container *ngIf="!checkIn else templateCheckIn">
+                <p-calendar class="checkinout" formControlName="checkIn" [iconDisplay]="'input'" [showIcon]="true"
+                  dateFormat="yy-mm-dd" placeholder="yy.mm.dd">
+                  <ng-template pTemplate="inputicon">
+                    <i class="pi pi-sign-in" style="font-size: 16px;"></i>
+                  </ng-template>
+                </p-calendar>
+              </ng-container>
+              <ng-template #templateCheckIn>
+                <p-calendar *ngIf="checkIn" class="checkinout" formControlName="checkIn" [iconDisplay]="'input'"
+                  [showIcon]="true" dateFormat="yy-mm-dd" [placeholder]="checkIn">
+                  <ng-template pTemplate="inputicon">
+                    <i class="pi pi-sign-in" style="font-size: 16px;"></i>
+                  </ng-template>
+                </p-calendar>
+              </ng-template>
+
+              <ng-container *ngIf="!checkOut else templateCheckOut">
+                <p-calendar class="checkinout" formControlName="checkOut" [iconDisplay]="'input'" [showIcon]="true"
+                  dateFormat="yy-mm-dd" placeholder="yy.mm.dd">
+                  <ng-template pTemplate="inputicon" let-clickCallBack="clickCallBack">
+                    <i class="pi pi-sign-out" style="font-size: 16px;"></i>
+                  </ng-template>
+                </p-calendar>
+              </ng-container>
+              <ng-template #templateCheckOut>
+                <p-calendar class="checkinout" formControlName="checkOut" [iconDisplay]="'input'" [showIcon]="true"
+                  dateFormat="yy-mm-dd" [placeholder]="checkOut">
+                  <ng-template pTemplate="inputicon" let-clickCallBack="clickCallBack">
+                    <i class="pi pi-sign-out" style="font-size: 16px;"></i>
+                  </ng-template>
+                </p-calendar>
+              </ng-template>
+
+              <button type="submit" (click)="inputSearch(newItem.value)" (click)="visible= false">search</button>
+            </div>
+          </form>
+        </div>
+      </p-dialog>
+    </div>
   </div>
 
 </div>

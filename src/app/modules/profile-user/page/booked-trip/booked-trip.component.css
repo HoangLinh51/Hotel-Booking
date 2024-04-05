@@ -10,6 +10,9 @@ label {
   font-weight: 400;
   line-height: normal;
   margin: 0px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .outputdirectional label.name {
@@ -92,6 +95,31 @@ a {
   }
   .outputdirectional .location {
     width: 190px;
+  }
+
+  .outputdirectional .payment {
+    display: none;
+  }
+
+  .outputdirectional .status {
+    display: none;
+  }
+
+  .outputdirectional .name {
+    display: none;
+  }
+
+  .outputdirectional .total {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 320px) and (max-width: 549px) {
+  .outputdirectional {
+    width: 275px;
+  }
+  .outputdirectional .location {
+    width: 150px;
   }
 
   .outputdirectional .payment {

@@ -31,7 +31,12 @@
   display: flex;
   justify-content: center;
 }
-.map_small{
+
+.map_small {
+  display: none;
+}
+
+.map_verysmall {
   display: none;
 }
 
@@ -42,10 +47,26 @@
   .map .header .title {
     margin-left: -95px;
   }
-  .map_normal{
+
+  .map_normal {
     display: none;
   }
-  .map_small{
+
+  .map_small {
     display: flex;
+  }
+}
+
+@media only screen and (min-width: 320px) and (max-width: 549px) {
+  .map .header .title {
+    margin-left: -25px;
+  }
+
+  .map_normal {
+    display: none;
+  }
+
+  .map_verysmall {
+    display: flex
   }
 }

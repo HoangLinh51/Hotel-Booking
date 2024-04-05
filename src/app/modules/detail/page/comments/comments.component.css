@@ -68,3 +68,22 @@
     width: 100%;
   }
 }
+
+
+@media only screen and (min-width: 320px) and (max-width: 549px) {
+  .comments {
+    flex-direction: column;
+    margin: 10px 15px;
+    gap: 10px;
+  }
+
+  .comments .group {
+    width: 100%
+  }
+
+  .comments .decrip,
+  .decrip2 {
+    gap: 10px;
+  }
+
+}
