@@ -6,7 +6,6 @@ label {
   color: #3E3E3E;
   font-family: Poppins;
   font-size: 14px;
-  font-style: normal;
   font-weight: 400;
   line-height: normal;
   margin: 0px;
@@ -23,7 +22,6 @@ label {
   color: #FF385C;
   font-family: Poppins;
   font-size: 25px;
-  font-style: normal;
   font-weight: 700;
   line-height: normal;
   margin: 0px;
@@ -35,13 +33,8 @@ a {
   color: #3E3E3E;
   font-family: Poppins;
   font-size: 14px;
-  font-style: normal;
   font-weight: 500;
   line-height: normal;
-}
-
-.outputdirectional .name {
-  width: 80px;
 }
 
 .outputdirectional .location {
@@ -52,18 +45,15 @@ a {
   width: 100px;
 }
 
-.outputdirectional .payment {
+.outputdirectional .name,
+.payment {
   width: 80px;
 }
 
-.outputdirectional .status {
+.outputdirectional .status,
+.view {
   width: 98px;
 }
-
-.outputdirectional .view {
-  width: 98px;
-}
-
 
 @media only screen and (max-width: 1128px) and (min-width: 950px) {
   .outputdirectional {
@@ -80,11 +70,8 @@ a {
     width: 230px;
   }
 
-  .outputdirectional .payment {
-    display: none;
-  }
-
-  .outputdirectional .status {
+  .outputdirectional .payment,
+  .status {
     display: none;
   }
 }
@@ -93,23 +80,15 @@ a {
   .outputdirectional {
     width: 330px;
   }
+
   .outputdirectional .location {
     width: 190px;
   }
 
-  .outputdirectional .payment {
-    display: none;
-  }
-
-  .outputdirectional .status {
-    display: none;
-  }
-
-  .outputdirectional .name {
-    display: none;
-  }
-
-  .outputdirectional .total {
+  .outputdirectional .payment,
+  .status,
+  .name,
+  .total {
     display: none;
   }
 }
@@ -118,23 +97,15 @@ a {
   .outputdirectional {
     width: 275px;
   }
+
   .outputdirectional .location {
     width: 150px;
   }
 
-  .outputdirectional .payment {
-    display: none;
-  }
-
-  .outputdirectional .status {
-    display: none;
-  }
-
-  .outputdirectional .name {
-    display: none;
-  }
-
-  .outputdirectional .total {
+  .outputdirectional .payment,
+  .status,
+  .name,
+  .total {
     display: none;
   }
 }

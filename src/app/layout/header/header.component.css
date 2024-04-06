@@ -12,7 +12,6 @@
   color: #FF385C;
   font-family: Poppins;
   font-size: 25px;
-  font-style: normal;
   font-weight: 700;
   line-height: normal;
   cursor: pointer;
@@ -41,7 +40,6 @@
   color: #BBB;
   font-family: Poppins;
   font-size: 14px;
-  font-style: normal;
   font-weight: 300;
   line-height: normal;
   display: flex;
@@ -74,13 +72,16 @@
   color: #BBB;
   font-family: Poppins;
   font-size: 14px;
-  font-style: normal;
   font-weight: 300;
   line-height: normal;
 }
 
 .search .filter .input .flip div:first-child {
   animation: show 3s linear infinite;
+}
+
+.small {
+  width: 100%;
 }
 
 @keyframes show {
@@ -151,7 +152,6 @@
   color: #3E3E3E;
   font-family: Poppins;
   font-size: 14px;
-  font-style: normal;
   font-weight: 500;
   line-height: normal;
   cursor: pointer;
@@ -186,7 +186,6 @@
   color: #3E3E3E;
   font-family: Poppins;
   font-size: 14px;
-  font-style: normal;
   font-weight: 500;
   line-height: 30px;
 }
@@ -202,7 +201,6 @@
   font-size: 14px;
   color: #3E3E3E;
   font-family: Poppins;
-  font-style: normal;
   font-weight: 400;
   line-height: normal;
   width: 150px;
@@ -216,7 +214,6 @@
   color: #fff;
   font-family: Poppins;
   font-size: 12px;
-  font-style: normal;
   font-weight: 400;
   line-height: normal;
 }
@@ -353,7 +350,6 @@
     font-size: 14px;
     color: #3E3E3E;
     font-family: Poppins;
-    font-style: normal;
     font-weight: 400;
     line-height: normal;
   }
@@ -402,7 +398,6 @@
     font-size: 12px;
     color: #3E3E3E;
     font-family: Poppins;
-    font-style: normal;
     font-weight: 400;
     line-height: normal;
   }

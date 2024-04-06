@@ -32,7 +32,6 @@ label {
   color: #3E3E3E;
   font-family: Poppins;
   font-size: 28px;
-  font-style: normal;
   font-weight: 1000;
   line-height: normal;
 }
@@ -41,7 +40,6 @@ label {
   color: #3E3E3E;
   font-family: Poppins;
   font-size: 28px;
-  font-style: normal;
   font-weight: 500;
   line-height: normal;
 }
@@ -71,7 +69,6 @@ label {
   color: #3E3E3E;
   font-family: Poppins;
   font-size: 14px;
-  font-style: normal;
   font-weight: 400;
   line-height: normal;
 }
@@ -80,19 +77,12 @@ label {
   color: #3E3E3E;
   font-family: Poppins;
   font-size: 12px;
-  font-style: normal;
   font-weight: 400;
   line-height: normal;
 }
 
 
-@media only screen and (min-width: 950px) and (max-width: 1128px) {
-  .review .evaluate .group {
-    width: 400px;
-  }
-}
-
-@media only screen and (min-width: 744px) and (max-width: 949px) {
+@media only screen and (min-width: 744px) and (max-width: 1128px) {
   .review .evaluate .group {
     width: 400px;
   }
@@ -109,11 +99,9 @@ label {
 }
 
 @media only screen and (min-width: 320px) and (max-width: 549px) {
-
   .review .title {
     margin-left: 5px;
   }
-
 
   .review .evaluate {
     margin: 0px;

@@ -10,7 +10,6 @@
   color: #FF385C;
   font-family: Poppins;
   font-size: 25px;
-  font-style: normal;
   font-weight: 700;
   line-height: normal;
   margin: 0px;
@@ -47,7 +46,6 @@
   color: #3E3E3E;
   font-family: Poppins;
   font-size: 14px;
-  font-style: normal;
   font-weight: 500;
   line-height: normal;
   margin: 0px;
@@ -59,7 +57,6 @@
   color: #3E3E3E;
   font-family: Poppins;
   font-size: 16px;
-  font-style: normal;
   font-weight: 500;
   line-height: normal;
   padding: 0px 10px;
@@ -72,7 +69,6 @@
   color: #3E3E3E;
   font-family: Poppins;
   font-size: 16px;
-  font-style: normal;
   font-weight: 500;
   line-height: normal;
   padding: 0px 5px;
@@ -130,11 +126,7 @@
     width: 330px;
   }
 
-  .outputdirectional .body img {
-    display: none;
-  }
-
-  .outputdirectional .body .categories {
+  .outputdirectional .body img, .outputdirectional .body .categories {
     display: none;
   }
 
@@ -148,11 +140,7 @@
     width: 275px;
   }
 
-  .outputdirectional .body img {
-    display: none;
-  }
-
-  .outputdirectional .body .categories {
+  .outputdirectional .body img, .outputdirectional .body .categories{
     display: none;
   }
 

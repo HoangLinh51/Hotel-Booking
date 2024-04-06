@@ -32,7 +32,6 @@ label {
   color: #3E3E3E;
   font-family: Poppins;
   font-size: 28px;
-  font-style: normal;
   font-weight: 500;
   line-height: normal;
 }
@@ -47,7 +46,6 @@ label {
   color: #3E3E3E;
   font-family: Poppins;
   font-size: 14px;
-  font-style: normal;
   font-weight: 300;
   line-height: normal;
 }
@@ -119,7 +117,6 @@ label {
   color: #3E3E3E;
   font-family: Poppins;
   font-size: 28px;
-  font-style: normal;
   font-weight: 500;
   line-height: normal;
   padding: 10px;
@@ -135,7 +132,6 @@ label {
   color: #3E3E3E;
   font-family: Poppins;
   font-size: 14px;
-  font-style: normal;
   font-weight: 400;
   line-height: normal;
   margin-bottom: 10px;
@@ -170,7 +166,6 @@ label {
 }
 
 @media only screen and (min-width: 550px) and (max-width: 743px) {
-
   .infor-hosted .header .title {
     margin-left: -55px;
   }

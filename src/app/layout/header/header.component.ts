@@ -32,6 +32,7 @@ export class HeaderComponent {
 
   ngOnInit() {
     this.date = this.form.group({
+      input: ['', Validators.required],
       checkIn: ['', Validators.required],
       checkOut: ['', Validators.required],
     });
@@ -55,8 +56,9 @@ export class HeaderComponent {
     this.newItemEvent.emit(this.valueInput);
   }
 
-  inputSearch(input: string) {
-    if (input === '') {
+  inputSearch() {
+    console.log('this.date.value.input', this.date.value.input);
+    if (this.date.value.input === '') {
       if (this.date.value.checkIn === '' && this.date.value.checkOut === '') {
         this.router.navigateByUrl('/').then(() => {
           window.location.reload();
@@ -73,7 +75,7 @@ export class HeaderComponent {
           checkIn,
           checkOut,
         });
-        this.emitNewItemEvent(input, dateInput);
+        this.emitNewItemEvent(this.date.value.input, dateInput);
       } else if (
         this.date.value.checkIn !== '' &&
         this.date.value.checkOut !== ''
@@ -86,7 +88,7 @@ export class HeaderComponent {
           checkIn,
           checkOut,
         };
-        this.emitNewItemEvent(input, dateInput);
+        this.emitNewItemEvent(this.date.value.input, dateInput);
       } else if (
         this.date.value.checkIn !== '' &&
         this.date.value.checkOut === ''
@@ -99,9 +101,9 @@ export class HeaderComponent {
           checkIn,
           checkOut,
         });
-        this.emitNewItemEvent(input, dateInput);
+        this.emitNewItemEvent(this.date.value.input, dateInput);
       }
-    } else if (input !== '') {
+    } else if (this.date.value.input !== '') {
       if (this.date.value.checkIn === '' && this.date.value.checkOut === '') {
         const checkIn = (this.checkIn = '');
         const checkOut = (this.checkOut = '');
@@ -109,7 +111,7 @@ export class HeaderComponent {
           checkIn,
           checkOut,
         });
-        this.emitNewItemEvent(input, dateInput);
+        this.emitNewItemEvent(this.date.value.input, dateInput);
       } else if (
         this.date.value.checkIn === '' &&
         this.date.value.checkOut !== ''
@@ -122,7 +124,7 @@ export class HeaderComponent {
           checkIn,
           checkOut,
         });
-        this.emitNewItemEvent(input, dateInput);
+        this.emitNewItemEvent(this.date.value.input, dateInput);
       } else if (
         this.date.value.checkIn !== '' &&
         this.date.value.checkOut !== ''
@@ -135,7 +137,7 @@ export class HeaderComponent {
           checkIn,
           checkOut,
         };
-        this.emitNewItemEvent(input, dateInput);
+        this.emitNewItemEvent(this.date.value.input, dateInput);
       } else if (
         this.date.value.checkIn !== '' &&
         this.date.value.checkOut === ''
@@ -148,7 +150,7 @@ export class HeaderComponent {
           checkIn,
           checkOut,
         });
-        this.emitNewItemEvent(input, dateInput);
+        this.emitNewItemEvent(this.date.value.input, dateInput);
       }
     }
   }

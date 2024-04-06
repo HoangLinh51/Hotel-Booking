@@ -1,8 +1,6 @@
+
 .header {
-  display: flex;
-  flex-direction: column;
   width: 100%;
-  height: auto;
 }
 
 .header img {
@@ -17,20 +15,10 @@
   margin: 30px 0px;
 }
 
-.header label.title {
+.header .text label{
   color: #FF385C;
   font-family: Poppins;
   font-size: 25px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
-}
-
-.header label.body {
-  color: #FF385C;
-  font-family: Poppins;
-  font-size: 25px;
-  font-style: normal;
   font-weight: 500;
   line-height: normal;
 }
@@ -45,7 +33,6 @@
   color: #3E3E3E;
   font-family: Poppins;
   font-size: 24px;
-  font-style: normal;
   font-weight: 500;
   line-height: normal;
 }
@@ -54,7 +41,6 @@
   color: #3E3E3E;
   font-family: Poppins;
   font-size: 16px;
-  font-style: normal;
   font-weight: 400;
   line-height: 30px;
 }
@@ -94,30 +80,9 @@
   gap: 10px;
 }
 
-.app_header,
-.app_footer {
-  width: 100%;
-}
 
-@media only screen and (min-width: 950px) and (max-width: 1128px) {}
-
-
-@media only screen and (min-width: 550px) and (max-width: 743px) {
-  img {
-    display: none;
-  }
-
-  .about .content .decription .body {
-    width: 100%;
-  }
-
-  .about .content2 .decription {
-    width: 100%
-  }
-}
-
-@media only screen and (min-width: 320px) and (max-width: 549px) {
-  img {
+@media only screen and (min-width: 320px) and (max-width: 743px) {
+  .about img {
     display: none;
   }
 
