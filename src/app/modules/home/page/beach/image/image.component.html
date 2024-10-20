@@ -1,16 +1,16 @@
-<div class="image" (click)="navigate(true,beach.id)">
-  <img loading="lazy" [src]="getCurrentImageSource(currentImageIndex)" alt="Image">
+<div class="image">
+  <img loading="lazy" [src]="getCurrentImageSource(currentImageIndex)" alt="Image" (click)="navigate(true,beach.id)">
   <div class="favorite" (click)="addFavorite(beach)" [ngClass]="{'favorite-hover': beach.isFavorite}">
     <i class="fas fa-heart"></i>
   </div>
   <div class="overlay">
     <div class="next-prev">
       <div class="prev">
-        <i class="pi pi-chevron-circle-left" style="font-size: 30px;" (click)="changeImage(false)"
+        <i class="pi pi-chevron-circle-left" style="font-size: 30px; color: #fff;" (click)="changeImage(false)"
           *ngIf="showPrevButton"></i>
       </div>
       <div class="next">
-        <i class="pi pi-chevron-circle-right" style="font-size: 30px;" (click)="changeImage(true)"
+        <i class="pi pi-chevron-circle-right" style="font-size: 30px; color: #fff;" (click)="changeImage(true)"
           *ngIf="showNextButton"></i>
       </div>
     </div>
