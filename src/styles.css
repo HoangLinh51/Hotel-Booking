@@ -8,12 +8,21 @@
 
 
 body {
-  background: #FFF;
+  background: #FFF;  
+  font-family: Poppins;
 }
+
 
 a:focus {
   outline: none !important;
 }
 input:focus{
   outline: none !important;
+}
+a,button{
+  cursor: pointer;
+}
+
+p, h1, h2, h3, h4, h5 {
+  margin: 0;
 }

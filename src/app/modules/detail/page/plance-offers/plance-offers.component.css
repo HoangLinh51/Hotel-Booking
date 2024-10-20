@@ -1,106 +1,44 @@
-label {
-  margin: 0px;
-}
-
 .plance-offers {
-  margin: 15px 0px;
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
 
-.plance-offers div.title {
-  display: flex;
-  justify-content: space-around;
-}
-
-.plance-offers div.title label {
+.plance-offers .title {
   color: #3E3E3E;
-  font-family: Poppins;
   font-size: 28px;
   font-weight: 1000;
   line-height: normal;
-  margin-left: -125px;
 }
 
 .plance-offers .navigate {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.plance-offers .left {
+.plance-offers .navigate .group {
   display: flex;
   flex-direction: column;
+  gap: 40px;
 }
 
-.plance-offers .left .top {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  margin: 10px;
-  gap: 60px;
-}
-
-.plance-offers .left label {
-  color: #3E3E3E;
-  font-family: Poppins;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: normal;
-}
-
-.plance-offers .left .group {
+.plance-offers .navigate .group .frame {
   display: flex;
   align-items: center;
   gap: 15px;
 }
 
-.plance-offers .right {
-  display: flex;
-  padding: 10px;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
+.plance-offers .navigate .button{
+  padding: 15px 45px;;
   flex-shrink: 0;
   border-radius: 15px;
   border: 1px solid #3E3E3E;
 }
 
-.plance-offers .right label {
-  color: #3E3E3E;
-  font-family: Poppins;
-  font-size: 14px;
-  font-weight: 600;
-  line-height: normal;
-}
-
-
-@media only screen and (min-width: 550px) and (max-width: 743px) {
-  .plance-offers .left .top {
+@media only screen  and (max-width: 743px) {
+  .plance-offers .navigate {
     flex-direction: column;
-    gap: 20px;
-  }
-
-  .plance-offers div.title label {
-    margin-left: -75px;
-  }
-
-  .plance-offers .right {
-    height: 70px;
-  }
-}
-
-@media only screen and (min-width: 320px) and (max-width: 549px) {
-  .plance-offers .left .top {
-    flex-direction: column;
-    gap: 20px;
-  }
-
-  .plance-offers div.title label {
-    margin-left: 5px;
-  }
-
-  .plance-offers .right {
-    height: 70px;
+    gap: 40px;
   }
 }

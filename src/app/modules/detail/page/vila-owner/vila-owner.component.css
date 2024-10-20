@@ -1,194 +1,129 @@
-label {
-  margin: 0px;
-}
-
 .vila-owner {
   display: flex;
-  justify-content: space-evenly;
-  margin: 15px 0px;
+  justify-content: space-between;
 }
 
-.vila-owner .left {
-  width: 40%;
+.vila-owner .info {
+  width: 65%;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.vila-owner .info .owner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 20px;
+}
+
+.vila-owner .info .owner .text {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  gap: 10px;
 }
 
-.vila-owner .left .owner {
-  display: flex;
-  justify-content: space-between;
-}
-
-.vila-owner .left .owner .text {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.vila-owner .left .owner .text label.title {
+.vila-owner .info .owner .text .title {
   color: #3E3E3E;
-  font-family: Poppins;
   font-size: 28px;
   font-weight: 1000;
   line-height: normal;
 }
 
-.vila-owner .left .owner .text .group {
+.vila-owner .info .owner .text .group {
   display: flex;
   align-items: center;
   gap: 6px;
 }
 
-.vila-owner .left .owner .text .group label {
-  color: #3E3E3E;
-  font-family: Poppins;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: normal;
-}
-
-.vila-owner .left .line {
+.vila-owner .info .line {
   width: 100%;
   height: 1px;
   background: #E6E6E6;
 }
 
-.vila-owner .left .describe {
+.vila-owner .info .describe {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  gap: 20px;
 }
 
-.vila-owner .left .describe .frame {
+.vila-owner .info .describe .frame {
   display: inline-flex;
   align-items: flex-start;
   gap: 15px;
-  margin: 10px;
 }
 
-.vila-owner .left .describe .text {
+.vila-owner .info .attention {
   display: flex;
-  flex-direction: column;
-}
-
-.vila-owner .left .describe .text label {
-  color: #3E3E3E;
-  font-family: Poppins;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: normal;
-}
-
-.vila-owner .left div.attention {
-  flex-shrink: 0;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 30px;
   border-radius: 10px;
   background: #FFF;
   box-shadow: 0px 0px 2px 0px rgba(43, 43, 43, 0.35);
 }
 
-.vila-owner .left div.attention .infor-attention {
-  width: 100%;
-  padding: 17px 35px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.vila-owner .left div.attention .infor-attention .text {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-
-.vila-owner .left div.attention .infor-attention label {
-  color: #3E3E3E;
-  font-family: Poppins;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: normal;
-}
-
-.vila-owner .right {
+.vila-owner .price {
+  width: 25%;
   height: 100%;
-  gap: 10px;
   display: flex;
-  padding: 20px;
-  border-radius: 15px;
-  border: 2px solid #E6E6E6;
-  box-shadow: 0px 0px 35px 0px rgba(155, 155, 155, 0.15);
   flex-direction: column;
-  justify-content: space-between;
+  gap: 20px;
+  padding: 20px;
+  border: 2px solid #E6E6E6;
+  border-radius: 15px;
+  box-shadow: 0px 0px 35px 0px rgba(155, 155, 155, 0.15);
 }
 
-.vila-owner .right .price {
+.vila-owner .price .fee {
   color: #3E3E3E;
-  font-family: Poppins;
   font-size: 25px;
   font-weight: 400;
   line-height: normal;
-  margin: 10px 0px;
 }
 
-.vila-owner .right .rating {
+.vila-owner .price .rating {
   display: flex;
+  justify-content: space-between;
   gap: 10px;
-  margin: 10px 0px;
 }
 
-.vila-owner .right .rating .star {
+.vila-owner .price .rating .star {
   display: inline-flex;
   align-items: center;
   gap: 5px;
 }
 
-.vila-owner .right label {
+.vila-owner .price .rating .review {
   color: #3E3E3E;
-  font-family: Poppins;
   font-size: 14px;
-  font-weight: 300;
   line-height: normal;
-}
-
-.vila-owner .right .rating .review {
   font-weight: 1000;
-  text-decoration-line: underline;
+  text-decoration: underline;
 }
-
-.vila-owner .right .button {
-  display: flex;
+.vila-owner .price .button {
+  color: #fff;
+  border: none;
   padding: 10px;
-  justify-content: center;
   border-radius: 8px;
   background: #FF385C;
 }
 
-.vila-owner .right .button label {
-  color: #FFF;
-  font-family: Poppins;
-  font-size: 14px;
-  font-weight: 600;
-  line-height: normal;
-}
-
 .main {
   display: flex;
-  height: 48vh;
   flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
+  align-items: center;gap: 30px;
 }
 
 .main .checklogo {
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 17vh;
-  justify-content: space-between;
+  gap: 20px;
 }
 
-.main label {
+.main p {
   color: #3E3E3E;
   font-family: Poppins;
   font-size: 25px;
@@ -197,65 +132,30 @@ label {
 }
 
 .main button {
-  padding: 10px;
+  padding: 10px 20px;
   border-radius: 8px;
   border: none;
   background: #FF385C;
   color: #fff;
 }
 
-@media only screen and (min-width: 950px) and (max-width: 1128px) {
-  .vila-owner .left {
-    width: 50vw;
+@media only screen and (min-width: 744px) and (max-width: 1128px) {
+  .vila-owner .price {
+    width: 30%;
   }
 }
 
-@media only screen and (min-width: 744px) and (max-width: 949px) {
-  .vila-owner .left {
-    width: 50vw;
-  }
-}
-
-@media only screen and (min-width: 550px) and (max-width: 743px) {
+@media only screen  and (max-width: 743px) {
   .vila-owner {
     flex-direction: column;
     align-items: center;
+    gap: 25px;
   }
-
-  .vila-owner .left {
+  .vila-owner .info,
+  .vila-owner .price {
     width: 100%;
-    margin: 20px;
   }
-
-  .vila-owner .left .owner .text {
-    margin-left: 10px;
-  }
-}
-
-@media only screen and (min-width: 320px) and (max-width: 549px) {
-  .vila-owner {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .vila-owner .left {
-    width: 100%;
-    margin: 20px;
-  }
-
-  .vila-owner .left .owner .text {
-    margin-left: 10px;
-  }
-
-  .vila-owner .left .owner .text .group {
-    flex-wrap: wrap;
-  }
-
-  .vila-owner .left .describe .frame {
-    gap: 5px;
-  }
-
-  .vila-owner .left div.attention .infor-attention {
-    padding: 15px 20px;
+  .vila-owner .info .owner .text .group {
+  flex-wrap: wrap;
   }
 }

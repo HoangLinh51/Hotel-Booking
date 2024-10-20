@@ -19,38 +19,55 @@ export class PageComponent {
   inputSearch!: InputSearch;
   checkIn!: string;
   checkOut!: string;
+  id: string = '';
 
   constructor(
     private route: ActivatedRoute,
-    private postService: PostService,
-    private authService: AuthService,
     private router: Router,
-    private toastrService: ToastrService
+    private postService: PostService,
+    private authService: AuthService
   ) {
     this.user = this.authService.userValue;
   }
 
   ngOnInit(): void {
-    this.router.events
-      .pipe(filter((event) => event instanceof NavigationEnd))
-      .subscribe(() => {
-        window.scrollTo(0, 0);
-      });
-
-    const id = this.route.snapshot.paramMap.get('id');
-    this.post = this.postService.getProductById(Number(id));
-    // console.log('product-id', this.postService.getProductById(Number(id))?.id);
+    this.id = this.route.snapshot.paramMap.get('id') || '';
+    this.post = this.postService.getProductById(Number(this.id));
     this.route.queryParams.subscribe((params) => {
       this.checkIn = params['checkIn'];
       this.checkOut = params['checkOut'];
     });
-    if (!this.checkIn) {
-      this.router.navigateByUrl('/');
-      this.toastrService.warning(
-        'You need to enter the check-in or check-out date',
-        'Warning'
-      );
-      this.router.navigate(['/']);
-    }
+    this.checkDate();
+  }
+
+  checkDate() {
+    const sumDate = (date: string | Date, offsetDays = 0) => {
+      const adjustedDate = new Date(date);
+      adjustedDate.setDate(adjustedDate.getDate() + offsetDays);
+      return formatDate(adjustedDate);
+    };
+
+    const formatDate = (date: Date) => {
+      const year = date.getFullYear();
+      const months = date.getMonth() + 1;
+      const dt = date.getDate();
+      const formattedDay = dt < 10 ? '0' + dt : dt.toString();
+      const formattedMonth = months < 10 ? '0' + months : months.toString();
+      return `${year}-${formattedMonth}-${formattedDay}`;
+    };
+
+    this.route.queryParams.subscribe((params) => {
+      if (!params['checkIn']) {
+        const checkIn = formatDate(new Date());
+        const checkOut = sumDate(new Date(), 1);
+
+        this.router.navigate([], {
+          relativeTo: this.route,
+          queryParams: { checkIn: checkIn, checkOut: checkOut },
+          queryParamsHandling: 'merge',
+          replaceUrl: true,
+        });
+      }
+    });
   }
 }

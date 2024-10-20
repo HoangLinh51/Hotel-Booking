@@ -1,39 +1,40 @@
 <div class="outputdirectional">
-  <label class="title">Detail Booking</label>
+  <p class="title">Detail Booking</p>
   <div class="detail">
     <div class="infor">
-      <label class="header">Information</label>
-      <label class="decrip">Name: {{item.orderInfo.ifUser.name}}</label>
-      <label class="decrip">Email: {{item.orderInfo.ifUser.email}}</label>
-      <label class="decrip">Number Phone: {{item.orderInfo.ifUser.phone}}</label>
+      <p class="header">Information</p>
+      <p class="decrip">Name: {{item.orderInfo.ifUser.name}}</p>
+      <p class="decrip">Email: {{item.orderInfo.ifUser.email}}</p>
+      <p class="decrip">Number Phone: {{item.orderInfo.ifUser.phone}}</p>
     </div>
     <div class="date">
-      <label class="header">Date</label>
+      <p class="header">Date</p>
       <div class="checkin">
-        <label class="title">Check-in</label>
-        <label class="decrip">{{item.orderInfo.date.checkIn}}</label>
+        <p class="title">Check-in</p>
+        <p class="decrip">{{item.orderInfo.date.checkIn}}</p>
       </div>
       <div class="checkout">
-        <label class="title">Check-out</label>
-        <label class="decrip">{{item.orderInfo.date.checkOut}}</label>
+        <p class="title">Check-out</p>
+        <p class="decrip">{{item.orderInfo.date.checkOut}}</p>
       </div>
     </div>
     <div class="total">
-      <label class="header">Total</label>
+      <p class="header">Total</p>
       <div class="amount">
-        <label class="decrip">{{item.orderInfo.ifUser.post.price}}$/1 night x {{item.orderInfo.date.numberOfDays}} night x {{item.orderInfo.ifUser.guest.id}} guest</label>
+        <p class="decrip">{{item.orderInfo.ifUser.post.price}}$/1 night x {{item.orderInfo.date.numberOfDays}} night x
+          {{item.orderInfo.ifUser.guest.id}} guest</p>
         <div class="line"></div>
-        <label class="decrip" style="font-weight: 600;">total : {{item.payment.total}}$</label>
+        <p class="decrip" style="font-weight: 600;">total : {{item.payment.total}}$</p>
       </div>
     </div>
   </div>
   <div class="inforproduct">
-    <label class="header" style="width: 100%;">Information in the location</label>
+    <p class="header" style="width: 100%;">Information in the location</p>
     <div class="decrip">
-      <label class="decrip">Location: {{item.orderInfo.ifUser.post.location}}</label>
-      <label class="decrip">Distance: {{item.orderInfo.ifUser.post.distance}}</label>
-      <label class="decrip">Star: {{item.orderInfo.ifUser.post.star}}</label>
-      <label class="decrip">Category:{{item.orderInfo.ifUser.post.categories}}</label>
+      <p class="decrip">Location: {{item.orderInfo.ifUser.post.location}}</p>
+      <p class="decrip">Distance: {{item.orderInfo.ifUser.post.distance}}</p>
+      <p class="decrip">Star: {{item.orderInfo.ifUser.post.star}}</p>
+      <p class="decrip">Category:{{item.orderInfo.ifUser.post.categories}}</p>
     </div>
   </div>
   <div class="button">

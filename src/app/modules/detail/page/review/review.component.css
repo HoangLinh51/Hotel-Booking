@@ -1,63 +1,40 @@
-label {
-  margin: 0px;
-}
-
 .review {
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  margin: 20px 0px;
-}
-
-.review .header {
-  display: flex;
-  justify-content: space-around;
+  gap: 30px;
 }
 
 .review .title {
   display: flex;
-  gap: 10px;
   align-items: center;
-  margin-left: -130px;
+  gap: 10px;
 }
 
 .review .title .star {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 8px;
-}
-
-.review .title .star label {
-  color: #3E3E3E;
-  font-family: Poppins;
-  font-size: 28px;
-  font-weight: 1000;
-  line-height: normal;
-}
-
-.review .title label {
-  color: #3E3E3E;
-  font-family: Poppins;
-  font-size: 28px;
-  font-weight: 500;
-  line-height: normal;
-}
-
-.review .evaluate {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  margin: 15px 50px;
-}
-
-.review .evaluate .point {
   display: flex;
   align-items: center;
   gap: 5px;
 }
 
-.review .evaluate .group {
+.review .title p {
+  color: #3E3E3E;
+  font-size: 28px;
+  font-weight: 1000;
+  line-height: normal;
+}
+
+.review .evaluate {
+  display: flex;
+  justify-content: space-between;
+}
+
+.review .evaluate .point {
+  display: flex;
+  align-items: center;
+  gap: 8px
+}
+
+.review .evaluate .property {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -65,51 +42,34 @@ label {
   padding: 8px;
 }
 
-.review .evaluate label.name {
-  color: #3E3E3E;
-  font-family: Poppins;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: normal;
-}
-
-.review .evaluate label.number {
-  color: #3E3E3E;
-  font-family: Poppins;
-  font-size: 12px;
-  font-weight: 400;
-  line-height: normal;
-}
-
-
 @media only screen and (min-width: 744px) and (max-width: 1128px) {
-  .review .evaluate .group {
-    width: 400px;
+  .review .evaluate .property {
+    width: 350px;
   }
 }
 
-@media only screen and (min-width: 550px) and (max-width: 743px) {
-  .review .title {
-    margin-left: -75px;
+@media only screen and (min-width: 400px) and (max-width: 743px) {
+  .review .evaluate {
+    flex-direction: column;
   }
 
-  .review .evaluate .group {
-    width: 400px;
+  .review .evaluate .property {
+    width: 100%;
   }
 }
 
-@media only screen and (min-width: 320px) and (max-width: 549px) {
+@media only screen and (max-width: 399px) {
   .review .title {
-    margin-left: 5px;
+    flex-wrap: wrap;
   }
 
   .review .evaluate {
-    margin: 0px;
+    flex-direction: column;
   }
 
-  .review .evaluate .group {
+  .review .evaluate .property {
     width: 100%;
-    align-items: flex-start;
     flex-direction: column;
+    align-items: flex-start;
   }
 }

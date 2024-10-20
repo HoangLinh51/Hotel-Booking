@@ -1,22 +1,22 @@
 <div class="outputdirectional">
-  <label class="title">Add Payment</label>
+  <p class="title">Add Payment</p>
   <ng-container *ngIf="payment === null else tempalte">
     <div class="frame1">
       <div class="card">
         <div class="payment">
           <button (click)="showDialog(!visible)"><i class="fa-solid fa-plus" style="color: #fff;"></i></button>
-          <label>Add Card</label>
+          <p>Add Card</p>
         </div>
       </div>
     </div>
-    <p-dialog [(visible)]="visible" [modal]="true" [style]="{ width: '30vw' }" [draggable]="false" [resizable]="false">
+    <p-dialog [(visible)]="visible" [modal]="true" [style]="{ width: '90vw' }" [draggable]="false" [resizable]="false">
       <ng-template pTemplate="header">
-        <label class="title">Add Card</label>
+        <p class="title">Add Card</p>
       </ng-template>
       <div class="dialog">
         <form [formGroup]="form" (ngSubmit)="onSubmit()">
           <div class="form">
-            <label class="header">Card Number</label>
+            <p class="header">Card Number</p>
             <input type="text" formControlName="cardNumber" minlength="6">
             <ng-container *ngIf="f['cardNumber'].invalid && f['cardNumber'].touched">
               <div class="invalid-message" *ngIf="f['cardNumber'].errors?.['required']">
@@ -29,7 +29,7 @@
           </div>
           <div class="infor">
             <div class="form">
-              <label class="header">Valid Date Until</label>
+              <p class="header">Valid Date Until</p>
               <p-calendar formControlName="validUntil" dateFormat="dd.mm.yy"></p-calendar>
               <ng-container *ngIf="f['validUntil'].invalid && f['validUntil'].touched">
                 <div class="invalid-message" *ngIf="f['validUntil'].errors?.['required']">
@@ -37,7 +37,7 @@
               </ng-container>
             </div>
             <div class="form">
-              <label class="header">CVV</label>
+              <p class="header">CVV</p>
               <input type="text" pInputText formControlName="cvv" />
               <ng-container *ngIf="f['cvv'].invalid && f['cvv'].touched">
                 <div class="invalid-message" *ngIf="f['cvv'].errors?.['required']">This CVV cannot be left blank.</div>
@@ -48,7 +48,7 @@
             </div>
           </div>
           <div class="form">
-            <label class="header">Name On Card</label>
+            <p class="header">Name On Card</p>
             <input type="text" formControlName="name">
             <ng-container *ngIf="f['name'].invalid && f['name'].touched">
               <div class="invalid-message" *ngIf="f['name'].errors?.['required']">This Name cannot be left blank.</div>
@@ -59,7 +59,7 @@
           </div>
           <div class="checkbox">
             <input type="checkbox" formControlName="checkBox">
-            <p>By tapping the button above, you have agreed to Nginep Terms & Conditions and Privacy Policy.</p>
+            <p>By tapping the button above, you have agreed to Stay Dream Terms & Conditions and Privacy Policy.</p>
           </div>
           <ng-container *ngIf="f['checkBox'].invalid">
             <div class="invalid-message" *ngIf="f['checkBox'].errors?.['required']">Cannot be left blank.</div>
@@ -76,8 +76,8 @@
     <div class="frame1" (click)="showDialog2(!visible2)">
       <div class="paymentTemplate">
         <div class="background">
-          <div class="chip"><svg xmlns="http://www.w3.org/2000/svg" width="35" height="25" viewBox="0 0 65 48"
-              fill="none">
+          <div class="chip">
+            <svg xmlns="http://www.w3.org/2000/svg" width="35" height="25" viewBox="0 0 65 48" fill="none">
               <rect x="0.5" y="1.5" width="63.2333" height="46" rx="5.5" fill="url(#paint0_linear_1_26)"
                 stroke="black" />
               <rect x="0.5" y="16.3833" width="17.8" height="14.6667" fill="url(#paint1_linear_1_26)" stroke="black" />
@@ -108,47 +108,48 @@
                   <stop offset="1" stop-color="#EFE1E1" />
                 </linearGradient>
               </defs>
-            </svg></div>
+            </svg>
+          </div>
           <div class="cardNumber">
-            <label class="body">{{payment.cardNumber}}</label>
+            <p class="body">{{payment.cardNumber}}</p>
           </div>
           <div class="component">
             <div class="validUntil">
-              <label class="header">Valid Until:</label>
-              <label class="body">{{payment.validUntil}}</label>
+              <p class="header">Valid Until:</p>
+              <p class="body">{{payment.validUntil}}</p>
             </div>
             <div class="cvv">
-              <label class="header">CVV:</label>
-              <label class="body">{{payment.cvv}}</label>
+              <p class="header">CVV:</p>
+              <p class="body">{{payment.cvv}}</p>
             </div>
           </div>
           <div class="name">
-            <label class="body">{{payment.name}}</label>
+            <p class="body">{{payment.name}}</p>
           </div>
         </div>
       </div>
     </div>
 
-    <p-dialog header="My Card" [(visible)]="visible2" [modal]="true" [style]="{ width: '30vw' }" [draggable]="false"
+    <p-dialog header="My Card" [(visible)]="visible2" [modal]="true" [style]="{ width: '90vw' }" [draggable]="false"
       [resizable]="false">
       <div class="dialog">
         <div class="form">
-          <label class="header">Card Number</label>
-          <label class="body">{{payment.cardNumber}}</label>
+          <p class="header">Card Number</p>
+          <p class="body">{{payment.cardNumber}}</p>
         </div>
         <div class="infor">
           <div class="form">
-            <label class="header">Valid Date Until</label>
-            <label class="body">{{payment.validUntil}}</label>
+            <p class="header">Valid Date Until</p>
+            <p class="body">{{payment.validUntil}}</p>
           </div>
           <div class="form">
-            <label class="header">CVV</label>
-            <label class="body">{{payment.cvv}}</label>
+            <p class="header">CVV</p>
+            <p class="body">{{payment.cvv}}</p>
           </div>
         </div>
         <div class="form">
-          <label class="header">Name On Card</label>
-          <label class="body">{{payment.name}}</label>
+          <p class="header">Name On Card</p>
+          <p class="body">{{payment.name}}</p>
         </div>
         <div class="submit">
           <button (click)="visible = false" class="save" (click)="deleteCard()">Delete Card</button>

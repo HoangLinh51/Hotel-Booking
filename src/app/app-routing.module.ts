@@ -12,7 +12,7 @@ const routes: Routes = [
     path: 'detail/:id',
     loadChildren: () =>
       import('./modules/detail/detail.module').then((m) => m.DetailModule),
-    canActivate: [AuthGuard],
+    // canActivate: [AuthGuard],
   },
   {
     path: 'about-us',

@@ -89,63 +89,46 @@ export class PageComponent implements OnInit {
 
   listProduct() {
     const posts = this.postService.getAllPost();
+    let postList = posts;
+
     if (this.categoryNameSelected !== '') {
-      this.postSelected = posts.filter(
+      postList = posts.filter(
         (i) => i.categories === this.categoryNameSelected
       );
     }
+
     if (this.inputSearch.input !== '') {
-      this.postSearch = this.postService.searchPosts(this.inputSearch.input);
-      if (this.productBooked) {
-        this.productBooked.forEach((productBooked: any) => {
-          if (
-            productBooked.dateBooked.checkIn ===
-              this.inputSearch.dateInput.checkIn &&
-            productBooked.dateBooked.checkOut ===
-              this.inputSearch.dateInput.checkOut
-          ) {
-            this.postSearch = this.postSearch.filter((listProduct) =>
-              this.productBooked.find(
-                (booked) => listProduct.id !== booked.idProduct
+      postList = this.postService.searchPosts(this.inputSearch.input);
+    }
+
+    if (this.productBooked) {
+      this.productBooked.forEach((productBooked: any) => {
+        if (
+          productBooked.dateBooked.checkIn ===
+            this.inputSearch.dateInput.checkIn &&
+          productBooked.dateBooked.checkOut ===
+            this.inputSearch.dateInput.checkOut
+        ) {
+          postList = postList.filter(
+            (listProduct) =>
+              !this.productBooked.find(
+                (booked) => listProduct.id === booked.idProduct
               )
-            );
-            console.log('this.postSearch', this.postSearch);
-            this.isSearch = true;
-          }
-          if (!this.isSearch) {
-            this.postSearch;
-          }
-        });
-      }
-      this.navigateQueryParams(
-        this.inputSearch.dateInput.checkIn,
-        this.inputSearch.dateInput.checkOut
-      );
-    } else if (this.inputSearch.input === '') {
-      if (this.productBooked) {
-        this.productBooked.forEach((productBooked: any) => {
-          if (
-            productBooked.dateBooked.checkIn ===
-              this.inputSearch.dateInput.checkIn &&
-            productBooked.dateBooked.checkOut ===
-              this.inputSearch.dateInput.checkOut
-          ) {
-            this.postSelected = this.postSelected.filter((listProduct) =>
-              this.productBooked.find(
-                (booked) => listProduct.id !== booked.idProduct
-              )
-            );
-            this.isSearch = true;
-          }
-          if (!this.isSearch) {
-            this.postSelected;
-          }
-        });
-      }
-      this.navigateQueryParams(
-        this.inputSearch.dateInput.checkIn,
-        this.inputSearch.dateInput.checkOut
-      );
+          );
+          this.isSearch = true;
+        }
+      });
+    }
+
+    this.navigateQueryParams(
+      this.inputSearch.dateInput.checkIn,
+      this.inputSearch.dateInput.checkOut
+    );
+
+    if (this.inputSearch.input !== '') {
+      this.postSearch = postList;
+    } else {
+      this.postSelected = postList;
     }
   }
 
@@ -155,7 +138,6 @@ export class PageComponent implements OnInit {
   }
 
   searchProduct(newItem: InputSearch) {
-    console.log('newItem hompage', newItem);
     this.inputSearch = newItem;
     this.listProduct();
   }
@@ -168,29 +150,4 @@ export class PageComponent implements OnInit {
       },
     });
   }
-
-  // onChangeTab($event: number, newItem: any) {
-  // console.log('$event: ', $event);
-  // console.log('newItem', newItem);
-  // this.productBooked = this.localStorageService.getItem(BOOKED_KEY) || [];
-  // if (newItem) {
-  //   const categorySelected = this.category[$event];
-  //   this.postSelected = this.posts.filter(
-  //     (i) => i.categories == categorySelected.name
-  //   );
-  //   if (this.productBooked) {
-  //     this.productBooked.forEach((product: any) => {
-  //       if (
-  //         product.dateBooked.checkIn === newItem.value.dateInput.checkIn &&
-  //         product.dateBooked.checkOut === newItem.value.dateInput.checkOut
-  //       ) {
-  //         this.postSelected = this.postSelected.filter(
-  //           (listProduct: { id: number }) =>
-  //             listProduct.id !== product.idProduct
-  //         );
-  //       }
-  //     });
-  //   }
-  // }
-  // }
 }

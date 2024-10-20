@@ -29,7 +29,7 @@
 .search .filter {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 5px;
 }
 
 .search .filter .input {
@@ -85,7 +85,6 @@
 }
 
 @keyframes show {
-
   0%,
   100% {
     margin-top: 0px;
@@ -231,7 +230,6 @@
 }
 
 @keyframes showSmall {
-
   0%,
   100% {
     margin-top: 0px;
@@ -267,7 +265,6 @@
 }
 
 @keyframes dialogSearch {
-
   0%,
   100% {
     margin-top: 0px;
@@ -450,11 +447,11 @@
     box-shadow: none;
     flex-direction: column;
     gap: 10px;
+    align-items: center
   }
 
   .date {
     flex-direction: column;
-    align-items: flex-start;
   }
 
   .search .filter .input input {

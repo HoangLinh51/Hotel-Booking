@@ -1,28 +1,11 @@
 <app-header-nonsearch></app-header-nonsearch>
-<div class="roadmap">
-  <p>Home / My Account</p>
-  <p>Hello {{user?.lastName}}!</p>
-</div>
-<div class="body">
-  <div class="directional">
-    <div class="manage">
-      <p class="title">Manage My Account</p>
-      <a routerLink="/myprofile" class="body">My Profile</a>
-      <a routerLink="/payment" class="body">My Payment Options</a>
-    </div>
-    <a class="title" routerLink="/booked-trip">My Booked Trip</a>
-    <a class="title" routerLink="/favorite">My Favourite</a>
+<div style="padding: 0px 15px; max-width: 1184px; margin: 10px auto; display: flex;flex-direction: column; gap: 20px;">
+  <div class="roadmap">
+    <h4>Home / My Account</h4>
+    <h4>Hello {{user?.lastName}}!</h4>
   </div>
-
-  <label for="nav_mobile-input" class="nav_bars">
-    <i class="pi pi-bars" style="font-size: 20px;"></i>
-  </label>
-
-  <input type="checkbox" name="" class="nav_input" id="nav_mobile-input">
-
-  <label for="nav_mobile-input" class="nav__overlay"></label>
-  <nav class="nav__mobile">
-    <div class="list">
+  <div class="body">
+    <div class="directional">
       <div class="manage">
         <p class="title">Manage My Account</p>
         <a routerLink="/myprofile" class="body">My Profile</a>
@@ -31,8 +14,27 @@
       <a class="title" routerLink="/booked-trip">My Booked Trip</a>
       <a class="title" routerLink="/favorite">My Favourite</a>
     </div>
-    <label for="nav_mobile-input" class="pi pi-times" style="font-size: 25px"></label>
-  </nav>
-  <router-outlet></router-outlet>
+
+    <label for="nav_mobile-input" class="nav_bars">
+      <i class="pi pi-bars" style="font-size: 20px;"></i>
+    </label>
+
+    <input type="checkbox" name="" class="nav_input" id="nav_mobile-input">
+
+    <label for="nav_mobile-input" class="nav__overlay"></label>
+    <nav class="nav__mobile">
+      <div class="list">
+        <div class="manage">
+          <p class="title">Manage My Account</p>
+          <a routerLink="/myprofile" class="body">My Profile</a>
+          <a routerLink="/payment" class="body">My Payment Options</a>
+        </div>
+        <a class="title" routerLink="/booked-trip">My Booked Trip</a>
+        <a class="title" routerLink="/favorite">My Favourite</a>
+      </div>
+      <label for="nav_mobile-input" class="pi pi-times" style="font-size: 25px"></label>
+    </nav>
+    <router-outlet></router-outlet>
+  </div>
 </div>
 <app-footer></app-footer>

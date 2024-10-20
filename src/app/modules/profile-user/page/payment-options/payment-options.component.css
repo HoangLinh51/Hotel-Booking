@@ -12,7 +12,6 @@
 
 .outputdirectional .title {
   color: #FF385C;
-  font-family: Poppins;
   font-size: 25px;
   font-weight: 700;
   line-height: normal;
@@ -87,28 +86,17 @@
 }
 
 .outputdirectional .frame1 .paymentTemplate .component .header {
-  color: #d7d1d1;
-  font-family: Poppins;
+  color: #bababa;
   font-size: 10px;
   font-weight: 500;
   line-height: normal;
 }
 
-.outputdirectional .frame1 .paymentTemplate .background label.body {
+.outputdirectional .frame1 .paymentTemplate .background p.body {
   color: #fff;
-  font-family: Poppins;
   font-size: 16px;
   font-weight: 500;
   line-height: normal;
-}
-
-.outputdirectional .frame1 label {
-  color: #3E3E3E;
-  font-family: Poppins;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: normal;
-  margin: 0px;
 }
 
 .outputdirectional .frame1 .payment button {
@@ -119,9 +107,8 @@
   background-color: #FF859b;
 }
 
-.dialog .form label.body {
+.dialog .form p.body, p.header {
   color: #3E3E3E;
-  font-family: Poppins;
   font-size: 14px;
   font-weight: 600;
   line-height: normal;
@@ -130,18 +117,8 @@
 
 .title {
   color: #3E3E3E;
-  font-family: Poppins;
   font-size: 25px;
   font-weight: 600;
-  line-height: normal;
-  margin: 0px;
-}
-
-label.header {
-  color: #3E3E3E;
-  font-family: Poppins;
-  font-size: 16px;
-  font-weight: 500;
   line-height: normal;
   margin: 0px;
 }
@@ -156,7 +133,6 @@ label.header {
   border: 1px solid;
   border-radius: 8px;
   color: #3E3E3E;
-  font-family: Poppins;
   font-size: 16px;
   font-weight: 500;
   line-height: normal;
@@ -178,7 +154,6 @@ label.header {
   margin: 0px;
   margin-left: 30px;
   color: #3E3E3E;
-  font-family: Poppins;
   font-size: 14px;
   font-weight: 500;
   line-height: normal;
@@ -212,7 +187,6 @@ label.header {
   height: 50px;
   background-color: #FF385C;
   color: #fff;
-  font-family: Poppins;
   font-size: 16px;
   font-weight: 400;
   line-height: normal;
@@ -240,6 +214,29 @@ label.header {
 
 @media only screen and (min-width: 320px) and (max-width: 549px) {
   .outputdirectional {
-    width: 275px;
+    width: 100%;
+  }
+  .outputdirectional .frame1 .payment {
+    width: 220px;
+    height: 120px ;
+  }
+  .outputdirectional .panel img {
+    height: 60px;
+  }
+  .outputdirectional .frame1 .paymentTemplate .background {
+    width: 200px;
+    height: 100px;
+    background-size: 220px 120px;
+  }
+  .outputdirectional .frame1 .paymentTemplate {
+    width: 220px;
+    height: 120px ;
+    background-size: 220px 120px;
+  }
+  .outputdirectional .frame1 .paymentTemplate .background .chip {
+    padding-top:10px;
+  }
+  .outputdirectional .frame1 .paymentTemplate .background p.body {
+    font-size: 12px;
   }
 }

@@ -3,7 +3,7 @@ import { PageComponent } from './page/page.component';
 import { DetailRoutingModule } from './detail-routing.module';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { CommentsComponent } from './page/comments/comments.component';
-import { DecripComponent } from './page/decrip/decrip.component';
+import { DecripComponent } from './page/title/title.component';
 import { ImageComponent } from './page/image/image.component';
 import { InforHostedComponent } from './page/infor-hosted/infor-hosted.component';
 import { MapComponent } from './page/map/map.component';

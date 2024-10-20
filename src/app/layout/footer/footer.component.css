@@ -47,7 +47,7 @@ label {
 .footer .footer2 .right-footer {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 5px;
 }
 
 .footer .footer2 .left-footer label,

@@ -1,0 +1,29 @@
+.decrip {
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  color: #3E3E3E;
+  font-size: 30px;
+  font-weight: 1000;
+  line-height: normal;
+}
+
+.decrip .review,
+.decrip .review .group,
+.decrip .interact .group{
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.decrip .interact .group{
+  flex-wrap: nowrap;
+}
+
+.decrip .interact {
+  display: flex;
+  gap: 20px;
+}

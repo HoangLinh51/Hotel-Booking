@@ -1,29 +1,27 @@
 <app-header></app-header>
+<div style="padding: 0px 15px; max-width: 1184px; margin: 10px auto; display: flex;flex-direction: column; gap: 20px;">
 
-<div class="title">
-  <label class="text">Beautiful villa on the edge of BLUE LAGOON</label>
-  <div></div>
+  <app-title [post]="post"></app-title>
+
+  <app-image [post]="post"></app-image>
+
+  <app-vila-owner [post]="post"></app-vila-owner>
+
+  <app-plance-offers></app-plance-offers>
+
+  <div class="line"></div>
+
+  <app-review [post]="post"></app-review>
+
+  <app-comments></app-comments>
+
+  <div class="line"></div>
+
+  <app-map></app-map>
+
+  <div class="line"></div>
+
+  <app-infor-hosted [post]="post"></app-infor-hosted>
+
 </div>
-<app-decrip [post]="post"></app-decrip>
-
-<app-image [post]="post"></app-image>
-
-<app-vila-owner [post]="post"></app-vila-owner>
-
-<app-plance-offers></app-plance-offers>
-
-<div class="line"></div>
-
-<app-review [post]="post"></app-review>
-
-<app-comments></app-comments>
-
-<div class="line"></div>
-
-<app-map></app-map>
-
-<div class="line"></div>
-
-<app-infor-hosted [post]="post"></app-infor-hosted>
-
 <app-footer></app-footer>

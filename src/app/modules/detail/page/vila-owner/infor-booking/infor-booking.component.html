@@ -1,17 +1,17 @@
-<label class="title">Information Booking</label>
+<h3 class="title">Information Booking</h3>
 <form [formGroup]="form" (ngSubmit)="onSubmit()">
   <div class="box">
     <div class="header">
       <div class="decrip">
         <div class="infor">
-          <label class="header">Name:</label>
+          <p class="header">Name:</p>
           <input type="text" formControlName="name">
           <ng-container *ngIf="f['name'].invalid && f['name'].touched">
             <div class="invalid-message" *ngIf="f['name'].errors?.['required']">This name cannot be left blank.</div>
           </ng-container>
         </div>
         <div class="infor">
-          <label class="header">Country of residence: </label>
+          <p class="header">Country of residence: </p>
           <input type="text" formControlName="country">
           <ng-container *ngIf="f['country'].invalid && f['country'].touched">
             <div class="invalid-message" *ngIf="f['country'].errors?.['required']">This country cannot be left blank.
@@ -21,7 +21,7 @@
       </div>
       <div class="decrip">
         <div class="infor">
-          <label class="header">Email: </label>
+          <p class="header">Email: </p>
           <input formControlName="email" type="text" placeholder="Your Email" minlength="8">
           <ng-container *ngIf="f['email'].invalid && (f['email'].dirty || f['email'].touched)">
             <div class="invalid-message" *ngIf="f['email'].errors?.['required']">This email cannot be left blank.</div>
@@ -30,7 +30,7 @@
           </ng-container>
         </div>
         <div class="infor">
-          <label class="header">Phone Number: </label>
+          <p class="header">Phone Number: </p>
           <input formControlName="phone" type="text" placeholder="Your Phone Number" minlength="10">
           <ng-container *ngIf=" f['phone'].invalid && (f['phone'].dirty || f['phone'].touched)">
             <div class="invalid-message" *ngIf="f['phone'].errors?.['required']">This phone number cannot be left
@@ -43,7 +43,7 @@
       </div>
       <div class="decrip">
         <div class="infor">
-          <label class="header">Guest</label>
+          <p class="header">Guest</p>
           <p-dropdown [options]="guest" optionLabel="name" [showClear]="true" placeholder="How many Guest?"
             tooltipPosition="bottom" formControlName="guest" [style]="{'display': 'flex'}"></p-dropdown>
           <ng-container *ngIf="f['guest'].invalid && f['guest'].touched">
@@ -53,7 +53,7 @@
       </div>
     </div>
     <div class="note">
-      <label class="header">Note</label>
+      <p class="header">Note</p>
       <textarea rows="5" cols="80" pInputTextarea class="note" formControlName="note"></textarea>
     </div>
   </div>

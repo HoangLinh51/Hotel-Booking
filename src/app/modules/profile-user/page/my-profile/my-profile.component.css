@@ -55,7 +55,7 @@
 }
 
 .outputdirectional .frame2 .cancel {
-  padding: 15px 45px;
+  padding: 15px 25px;
   border-radius: 15px;
   border: none;
   background: white;
@@ -117,7 +117,7 @@
 
 @media only screen and (min-width: 320px) and (max-width: 549px) {
   .outputdirectional {
-    width: 275px;
+    width: 255px;
   }
 
   .outputdirectional .frame {
