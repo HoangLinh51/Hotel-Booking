@@ -5,8 +5,6 @@ import { InputSearch } from 'src/app/data/modal/booking';
 import { LUser } from 'src/app/data/modal/user';
 import { AuthService } from 'src/app/data/service/auth.service';
 import { PostService } from 'src/app/data/service/post.service';
-import { ToastrService } from 'ngx-toastr';
-import { filter } from 'rxjs/operators';
 
 @Component({
   selector: 'app-page',

@@ -53,7 +53,7 @@ export class LoginComponent {
             this.router.navigateByUrl(returnUrl);
           },
           error: (error) => {
-            this.toastrService.error(error, 'Error!');
+            this.toastrService.error(error.error.message, 'Error!');
             this.loading = false;
           },
         });

@@ -12,40 +12,52 @@
 
     <form class="forminput" [formGroup]="form" (ngSubmit)="onSubmit()">
       <div class="form">
-        <input formControlName="firstName" type="text" placeholder="First Name">
-        <ng-container *ngIf="f['firstName'].invalid && f['firstName'].touched">
-          <div class="invalid-message" *ngIf="f['firstName'].errors?.['required']">This First Name cannot be left blank.
-          </div>
-        </ng-container>
+        <div style="width: 100%;">
+          <input formControlName="firstName" type="text" placeholder="First Name">
+          <ng-container *ngIf="f['firstName'].invalid && f['firstName'].touched">
+            <div class="invalid-message" *ngIf="f['firstName'].errors?.['required']">This First Name cannot be left
+              blank.
+            </div>
+          </ng-container>
+        </div>
 
-        <input formControlName="lastName" type="text" placeholder="Last Name">
-        <ng-container *ngIf="f['lastName'].invalid && f['lastName'].touched">
-          <div class="invalid-message" *ngIf="f['lastName'].errors?.['required']">This last name cannot be left blank.
-          </div>
-        </ng-container>
+        <div style="width: 100%;">
+          <input formControlName="lastName" type="text" placeholder="Last Name">
+          <ng-container *ngIf="f['lastName'].invalid && f['lastName'].touched">
+            <div class="invalid-message" *ngIf="f['lastName'].errors?.['required']">This last name cannot be left blank.
+            </div>
+          </ng-container>
+        </div>
 
-        <input formControlName="email" type="text" placeholder="Email" minlength="8">
-        <ng-container *ngIf="f['email'].invalid && (f['email'].dirty || f['email'].touched)">
-          <div class="invalid-message" *ngIf="f['email'].errors?.['required']">This email cannot be left blank.</div>
-          <div class="invalid-message" *ngIf="f['email'].errors?.['minlength']">Email is too short</div>
-          <div class="invalid-message" *ngIf="f['email'].errors?.['email']">Invalid email format.</div>
-        </ng-container>
+        <div style="width: 100%;">
+          <input formControlName="email" type="text" placeholder="Email" minlength="8">
+          <ng-container *ngIf="f['email'].invalid && (f['email'].dirty || f['email'].touched)">
+            <div class="invalid-message" *ngIf="f['email'].errors?.['required']">This email cannot be left blank.</div>
+            <div class="invalid-message" *ngIf="f['email'].errors?.['minlength']">Email is too short</div>
+            <div class="invalid-message" *ngIf="f['email'].errors?.['email']">Invalid email format.</div>
+          </ng-container>
+        </div>
 
-        <input formControlName="phoneNumber" type="text" placeholder="Phone Number" minlength="10">
-        <ng-container *ngIf=" f['phoneNumber'].invalid && (f['phoneNumber'].dirty || f['phoneNumber'].touched)">
-          <div class="invalid-message" *ngIf="f['phoneNumber'].errors?.['required']">This phone number cannot be left
-            blank.</div>
-          <div class="invalid-message" *ngIf="f['phoneNumber'].errors?.['minlength']">Phone Number is too short</div>
-          <div class="invalid-message" *ngIf="f['phoneNumber'].errors?.['invalidPhoneNumber']">Invalid Vietnamese phone
-            number format.</div>
-        </ng-container>
+        <div style="width: 100%;">
+          <input formControlName="phoneNumber" type="text" placeholder="Phone Number" minlength="10">
+          <ng-container *ngIf=" f['phoneNumber'].invalid && (f['phoneNumber'].dirty || f['phoneNumber'].touched)">
+            <div class="invalid-message" *ngIf="f['phoneNumber'].errors?.['required']">This phone number cannot be left
+              blank.</div>
+            <div class="invalid-message" *ngIf="f['phoneNumber'].errors?.['minlength']">Phone Number is too short</div>
+            <div class="invalid-message" *ngIf="f['phoneNumber'].errors?.['invalidPhoneNumber']">Invalid Vietnamese
+              phone
+              number format.</div>
+          </ng-container>
+        </div>
 
-        <input formControlName="password" type="text" placeholder="Password" minlength="6">
-        <ng-container *ngIf="f['password'].invalid && f['password'].touched">
-          <div class="invalid-message" *ngIf="f['password'].errors?.['required']">This password cannot be left blank.
-          </div>
-          <div class="invalid-message" *ngIf="f['password'].errors?.['minlength']">Password is too short</div>
-        </ng-container>
+        <div style="width: 100%;">
+          <input formControlName="password" type="text" placeholder="Password" minlength="6">
+          <ng-container *ngIf="f['password'].invalid && f['password'].touched">
+            <div class="invalid-message" *ngIf="f['password'].errors?.['required']">This password cannot be left blank.
+            </div>
+            <div class="invalid-message" *ngIf="f['password'].errors?.['minlength']">Password is too short</div>
+          </ng-container>
+        </div>
       </div>
       <div class="create-acc">
         <button type="submit">Create Accout</button>
